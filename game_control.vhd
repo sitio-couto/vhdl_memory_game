@@ -68,6 +68,9 @@ architecture rtl of game_control is
 	 );
   end component;
   
+  type vetor is array (0 to 100) of integer range 0 to 100;
+  signal mesa : vetor;
+  
   signal key_en, reset : std_logic;
   signal state, next_state : std_logic_vector (3 downto 0);
   signal key_on      : std_logic_vector (2  downto 0);
@@ -79,6 +82,10 @@ architecture rtl of game_control is
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 32;
   signal key_state: std_logic;
+  signal rand_num: integer range 0 to 9;
+  
+  signal deck_colors, deck_numbers, deck_both: vetor;
+  signal make_deck: std_logic;
 begin
 
   kbdex_ctrl_inst : kbdex_ctrl
@@ -117,10 +124,36 @@ begin
 		32 when 3,
 		 0 when others;
 
+	
+	process
+	begin
+	wait until make_deck'event and make_deck = '0';
+		-- MAQUINA DE ESTADOS E PROCESSAMENTO DO INPUT DO TECLADO
+		--MAKE DECK : 1o digito cor / 2o digito numero
+		
+--			loop1: for x in 0 to 7 loop
+--				deck_colors(x) <= 10*x;
+--			end loop;
+--			
+--			loop2: for x in 0 to 9 loop
+--				deck_numbers(x) <= x;
+--			end loop;
+--
+--			loop3: for x in 0 to 79 loop
+--				deck_both(x) <= x;
+--			end loop;
+			deck_colors(3) <= 3;
+		
+	end process;
+
+	
 	process
 		variable counter : integer range 0 to 50000000; 
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
+	
+		make_deck <= '0';
+
 		--CONTADOR PARA GERAR NUMEROS ALEATORIOS
 		counter := counter + 1;
 		
@@ -129,37 +162,39 @@ begin
 		end if;
 		--FIM CONTADOR
 	
-		-- MAQUINA DE ESTADOS E PROCESSAMENTO DO INPUT DO TECLADO
 		if key_on /= "000" and key_on_prev = "000" then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
- 		case state is
-			when "0000" =>
-				n_players <= to_integer(unsigned(key_number(3 downto 0)));
-				if to_integer(unsigned(key_number(3 downto 0))) > 1 and to_integer(unsigned(key_number(3 downto 0))) < 5 then 
-					next_state <= "0001";
-				end if;
-			when "0001" =>
-				t_cards <= to_integer(unsigned(key_number(3 downto 0)));
-				if to_integer(unsigned(key_number(3 downto 0))) > 0 and to_integer(unsigned(key_number(3 downto 0))) < 4 then 
-					next_state <= "0010";
-				end if;
-			when "0010" =>
-				n_pairs <= to_integer(unsigned(key_number(3 downto 0)));
 				
-				if t_cards = 1 then -- Se for apenas cor (8 pares);
-					if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-						next_state <= "0011"; -- Valido
+			rand_num <= (counter mod 10);
+		
+			case state is
+				when "0000" =>
+					n_players <= to_integer(unsigned(key_number(3 downto 0)));
+					if to_integer(unsigned(key_number(3 downto 0))) > 1 and to_integer(unsigned(key_number(3 downto 0))) < 5 then 
+						next_state <= "0001";
 					end if;
-				elsif t_cards = 2 then -- Se for apenas numero (10 pares)
-					if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-						next_state <= "0011"; -- Valido
+				when "0001" =>
+					t_cards <= to_integer(unsigned(key_number(3 downto 0)));
+					if to_integer(unsigned(key_number(3 downto 0))) > 0 and to_integer(unsigned(key_number(3 downto 0))) < 4 then 
+						next_state <= "0010";
 					end if;
-				elsif t_cards = 3 then -- Se for numeros e cores (80 pares)
-					if to_integer(unsigned(key_number(3 downto 0))) < 4 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-						next_state <= "0011"; -- Valido
+				when "0010" =>
+					n_pairs <= to_integer(unsigned(key_number(3 downto 0)));
+					
+					if t_cards = 1 then -- Se for apenas cor (8 pares);
+						if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
+							next_state <= "0011"; -- Valido
+						end if;
+					elsif t_cards = 2 then -- Se for apenas numero (10 pares)
+						if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
+							next_state <= "0011"; -- Valido
+						end if;
+					elsif t_cards = 3 then -- Se for numeros e cores (80 pares)
+						if to_integer(unsigned(key_number(3 downto 0))) < 4 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
+							next_state <= "0011"; -- Valido
+						end if;
 					end if;
-				end if;
-			when others =>
-				next_state <= "0000";
+				when others =>
+					next_state <= "0000";
 			end case;
 		end if;
 		-- FIM DA MAQUINA DE ESTADOS
@@ -173,7 +208,7 @@ begin
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(n_players, 4)),
+		  std_logic_vector(to_unsigned(deck_colors(3), 4)),
 		  HEX0
 	) ;
 	
@@ -189,6 +224,13 @@ begin
 		  HEX2
 	) ;
 	
+	
+	print3 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned(rand_num, 4)),
+		  HEX3
+	) ;
+	
 	print4 : bin2dec 
 		port map (
 		  std_logic_vector(to_unsigned((n_cards mod 10), 4)),
@@ -202,7 +244,7 @@ begin
 	) ;
 	
 	LEDR(9 downto 6) <= state;
-	HEX3 <= "1111111";
+	--HEX3 <= "1111111";
 	-- FIM DISPLAYS
 	
 end rtl;
