@@ -118,9 +118,19 @@ begin
 		 0 when others;
 
 	process
+		variable counter : integer range 0 to 50000000; 
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-		if key_on /= "000" and key_on_prev = "000" then	-- nao tinha nada apertado, e apertou agr
+		--CONTADOR PARA GERAR NUMEROS ALEATORIOS
+		counter := counter + 1;
+		
+		if (counter = 50000000) then 
+			counter := 0;
+		end if;
+		--FIM CONTADOR
+	
+		-- MAQUINA DE ESTADOS E PROCESSAMENTO DO INPUT DO TECLADO
+		if key_on /= "000" and key_on_prev = "000" then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
  		case state is
 			when "0000" =>
 				n_players <= to_integer(unsigned(key_number(3 downto 0)));
@@ -152,11 +162,15 @@ begin
 				next_state <= "0000";
 			end case;
 		end if;
-		key_on_prev <= key_on;	-- atualiza key_on_prev
+		-- FIM DA MAQUINA DE ESTADOS
+		
+		key_on_prev <= key_on;	-- atualiza key_on_prev para processar apenas uma vez por input
 	end process;
 	
 	state <= next_state;
 	
+	
+	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
 		  std_logic_vector(to_unsigned(n_players, 4)),
@@ -189,5 +203,6 @@ begin
 	
 	LEDR(9 downto 6) <= state;
 	HEX3 <= "1111111";
+	-- FIM DISPLAYS
 	
 end rtl;
