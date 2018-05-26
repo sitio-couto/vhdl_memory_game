@@ -71,13 +71,14 @@ architecture rtl of game_control is
   signal key_en, reset : std_logic;
   signal state, next_state : std_logic_vector (3 downto 0);
   signal key_on      : std_logic_vector (2  downto 0);
+  signal key_on_prev      : std_logic_vector (2  downto 0);
   signal key_code    : std_logic_vector (47 downto 0);
   signal key_number  : std_logic_vector (7 downto 0);
   signal key_pressed : std_logic_vector (7  downto 0);
 
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 32;
-  
+  signal key_state: std_logic;
 begin
 
   kbdex_ctrl_inst : kbdex_ctrl
@@ -140,36 +141,36 @@ begin
 		  std_logic_vector(to_unsigned(n_cards, 4)),
 		  HEX3
 	) ;
-	
-	process (key_on)
+
+
+	process
 	begin 
-		if key_on /= "000" then
+	wait until CLOCK_50'event and CLOCK_50 = '1';
+		if key_on /= "000" and key_on_prev = "000" then	-- nao tinha nada apertado, e apertou agr
  		case state is
 			when "0000" =>
 				n_players <= to_integer(unsigned(key_number(3 downto 0)));
-				if n_players /= 0 then 
+				if to_integer(unsigned(key_number(3 downto 0))) > 1 and to_integer(unsigned(key_number(3 downto 0))) < 5 then 
 					next_state <= "0001";
 				end if;
 			when "0001" =>
 				t_cards <= to_integer(unsigned(key_number(3 downto 0)));
-				if t_cards /= 0 and t_cards < 4 then 
+				if to_integer(unsigned(key_number(3 downto 0)) > 0 and to_integer(unsigned(key_number(3 downto 0)) < 4 then 
 					next_state <= "0010";
 				end if;
 			when "0010" =>
 				n_pairs <= to_integer(unsigned(key_number(3 downto 0)));
 				
-				if t_cards = 0 then next_state <= "0000";
-				
-				elsif t_cards = 1 then -- Se for apenas cor (8 pares);
-					if n_pairs < 3 and n_pairs /= 0 then 
+				if t_cards = 1 then -- Se for apenas cor (8 pares);
+					if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
 						next_state <= "0011"; -- Valido
 					end if;
 				elsif t_cards = 2 then -- Se for apenas numero (10 pares)
-					if n_pairs < 3 and n_pairs /= 0 then 
+					if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
 						next_state <= "0011"; -- Valido
 					end if;
 				elsif t_cards = 3 then -- Se for numeros e cores (80 pares)
-					if n_pairs < 4 and n_pairs /= 0 then 
+					if to_integer(unsigned(key_number(3 downto 0))) < 4 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
 						next_state <= "0011"; -- Valido
 					end if;
 				end if;
@@ -177,61 +178,11 @@ begin
 				next_state <= "0000";
 			end case;
 		end if;
+		key_on_prev <= key_on;	-- atualiza key_on_prev
 	end process;
 	
-   state <= next_state;
+	state <= next_state;
 	
 	LEDR(9 downto 6) <= state;
 	
 end rtl;
-
-
-
-
-
-
-
---	process
---	begin 
---	wait until CLOCK_50'event and CLOCK_50 = '1';
---		if key_on_flag = '1' then 
---			if key_on = '0' then key_on_flag <= '0';
---			end if;
---		elsif reset = '1' then
---			next_state <= "000";
---		else
--- 		case state is
---			when "000" =>
---				n_players <= unsigned(key_number(3 downto 0));
---				if n_players = 0 then next_state <= "000";
---				elsif n_players > 4 then next_state <= "000";
---				else next_state <= "001";
---				end if;
---			when "001" =>
---				t_cards <= unsigned(key_number(3 downto 0));
---				if t_cards = 0 then next_state <= "001";
---				elsif t_cards > 3 then next_state <= "001";
---				else next_state <= "010";
---				end if;
---			when "010" =>
---				addr <= "000000010";
---				save <= '1';
---				d_in <= key_number;
---				next_state <="001";
---				if key_on /= 0 then next_state <="011";
---				end if;
---			when "011" =>
---				if w = '1' then next_state <= "100";
---				else if b= next_state = "001";
---				end if;
---			when "100" =>
---				if w = '1' then next_state <= "000";
---				else next_state <= "011";
---				end if;
---			when others =>
---				if w = '1' then next_state <= "000";
---				else next_state <= "001";
---				end if;
---			end case;
---		end if;
---	end process;
