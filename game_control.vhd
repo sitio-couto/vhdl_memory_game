@@ -117,32 +117,6 @@ begin
 		32 when 3,
 		 0 when others;
 
-	
-	print0 : bin2dec 
-		port map (
-		  std_logic_vector(to_unsigned(n_players, 4)),
-		  HEX0
-	) ;
-	
-	print1 : bin2dec 
-		port map (
-		  std_logic_vector(to_unsigned(t_cards, 4)),
-		  HEX1
-	) ;
-	
-	print2 : bin2dec 
-		port map (
-		  std_logic_vector(to_unsigned(n_pairs, 4)),
-		  HEX2
-	) ;
-	
-	print3 : bin2dec 
-		port map (
-		  std_logic_vector(to_unsigned(n_cards, 4)),
-		  HEX3
-	) ;
-
-
 	process
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
@@ -155,7 +129,7 @@ begin
 				end if;
 			when "0001" =>
 				t_cards <= to_integer(unsigned(key_number(3 downto 0)));
-				if to_integer(unsigned(key_number(3 downto 0)) > 0 and to_integer(unsigned(key_number(3 downto 0)) < 4 then 
+				if to_integer(unsigned(key_number(3 downto 0))) > 0 and to_integer(unsigned(key_number(3 downto 0))) < 4 then 
 					next_state <= "0010";
 				end if;
 			when "0010" =>
@@ -183,6 +157,37 @@ begin
 	
 	state <= next_state;
 	
+	print0 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned(n_players, 4)),
+		  HEX0
+	) ;
+	
+	print1 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned(t_cards, 4)),
+		  HEX1
+	) ;
+	
+	print2 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned(n_pairs, 4)),
+		  HEX2
+	) ;
+	
+	print4 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned((n_cards mod 10), 4)),
+		  HEX4
+	) ;
+	
+	print5 : bin2dec 
+		port map (
+		  std_logic_vector(to_unsigned((n_cards/10 mod 10), 4)),
+		  HEX5
+	) ;
+	
 	LEDR(9 downto 6) <= state;
+	HEX3 <= "1111111";
 	
 end rtl;
