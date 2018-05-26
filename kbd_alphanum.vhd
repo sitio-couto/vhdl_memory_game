@@ -1,0 +1,120 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity kbd_alphanum is
+  port (
+    clk : in std_logic;
+    key_on : in std_logic_vector(2 downto 0);
+    key_code : in std_logic_vector(47 downto 0);
+    HEX1 : out std_logic_vector(3 downto 0); -- GFEDCBA
+    HEX0 : out std_logic_vector(3 downto 0) -- GFEDCBA
+  );
+end kbd_alphanum;
+
+architecture rtl of kbd_alphanum is
+component bin2hex
+	port (
+		SW: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		light : IN STD_LOGIC;
+		HEX0: OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+	);
+end component;
+
+component ff_d
+  port(
+    D   : in std_logic;
+    Clk : in std_logic;
+	 Q   : out std_logic;
+    Q_n : out std_logic;
+	 Preset : in std_logic;
+	 Clear  : in std_logic
+  );
+end component;
+
+component ff_t
+  port(
+    T   : in std_logic;
+    Clk : in std_logic;
+	 Q   : out std_logic;
+    Q_n : out std_logic;
+	 Preset : in std_logic;
+	 Clear  : in std_logic
+  );
+end component;
+
+component code2ascii
+	port (
+		capital_en : in std_logic;
+		key_code   : in std_logic_vector(15 downto 0);
+		key_ascii  : out std_logic_vector(7 downto 0)
+	);
+end component;
+  signal key_ascii : std_logic_vector (47 downto 0);
+  signal key_shown : std_logic_vector (15 downto 0);
+  signal shift_in, shift_out : std_logic;
+  signal caps_in, caps_out   : std_logic;
+  signal dp_on, capital_en, second_key : std_logic;
+
+begin
+
+	--Testa se a primeira tecla eh shift
+	with key_code(15 downto 0) select shift_in <=
+		'1' when x"0012",
+		'1' when x"0059",
+		'0' when others;
+
+	--Testa se a primeira tecla eh caps
+	with key_code(15 downto 0) select caps_in <=
+		'1' when x"0058",
+		'0' when others;
+		
+  -- Cria flipflop para o shift
+  shift_flop : ff_d port map (
+		shift_in,
+		clk,
+		shift_out,
+		OPEN,
+		'0', 
+		'0'
+  );
+	
+  --Cria flipflop para o caps
+  caps_flop : ff_t port map (
+		'1',
+		caps_in,
+		caps_out,
+		OPEN,
+		'0', 
+		'0'
+  );
+  
+  --Inverte o comportamento do shift se o caps estiver ativo
+  capital_en <= caps_out xor shift_out;
+ 
+  --Gera tradutores scan2ascii para as 3 teclas
+  G1 : for i in 2 downto 0 generate		
+		translate : code2ascii port map (
+			capital_en,
+			key_code(16*i + 15 downto 16*i),
+			key_ascii(16*i + 7 downto 16*i)
+		);
+  end generate;
+  
+  --Se caps ou shift pressionados, aponta pra segunda tecla.
+  second_key <= caps_in or shift_out;
+  
+  --Seleciona se a tecla a ser mostrada eh a segunda ou a primeira
+  with second_key select key_shown <=
+		key_ascii(15 downto 0) when '0',
+		key_ascii(31 downto 16) when '1';
+	
+	--Define se o display deve ficar desligado caso nao haja uma representacao da tela em ascii
+	with key_shown(7 downto 0) select dp_on <=
+		'0' when x"00",
+		'1' when others;
+	
+	--retorna o valor ascii
+	HEX0 <= key_shown(3 downto 0);
+	HEX1 <= key_shown(7 downto 4);
+	
+end rtl;

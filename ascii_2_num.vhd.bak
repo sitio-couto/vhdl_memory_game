@@ -1,0 +1,24 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all;
+
+ENTITY ascii_2_num IS
+PORT (key_pressed: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		numeric : OUT std_logic_vector (31 downto 0)
+		);
+END ascii_2_num;
+ARCHITECTURE Behavior OF ascii_2_num IS
+	signal blank : std_logic_vector (23 downto 0);
+BEGIN
+
+WITH keypressed SELECT HEX0 <= 
+		 -- 2 - 4 (num)
+		 blank & x"02" when x"32", 
+		 blank & x"03" when x"33", 
+		 blank & x"04" when x"34",
+		 -- 2 - 4 (keypad)
+		 blank & x"02" when x"30",
+		 blank & x"03" when x"31",
+		 blank & x"04" when x"32",
+		 blank & x"00" when others;
+		 
+END Behavior ;

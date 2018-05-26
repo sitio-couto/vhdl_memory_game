@@ -1,0 +1,33 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all;
+
+ENTITY bin2hex IS
+PORT (SW: IN STD_LOGIC_VECTOR(3 DOWNTO 0) ;
+		light : IN STD_LOGIC;
+		HEX0: OUT STD_LOGIC_VECTOR (6 DOWNTO 0)) ;
+END bin2hex;
+ARCHITECTURE Behavior OF bin2hex IS
+	signal lightSW : std_logic_vector (4 downto 0);
+BEGIN
+
+	lightSW <= light & SW;
+
+WITH lightSW SELECT
+HEX0 <= "1111001" WHEN "10001",
+		  "0100100" WHEN "10010",
+		  "0110000" WHEN "10011",
+		  "0011001" WHEN "10100",
+		  "0010010" WHEN "10101",
+		  "0000010" WHEN "10110",
+		  "1111000" WHEN "10111",
+		  "0000000" WHEN "11000",
+		  "0010000" WHEN "11001",
+		  "1000000" WHEN "10000",
+		  "0001000" WHEN "11010",
+		  "0000011" WHEN "11011",
+		  "1000110" WHEN "11100",
+		  "0100001" WHEN "11101",
+		  "0000110" WHEN "11110",
+		  "0001110" WHEN "11111",
+		  "1111111" WHEN OTHERS;
+END Behavior ;
