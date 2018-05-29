@@ -70,8 +70,7 @@ architecture rtl of game_control is
   
   type vetor is array (0 to 100) of integer range 0 to 100;
   signal mesa : vetor;
-  
-  signal key_en, reset : std_logic;
+
   signal state, next_state : std_logic_vector (3 downto 0);
   signal key_on      : std_logic_vector (2  downto 0);
   signal key_on_prev      : std_logic_vector (2  downto 0);
@@ -81,11 +80,10 @@ architecture rtl of game_control is
 
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 32;
-  signal key_state: std_logic;
   signal rand_num: integer range 0 to 9;
   
-  signal deck_colors, deck_numbers, deck_both: vetor;
-  signal make_deck: std_logic;
+  signal deck : vetor;
+  signal set_table : std_logic;
 begin
 
   kbdex_ctrl_inst : kbdex_ctrl
@@ -125,12 +123,11 @@ begin
 		 0 when others;
 	
 	process
-		variable counter : integer range 0 to 50000000; 
+		variable counter : integer range 0 to 50000000;
+		variable i : integer range 0 to 80;
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
 	
-		make_deck <= '0';
-
 		--CONTADOR PARA GERAR NUMEROS ALEATORIOS
 		counter := counter + 1;
 		
@@ -139,7 +136,7 @@ begin
 		end if;
 		--FIM CONTADOR
 	
-		if key_on /= "000" and key_on_prev = "000" then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
+		if (key_on /= "000" and key_on_prev = "000") or set_table = '1' then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
 				
 			rand_num <= (counter mod 10);
 		
@@ -171,21 +168,38 @@ begin
 						end if;
 					end if;
 					
+					-- ZERAMENTO DO DECK.
+					i := 0;
+					while (i < 80) loop
+						deck(i) <= 0;
+						i := i + 1;
+					end loop; 
+					
+					-- FLAG PARA INICILIZAR A MESA.
+					set_table <= '1';
+					
 				when "0011" => 
-				
-					for i in 0 to 8 loop
-						deck_colors(i) <= i*10;
-					end loop;
+					-- INICIALIZAÇAO DO DECK.
+					i := 0;
+					while (i < 80) loop
+						if t_cards = 1 and i < 8 then
+							deck(i) <= i*10;
+						elsif t_cards = 2 and i < 10 then 
+							deck(i) <= i;
+						elsif t_cards = 3 then 
+							deck(i) <= i;
+						end if;
+						
+						i := i + 1;
+					end loop; 
 					
-					for i in 0 to 9 loop
-						deck_numbers(i) <= i;
-					end loop;
-					
-					for i in 0 to 79 loop
-						deck_both(i) <= i;
-					end loop;
+					--INICIALIZAÇAO DA MESA DE JOGO.
+					i := 0;
+					while (i < 80) loop
+					end loop; 
 					
 					next_state <= "0100";
+					set_table <= '0';
 				when others =>
 					next_state <= "0000";
 			end case;
@@ -201,38 +215,38 @@ begin
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_colors(8) mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(9) mod 10), 4)),
 		  HEX0
 	) ;
 	
 	print1 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_colors(8)/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(9)/10 mod 10), 4)),
 		  HEX1
 	) ;
 	
 	print2 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_numbers(9) mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(7) mod 10), 4)),
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_numbers(8)/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(7)/10 mod 10), 4)),
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_both(79) mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(79) mod 10), 4)),
 		  HEX4
 	) ;
 	
 	print5 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck_both(79)/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck(79)/10 mod 10), 4)),
 		  HEX5
 	) ;
 	

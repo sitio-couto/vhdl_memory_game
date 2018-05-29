@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for jogo_da_memoria
-Tue May 29 10:39:02 2018
+Tue May 29 11:49:06 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.29        ;
+; Average used               ; 1.30        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.8%      ;
-;     Processor 3            ;   9.7%      ;
-;     Processor 4            ;   9.6%      ;
+;     Processor 2            ;  10.2%      ;
+;     Processor 3            ;  10.1%      ;
+;     Processor 4            ;  10.0%      ;
 +----------------------------+-------------+
 
 
@@ -130,9 +130,9 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                ; Note                                                 ;
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
-; 101.69 MHz ; 101.69 MHz      ; CLOCK_50                                                  ;                                                      ;
-; 287.52 MHz ; 287.52 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ;                                                      ;
-; 660.07 MHz ; 570.78 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; limit due to low minimum pulse width violation (tcl) ;
+; 110.06 MHz ; 110.06 MHz      ; CLOCK_50                                                  ;                                                      ;
+; 244.56 MHz ; 244.56 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ;                                                      ;
+; 609.01 MHz ; 554.32 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; limit due to low minimum pulse width violation (tcl) ;
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -148,10 +148,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -8.834 ; -456.368      ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -4.327 ; -52.197       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.830 ; -2.830        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.515 ; -1.025        ;
+; CLOCK_50                                                  ; -8.086 ; -463.884      ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.770 ; -53.980       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.342 ; -3.342        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.642 ; -1.279        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -160,10 +160,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -3.383 ; -21.036       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.474  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.597  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2.185  ; 0.000         ;
+; CLOCK_50                                                  ; -3.904 ; -30.166       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.992 ; -1.992        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.694  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2.728  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -172,23 +172,23 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -5.802 ; -258.098      ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.685 ; -5.760        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.971 ; -48.414       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.366 ; -3.366        ;
+; CLOCK_50                                                  ; -5.571 ; -256.144      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.618 ; -9.230        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.672 ; -3.672        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.285 ; -52.444       ;
 +-----------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Removal Summary                                             ;
-+-----------------------------------------------------------+-------+---------------+
-; Clock                                                     ; Slack ; End Point TNS ;
-+-----------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                  ; 0.353 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.550 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.632 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.422 ; 0.000         ;
-+-----------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                                              ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.221 ; -0.221        ;
+; CLOCK_50                                                  ; 0.405  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.748  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 3.517  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -196,11 +196,11 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.423 ; -70.679       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.394 ; -11.941       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.394 ; -1.533        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -0.394 ; -1.080        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.394 ; -0.713        ;
+; CLOCK_50                                                  ; -0.426 ; -76.171       ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.402 ; -1.585        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.394 ; -15.877       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -0.394 ; -1.016        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.394 ; -0.547        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -215,9 +215,9 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                ; Note                                                 ;
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
-; 103.21 MHz ; 103.21 MHz      ; CLOCK_50                                                  ;                                                      ;
-; 292.31 MHz ; 292.31 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ;                                                      ;
-; 659.2 MHz  ; 563.7 MHz       ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; limit due to low minimum pulse width violation (tcl) ;
+; 112.42 MHz ; 112.42 MHz      ; CLOCK_50                                                  ;                                                      ;
+; 246.31 MHz ; 246.31 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ;                                                      ;
+; 610.5 MHz  ; 554.32 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; limit due to low minimum pulse width violation (tcl) ;
 +------------+-----------------+-----------------------------------------------------------+------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -227,10 +227,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -8.689 ; -436.310      ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -4.307 ; -52.342       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.973 ; -2.973        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.517 ; -1.030        ;
+; CLOCK_50                                                  ; -7.895 ; -446.395      ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.855 ; -54.667       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.468 ; -3.468        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.638 ; -1.272        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -239,10 +239,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -3.460 ; -22.046       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.431  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.572  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2.312  ; 0.000         ;
+; CLOCK_50                                                  ; -3.961 ; -37.751       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.856 ; -1.856        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.655  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2.873  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -251,10 +251,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -5.513 ; -234.722      ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.463 ; -5.481        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -4.027 ; -47.712       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.502 ; -3.502        ;
+; CLOCK_50                                                  ; -5.370 ; -232.168      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.341 ; -8.676        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.745 ; -3.745        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.456 ; -52.895       ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -263,10 +263,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.018 ; -0.048        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.511  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.561  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.526  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.156 ; -0.156        ;
+; CLOCK_50                                                  ; 0.072  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.855  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 3.251  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -275,11 +275,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.418 ; -75.825       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.394 ; -11.930       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.394 ; -1.554        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -0.394 ; -1.066        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.394 ; -0.700        ;
+; CLOCK_50                                                  ; -0.456 ; -82.136       ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.402 ; -1.584        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.394 ; -17.307       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -0.394 ; -1.020        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.394 ; -0.536        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -294,10 +294,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -5.005 ; -241.992      ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -2.171 ; -24.189       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -1.311 ; -1.311        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.000  ; 0.000         ;
+; CLOCK_50                                                  ; -4.510 ; -239.191      ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -2.081 ; -25.761       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -1.604 ; -1.604        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.074 ; -0.147        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -306,10 +306,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -2.015 ; -12.666       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.132  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.308  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.039  ; 0.000         ;
+; CLOCK_50                                                  ; -2.326 ; -19.789       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.453 ; -1.453        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.363  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.386  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -318,23 +318,23 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -3.529 ; -154.809      ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.015 ; -3.420        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -2.025 ; -23.805       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.507 ; -1.507        ;
+; CLOCK_50                                                  ; -3.266 ; -152.724      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.764 ; -5.526        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.700 ; -1.700        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.616 ; -29.160       ;
 +-----------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Fast 1100mV 85C Model Removal Summary                                             ;
-+-----------------------------------------------------------+-------+---------------+
-; Clock                                                     ; Slack ; End Point TNS ;
-+-----------------------------------------------------------+-------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.051 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.132 ; 0.000         ;
-; CLOCK_50                                                  ; 0.212 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.125 ; 0.000         ;
-+-----------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                                              ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.443 ; -0.443        ;
+; CLOCK_50                                                  ; 0.001  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.308  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.942  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -342,11 +342,11 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.411 ; -12.218       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.142 ; -0.283        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.065 ; -0.065        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.067  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.072  ; 0.000         ;
+; CLOCK_50                                                  ; -0.480 ; -13.036       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.169 ; -3.559        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.123 ; -0.245        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 0.075  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.152  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -361,10 +361,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -4.411 ; -204.742      ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -2.047 ; -22.128       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -1.310 ; -1.310        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.043  ; 0.000         ;
+; CLOCK_50                                                  ; -3.969 ; -201.884      ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.887 ; -23.669       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -1.581 ; -1.581        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.032 ; -0.063        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -373,10 +373,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -2.009 ; -12.994       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.074  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.277  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.047  ; 0.000         ;
+; CLOCK_50                                                  ; -2.286 ; -24.334       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.296 ; -1.296        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0.319  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.371  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -385,10 +385,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -3.026 ; -123.693      ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.567 ; -2.872        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.939 ; -21.259       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.499 ; -1.499        ;
+; CLOCK_50                                                  ; -2.798 ; -120.487      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.343 ; -4.684        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.650 ; -1.650        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.611 ; -26.315       ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -397,10 +397,10 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.059 ; -0.357        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.004  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.073  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.127  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.405 ; -0.405        ;
+; CLOCK_50                                                  ; -0.132 ; -1.494        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.291  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.631  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -409,11 +409,11 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.405 ; -12.043       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.092 ; -0.181        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -0.016 ; -0.016        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.086  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.091  ; 0.000         ;
+; CLOCK_50                                                  ; -0.479 ; -13.014       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.153 ; -3.219        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.075 ; -0.147        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 0.097  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.156  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -428,18 +428,18 @@ No synchronizer chains to report.
 +------------------------------------------------------------+----------+---------+----------+---------+---------------------+
 ; Clock                                                      ; Setup    ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------------------------------+----------+---------+----------+---------+---------------------+
-; Worst-case Slack                                           ; -8.834   ; -3.460  ; -5.802   ; -0.059  ; -0.423              ;
-;  CLOCK_50                                                  ; -8.834   ; -3.460  ; -5.802   ; -0.059  ; -0.423              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.517   ; 0.277   ; N/A      ; N/A     ; -0.394              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; N/A      ; N/A     ; -3.502   ; 1.125   ; -0.394              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -4.327   ; 0.074   ; -4.027   ; 0.073   ; -0.394              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.973   ; 1.039   ; -4.685   ; 0.004   ; -0.394              ;
-; Design-wide TNS                                            ; -512.42  ; -22.046 ; -315.638 ; -0.357  ; -91.075             ;
-;  CLOCK_50                                                  ; -456.368 ; -22.046 ; -258.098 ; -0.357  ; -75.825             ;
-;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -1.030   ; 0.000   ; N/A      ; N/A     ; -1.554              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; N/A      ; N/A     ; -3.502   ; 0.000   ; -0.713              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -52.342  ; 0.000   ; -48.414  ; 0.000   ; -11.941             ;
-;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.973   ; 0.000   ; -5.760   ; 0.000   ; -1.080              ;
+; Worst-case Slack                                           ; -8.086   ; -3.961  ; -5.571   ; -0.443  ; -0.480              ;
+;  CLOCK_50                                                  ; -8.086   ; -3.961  ; -5.571   ; -0.132  ; -0.480              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -0.642   ; 0.319   ; N/A      ; N/A     ; -0.402              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; N/A      ; N/A     ; -3.745   ; 1.291   ; -0.394              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.855   ; -1.992  ; -3.456   ; -0.443  ; -0.394              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.468   ; 1.371   ; -4.618   ; 1.631   ; -0.394              ;
+; Design-wide TNS                                            ; -522.485 ; -39.607 ; -321.49  ; -1.899  ; -102.583            ;
+;  CLOCK_50                                                  ; -463.884 ; -37.751 ; -256.144 ; -1.494  ; -82.136             ;
+;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; -1.279   ; 0.000   ; N/A      ; N/A     ; -1.585              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; N/A      ; N/A     ; -3.745   ; 0.000   ; -0.547              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -54.667  ; -1.992  ; -52.895  ; -0.443  ; -17.307             ;
+;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.468   ; 0.000   ; -9.230   ; 0.000   ; -1.020              ;
 +------------------------------------------------------------+----------+---------+----------+---------+---------------------+
 
 
@@ -769,15 +769,15 @@ No synchronizer chains to report.
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 97962    ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 8509     ; 13511    ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 45009    ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 3693     ; 5119     ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; CLOCK_50                                                  ; 7        ; 5        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 33       ; 1        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0        ; 0        ; 0        ; 2        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 1        ; 1        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 116      ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 123      ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 8        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
@@ -789,15 +789,15 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 97962    ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 8509     ; 13511    ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 45009    ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 3693     ; 5119     ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; CLOCK_50                                                  ; 7        ; 5        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 33       ; 1        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; 0        ; 0        ; 0        ; 2        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 1        ; 1        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 116      ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 123      ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 8        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
@@ -809,13 +809,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 2592     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 2591     ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 87       ; 87       ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 24       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 31       ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 21       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 23       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -826,13 +826,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 2592     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 2591     ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 87       ; 87       ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 24       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 31       ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 21       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 23       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -859,8 +859,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
 ; Unconstrained Input Port Paths  ; 28    ; 28   ;
-; Unconstrained Output Ports      ; 13    ; 13   ;
-; Unconstrained Output Port Paths ; 17    ; 17   ;
+; Unconstrained Output Ports      ; 38    ; 38   ;
+; Unconstrained Output Port Paths ; 98    ; 98   ;
 +---------------------------------+-------+------+
 
 
@@ -892,9 +892,34 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX2[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX4[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX4[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -923,9 +948,34 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX1[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX1[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX2[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX2[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX2[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX3[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX4[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX4[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -945,7 +995,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 29 10:38:57 2018
+    Info: Processing started: Tue May 29 11:49:00 2018
 Info: Command: quartus_sta jogo_da_memoria -c jogo_da_memoria
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -959,180 +1009,180 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|sigsend kbdex_ctrl:kbdex_ctrl_inst|sigsend
-    Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|key0code[0] kbdex_ctrl:kbdex_ctrl_inst|key0code[0]
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked
+    Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|key0code[0] kbdex_ctrl:kbdex_ctrl_inst|key0code[0]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.834
+Info (332146): Worst-case setup slack is -8.086
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.834            -456.368 CLOCK_50 
-    Info (332119):    -4.327             -52.197 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -2.830              -2.830 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.515              -1.025 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-Info (332146): Worst-case hold slack is -3.383
+    Info (332119):    -8.086            -463.884 CLOCK_50 
+    Info (332119):    -3.770             -53.980 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -3.342              -3.342 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.642              -1.279 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+Info (332146): Worst-case hold slack is -3.904
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.383             -21.036 CLOCK_50 
-    Info (332119):     0.474               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.597               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     2.185               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -5.802
+    Info (332119):    -3.904             -30.166 CLOCK_50 
+    Info (332119):    -1.992              -1.992 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.694               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     2.728               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -5.571
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.802            -258.098 CLOCK_50 
-    Info (332119):    -4.685              -5.760 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -3.971             -48.414 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -3.366              -3.366 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is 0.353
+    Info (332119):    -5.571            -256.144 CLOCK_50 
+    Info (332119):    -4.618              -9.230 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -3.672              -3.672 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -3.285             -52.444 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+Info (332146): Worst-case removal slack is -0.221
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.353               0.000 CLOCK_50 
-    Info (332119):     0.550               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.632               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     2.422               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.423
+    Info (332119):    -0.221              -0.221 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.405               0.000 CLOCK_50 
+    Info (332119):     2.748               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     3.517               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.426
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.423             -70.679 CLOCK_50 
-    Info (332119):    -0.394             -11.941 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -0.394              -1.533 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.394              -1.080 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.394              -0.713 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -0.426             -76.171 CLOCK_50 
+    Info (332119):    -0.402              -1.585 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    -0.394             -15.877 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.394              -1.016 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394              -0.547 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.689
+Info (332146): Worst-case setup slack is -7.895
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.689            -436.310 CLOCK_50 
-    Info (332119):    -4.307             -52.342 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -2.973              -2.973 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.517              -1.030 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-Info (332146): Worst-case hold slack is -3.460
+    Info (332119):    -7.895            -446.395 CLOCK_50 
+    Info (332119):    -3.855             -54.667 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -3.468              -3.468 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.638              -1.272 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+Info (332146): Worst-case hold slack is -3.961
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.460             -22.046 CLOCK_50 
-    Info (332119):     0.431               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.572               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     2.312               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -5.513
+    Info (332119):    -3.961             -37.751 CLOCK_50 
+    Info (332119):    -1.856              -1.856 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.655               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     2.873               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -5.370
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.513            -234.722 CLOCK_50 
-    Info (332119):    -4.463              -5.481 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -4.027             -47.712 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -3.502              -3.502 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is -0.018
+    Info (332119):    -5.370            -232.168 CLOCK_50 
+    Info (332119):    -4.341              -8.676 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -3.745              -3.745 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -3.456             -52.895 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+Info (332146): Worst-case removal slack is -0.156
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.018              -0.048 CLOCK_50 
-    Info (332119):     0.511               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.561               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     2.526               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.418
+    Info (332119):    -0.156              -0.156 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.072               0.000 CLOCK_50 
+    Info (332119):     2.855               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     3.251               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.456
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.418             -75.825 CLOCK_50 
-    Info (332119):    -0.394             -11.930 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -0.394              -1.554 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.394              -1.066 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.394              -0.700 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -0.456             -82.136 CLOCK_50 
+    Info (332119):    -0.402              -1.584 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    -0.394             -17.307 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.394              -1.020 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394              -0.536 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.005
+Info (332146): Worst-case setup slack is -4.510
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.005            -241.992 CLOCK_50 
-    Info (332119):    -2.171             -24.189 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.311              -1.311 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.000               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-Info (332146): Worst-case hold slack is -2.015
+    Info (332119):    -4.510            -239.191 CLOCK_50 
+    Info (332119):    -2.081             -25.761 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.604              -1.604 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.074              -0.147 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+Info (332146): Worst-case hold slack is -2.326
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.015             -12.666 CLOCK_50 
-    Info (332119):     0.132               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.308               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     1.039               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -3.529
+    Info (332119):    -2.326             -19.789 CLOCK_50 
+    Info (332119):    -1.453              -1.453 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.363               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     1.386               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -3.266
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.529            -154.809 CLOCK_50 
-    Info (332119):    -3.015              -3.420 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -2.025             -23.805 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.507              -1.507 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is 0.051
+    Info (332119):    -3.266            -152.724 CLOCK_50 
+    Info (332119):    -2.764              -5.526 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -1.700              -1.700 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -1.616             -29.160 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+Info (332146): Worst-case removal slack is -0.443
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.051               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.132               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.212               0.000 CLOCK_50 
-    Info (332119):     1.125               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.411
+    Info (332119):    -0.443              -0.443 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.001               0.000 CLOCK_50 
+    Info (332119):     1.308               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     1.942               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.480
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.411             -12.218 CLOCK_50 
-    Info (332119):    -0.142              -0.283 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.065              -0.065 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):     0.067               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.072               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.480             -13.036 CLOCK_50 
+    Info (332119):    -0.169              -3.559 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.123              -0.245 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     0.075               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     0.152               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.411
+Info (332146): Worst-case setup slack is -3.969
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.411            -204.742 CLOCK_50 
-    Info (332119):    -2.047             -22.128 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.310              -1.310 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.043               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-Info (332146): Worst-case hold slack is -2.009
+    Info (332119):    -3.969            -201.884 CLOCK_50 
+    Info (332119):    -1.887             -23.669 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.581              -1.581 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.032              -0.063 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+Info (332146): Worst-case hold slack is -2.286
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.009             -12.994 CLOCK_50 
-    Info (332119):     0.074               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.277               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     1.047               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -3.026
+    Info (332119):    -2.286             -24.334 CLOCK_50 
+    Info (332119):    -1.296              -1.296 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.319               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     1.371               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -2.798
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.026            -123.693 CLOCK_50 
-    Info (332119):    -2.567              -2.872 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -1.939             -21.259 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.499              -1.499 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is -0.059
+    Info (332119):    -2.798            -120.487 CLOCK_50 
+    Info (332119):    -2.343              -4.684 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -1.650              -1.650 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -1.611             -26.315 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+Info (332146): Worst-case removal slack is -0.405
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.059              -0.357 CLOCK_50 
-    Info (332119):     0.004               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.073               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     1.127               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.405
+    Info (332119):    -0.405              -0.405 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.132              -1.494 CLOCK_50 
+    Info (332119):     1.291               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     1.631               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.479
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.405             -12.043 CLOCK_50 
-    Info (332119):    -0.092              -0.181 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.016              -0.016 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):     0.086               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.091               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.479             -13.014 CLOCK_50 
+    Info (332119):    -0.153              -3.219 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.075              -0.147 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     0.097               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     0.156               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1348 megabytes
-    Info: Processing ended: Tue May 29 10:39:02 2018
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 1339 megabytes
+    Info: Processing ended: Tue May 29 11:49:06 2018
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
 
