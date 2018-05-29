@@ -129,6 +129,11 @@ begin
 		variable counter            : integer range 0 to 50000000;
 		variable i, aux, lin, col   : integer range 0 to 100;
 		variable rand1, rand2, flag : integer range 0 to 100;
+		
+		variable seed: positive := 61631;
+		constant M: integer := 502321;
+		constant A: integer := 6521;
+		constant B: integer := 88977;
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
 	
@@ -142,7 +147,7 @@ begin
 	
 		if (key_on /= "000" and key_on_prev = "000") or set_table = '1' then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
 				
-			rand_num <= (counter mod 10);
+			
 		
 			case state is
 				when "0000" =>
@@ -206,10 +211,16 @@ begin
 				when "0100" =>			
 					--INICIALIZAÇAO DA MESA DE JOGO (i := 0).
 					
+					seed := (seed*A + B) mod M;
+					rand1 := (seed mod n_cards);
+					rand2 := (seed mod n_cards);
+					
+					
 					-- Aloca a primeira carta do par.
 					flag := 0;
 					aux := 0;
 					while (aux < 80) loop
+						
 						lin := (rand1/8 mod 10); -- Cada linha possui ate 8 cartas.
 						col := (rand1 mod 8);    -- Colunas sao indexadas de 0 a 7.
 						
@@ -220,7 +231,7 @@ begin
 							flag := 1;
 						else
 							-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
-							rand1 := rand1 + aux;
+							rand1 := rand1 + 1;
 							-- Caso exceda o numero de cartas, vai pra primeira posicao.
 							if (rand1 = n_cards) then rand1 := 0; 
 							end if;
@@ -243,7 +254,7 @@ begin
 							flag := 1;
 						else
 							-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
-							rand2 := rand2 + aux;
+							rand2 := rand2 + 1;
 							-- Caso exceda o numero de cartas, vai pra primeira posicao.
 							if (rand2 = n_cards) then rand2 := 0; 
 							end if;
@@ -252,10 +263,10 @@ begin
 						aux := aux + 1;
 					end loop;
 					
-					i := i + 2;	-- Incremente o numero de pares setados.
+					i := i + 1;	-- Incremente o numero de pares setados.
 					
 					-- Quando pronta a mesa, passa para o proximo estado
-					if (i = n_cards) then
+					if (i = (n_cards/2)) then
 						next_state <= "0101";
 						set_table <= '0';
 					end if;
