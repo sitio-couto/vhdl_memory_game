@@ -1,5 +1,5 @@
 Flow report for jogo_da_memoria
-Tue May 29 11:49:44 2018
+Tue May 29 11:50:53 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 29 11:49:44 2018       ;
+; Flow Status                     ; Successful - Tue May 29 11:50:53 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 155                                         ;
-; Total pins                      ; 55                                          ;
+; Logic utilization (in ALMs)     ; 321 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 172                                         ;
+; Total pins                      ; 55 / 457 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -94,29 +94,41 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 1170 MB             ; 00:00:22                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:22                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 1170 MB             ; 00:00:22                           ;
+; Fitter                    ; 00:00:53     ; 1.0                     ; 2567 MB             ; 00:01:22                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 1103 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.3                     ; 1355 MB             ; 00:00:07                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1279 MB             ; 00:00:01                           ;
+; Total                     ; 00:01:18     ; --                      ; --                  ; 00:01:58                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                 ;
-+----------------------+-----------------------------+-------------+-------------+----------------+
-; Module Name          ; Machine Hostname            ; OS Name     ; OS Version  ; Processor type ;
-+----------------------+-----------------------------+-------------+-------------+----------------+
-; Analysis & Synthesis ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-+----------------------+-----------------------------+-------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                      ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
+; Module Name               ; Machine Hostname            ; OS Name     ; OS Version  ; Processor type ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
+; Analysis & Synthesis      ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; Fitter                    ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; Assembler                 ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; TimeQuest Timing Analyzer ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer        ; costarica.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
+quartus_fit --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
+quartus_asm --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
+quartus_sta jogo_da_memoria -c jogo_da_memoria
+quartus_eda --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 
 
 
