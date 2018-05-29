@@ -82,7 +82,8 @@ architecture rtl of game_control is
   signal n_cards : integer range 0 to 79;
   signal rand_num: integer range 0 to 9;
   
-  signal deck, game_table, table_map : vetor;
+  signal deck, game_table : vetor;
+  signal table_map  : std_logic_vector(0 to 79);
   signal table_size : integer range 0 to 9;
   signal set_table : std_logic;
 begin
@@ -126,9 +127,9 @@ begin
 		 0 when others;
 	
 	process
-		variable counter            : integer range 0 to 50000000;
-		variable i, aux, lin, col   : integer range 0 to 100;
-		variable rand1, rand2, flag : integer range 0 to 100;
+		variable counter  : integer range 0 to 50000000;
+		variable i, aux, lin1, col1, lin2, col2 : integer range 0 to 100;
+		variable rand1, rand2, flag, lin, col 	 : integer range 0 to 100;
 		
 		variable seed: positive := 61631;
 		constant M: integer := 502321;
@@ -155,6 +156,7 @@ begin
 					if to_integer(unsigned(key_number(3 downto 0))) > 1 and to_integer(unsigned(key_number(3 downto 0))) < 5 then 
 						next_state <= "0001";
 					end if;
+					seed := counter;
 				when "0001" =>
 					t_cards <= to_integer(unsigned(key_number(3 downto 0)));
 					if to_integer(unsigned(key_number(3 downto 0))) > 0 and to_integer(unsigned(key_number(3 downto 0))) < 4 then 
@@ -200,76 +202,81 @@ begin
 						end if;
 					
 						-- Zera o mapeamento das posicoes da mesa.
-						table_map(i) <= 0;
+						table_map(i) <= '0';
 				
 						i := i + 1;
 					end loop;
 				
 					next_state <= "0100";
-					i := 0;
 					
 				when "0100" =>			
 					--INICIALIZAÇAO DA MESA DE JOGO (i := 0).
-					
-					seed := (seed*A + B) mod M;
-					rand1 := (seed mod n_cards);
-					rand2 := (seed mod n_cards);
-					
-					
-					-- Aloca a primeira carta do par.
-					flag := 0;
-					aux := 0;
-					while (aux < 80) loop
+					i := 0;
+					while (i < 80) loop
+						seed := (seed*A + B) mod M;
+						rand1 := (seed mod n_cards);
+						seed := (seed*A + B) mod M;
+						rand2 := (seed mod n_cards);
 						
-						lin := (rand1/8 mod 10); -- Cada linha possui ate 8 cartas.
-						col := (rand1 mod 8);    -- Colunas sao indexadas de 0 a 7.
+						-- Aloca a primeira carta do par.
+						flag := 0;
+						aux := 0;
+						while (aux < 80) loop
+							
+							lin := (rand1/8 mod 10); -- Cada linha possui ate 8 cartas.
+							col := (rand1 mod 8);    -- Colunas sao indexadas de 0 a 7.
 						
-						if table_map(lin*8 + col) = 0 and flag = 0 then
-							-- Caso encontre uma posicao, seta e sai do loop.
-							table_map(lin*8 + col) <= 1;
-							game_table(lin*8 + col) <= deck(i);
-							flag := 1;
-						else
-							-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
-							rand1 := rand1 + 1;
-							-- Caso exceda o numero de cartas, vai pra primeira posicao.
-							if (rand1 = n_cards) then rand1 := 0; 
+							if table_map(lin*8 + col) = '0' and flag = 0 then
+								-- Caso encontre uma posicao, salva e seta a flag.
+								table_map(lin*8 + col) <= '1'; -- Marca posicao como ocupada
+								lin1 := lin;  -- Salva linha da posicao				
+								col1 := col;  -- Salva coluna da posicao
+								flag := 1;	  -- Seta flag para mostra que ja tem uma posicao.
+							else
+								-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
+								rand1 := rand1 + 1;
+								-- Caso exceda o numero de cartas, vai pra primeira posicao.
+								if (rand1 = n_cards) then rand1 := 0; 
+								end if;
 							end if;
-						end if;
-
-						aux := aux + 1;
-					end loop;
-					
-					-- Aloca a segunda carta do par.
-					flag := 0;
-					aux := 0;
-					while (aux < 80) loop
-						lin := (rand2/8 mod 10); -- Cada linha possui ate 8 cartas.
-						col := (rand2 mod 8);    -- Colunas sao indexadas de 0 a 7.
+	
+							aux := aux + 1;
+						end loop;
 						
-						if table_map(lin*8 + col) = 0 and flag = 0 then
-							-- Caso encontre uma posicao, seta e sai do loop.
-							table_map(lin*8 + col) <= 1;
-							game_table(lin*8 + col) <= deck(i);
-							flag := 1;
-						else
-							-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
-							rand2 := rand2 + 1;
-							-- Caso exceda o numero de cartas, vai pra primeira posicao.
-							if (rand2 = n_cards) then rand2 := 0; 
+						-- Aloca a primeira carta do par.
+						flag := 0;
+						aux := 0;
+						while (aux < 80) loop
+							
+							lin := (rand2/8 mod 10); -- Cada linha possui ate 8 cartas.
+							col := (rand2 mod 8);    -- Colunas sao indexadas de 0 a 7.
+						
+							if table_map(lin*8 + col) = '0' and flag = 0 then
+								-- Caso encontre uma posicao, salva e seta a flag.
+								table_map(lin*8 + col) <= '1'; -- Marca posicao como ocupada
+								lin2 := lin;  -- Salva linha da posicao				
+								col2 := col;  -- Salva coluna da posicao
+								flag := 1;	  -- Seta flag para mostra que ja tem uma posicao.
+							else
+								-- Caso a posicao ja esteja ocupada, vai pra proxima posicao.
+								rand2 := rand2 + 1;
+								-- Caso exceda o numero de cartas, vai pra primeira posicao.
+								if (rand2 = n_cards) then rand2 := 0; 
+								end if;
 							end if;
-						end if;
-
-						aux := aux + 1;
-					end loop;
-					
-					i := i + 1;	-- Incremente o numero de pares setados.
-					
+	
+							aux := aux + 1;
+						end loop;
+						
+						-- Registra cartas nas posicoes encontradas
+						game_table(lin1*8 + col1) <= deck(i); 
+						game_table(lin2*8 + col2) <= deck(i);
+						i := i + 1;	-- Incremente o numero de pares setados.
+					end loop;	
+	
 					-- Quando pronta a mesa, passa para o proximo estado
-					if (i = (n_cards/2)) then
-						next_state <= "0101";
-						set_table <= '0';
-					end if;
+					next_state <= "0101";
+					set_table <= '0';
 					
 				when others =>
 					next_state <= "0000";
