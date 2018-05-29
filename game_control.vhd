@@ -123,29 +123,6 @@ begin
 		16 when 2,
 		32 when 3,
 		 0 when others;
-
-	
-	process
-	begin
-	wait until make_deck'event and make_deck = '0';
-		-- MAQUINA DE ESTADOS E PROCESSAMENTO DO INPUT DO TECLADO
-		--MAKE DECK : 1o digito cor / 2o digito numero
-		
---			loop1: for x in 0 to 7 loop
---				deck_colors(x) <= 10*x;
---			end loop;
---			
---			loop2: for x in 0 to 9 loop
---				deck_numbers(x) <= x;
---			end loop;
---
---			loop3: for x in 0 to 79 loop
---				deck_both(x) <= x;
---			end loop;
-			deck_colors(3) <= 3;
-		
-	end process;
-
 	
 	process
 		variable counter : integer range 0 to 50000000; 
@@ -193,6 +170,22 @@ begin
 							next_state <= "0011"; -- Valido
 						end if;
 					end if;
+					
+				when "0011" => 
+				
+					for i in 0 to 8 loop
+						deck_colors(i) <= i*10;
+					end loop;
+					
+					for i in 0 to 9 loop
+						deck_numbers(i) <= i;
+					end loop;
+					
+					for i in 0 to 79 loop
+						deck_both(i) <= i;
+					end loop;
+					
+					next_state <= "0100";
 				when others =>
 					next_state <= "0000";
 			end case;
@@ -208,38 +201,38 @@ begin
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(deck_colors(3), 4)),
+		  std_logic_vector(to_unsigned((deck_colors(8) mod 10), 4)),
 		  HEX0
 	) ;
 	
 	print1 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(t_cards, 4)),
+		  std_logic_vector(to_unsigned((deck_colors(8)/10 mod 10), 4)),
 		  HEX1
 	) ;
 	
 	print2 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(n_pairs, 4)),
+		  std_logic_vector(to_unsigned((deck_numbers(9) mod 10), 4)),
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(rand_num, 4)),
+		  std_logic_vector(to_unsigned((deck_numbers(8)/10 mod 10), 4)),
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((n_cards mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck_both(79) mod 10), 4)),
 		  HEX4
 	) ;
 	
 	print5 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((n_cards/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((deck_both(79)/10 mod 10), 4)),
 		  HEX5
 	) ;
 	
