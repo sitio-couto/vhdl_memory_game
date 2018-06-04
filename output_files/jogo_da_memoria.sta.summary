@@ -3,80 +3,80 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -8.173
-TNS   : -469.589
+Slack : -112.767
+TNS   : -3972.691
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.587
-TNS   : -48.174
+Slack : -4.201
+TNS   : -53.492
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -3.331
-TNS   : -3.331
+Slack : -3.572
+TNS   : -3.572
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.648
-TNS   : -1.292
+Slack : -0.833
+TNS   : -1.663
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -0.339
-TNS   : -0.826
+Slack : 0.041
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.583
+Slack : 0.750
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.722
+Slack : 0.809
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 2.716
+Slack : 2.912
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
-Slack : -5.215
-TNS   : -256.308
+Slack : -5.959
+TNS   : -275.688
 
 Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -4.581
-TNS   : -9.161
+Slack : -4.915
+TNS   : -9.830
 
 Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.617
-TNS   : -55.049
+Slack : -3.912
+TNS   : -53.477
 
 Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -3.308
-TNS   : -3.308
+Slack : -3.533
+TNS   : -3.533
 
 Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
-Slack : 0.007
+Slack : 0.088
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.868
+Slack : 0.692
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 2.477
+Slack : 2.630
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 3.483
+Slack : 3.607
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.439
-TNS   : -78.733
+Slack : -0.468
+TNS   : -166.930
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : -0.394
-TNS   : -14.261
+TNS   : -14.074
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
 Slack : -0.394
-TNS   : -1.317
+TNS   : -1.361
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
 Slack : -0.394
@@ -84,258 +84,258 @@ TNS   : -1.018
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
 Slack : -0.394
-TNS   : -0.584
+TNS   : -0.690
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -8.076
-TNS   : -452.169
+Slack : -114.853
+TNS   : -3946.114
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.665
-TNS   : -48.920
+Slack : -4.227
+TNS   : -53.506
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -3.453
-TNS   : -3.453
+Slack : -3.684
+TNS   : -3.684
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.644
-TNS   : -1.285
+Slack : -0.847
+TNS   : -1.688
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.476
-TNS   : -2.877
+Slack : -0.295
+TNS   : -0.576
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.489
+Slack : 0.670
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.680
+Slack : 0.770
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 2.856
+Slack : 3.015
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
-Slack : -5.121
-TNS   : -232.455
+Slack : -5.807
+TNS   : -253.671
 
 Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -4.339
-TNS   : -8.677
+Slack : -4.647
+TNS   : -9.294
 
 Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.770
-TNS   : -54.326
+Slack : -4.004
+TNS   : -52.797
 
 Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -3.375
-TNS   : -3.375
+Slack : -3.565
+TNS   : -3.565
 
 Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
-Slack : -0.265
-TNS   : -3.406
+Slack : -0.271
+TNS   : -0.271
 
 Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.724
+Slack : 0.628
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 2.583
+Slack : 2.705
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 3.244
+Slack : 3.348
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.428
-TNS   : -84.509
+Slack : -0.445
+TNS   : -177.889
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : -0.394
-TNS   : -15.158
+TNS   : -14.409
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
 Slack : -0.394
-TNS   : -1.367
+TNS   : -1.466
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
 Slack : -0.394
-TNS   : -1.022
+TNS   : -1.020
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
 Slack : -0.394
-TNS   : -0.575
+TNS   : -0.662
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.465
-TNS   : -238.818
+Slack : -63.180
+TNS   : -2281.727
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -2.022
-TNS   : -22.201
+Slack : -2.166
+TNS   : -25.914
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -1.596
-TNS   : -1.596
+Slack : -1.786
+TNS   : -1.786
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.090
-TNS   : -0.179
+Slack : -0.180
+TNS   : -0.358
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : -0.110
-TNS   : -0.239
+Slack : 0.047
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.102
+Slack : 0.199
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.390
+Slack : 0.425
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.377
+Slack : 1.495
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
-Slack : -2.839
-TNS   : -146.439
+Slack : -3.215
+TNS   : -166.792
 
 Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.739
-TNS   : -5.478
+Slack : -3.054
+TNS   : -6.108
 
 Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.821
-TNS   : -29.921
+Slack : -2.052
+TNS   : -30.681
 
 Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -1.494
-TNS   : -1.494
+Slack : -1.620
+TNS   : -1.620
 
 Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
-Slack : 0.003
+Slack : 0.136
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.241
+Slack : 0.218
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 1.178
+Slack : 1.215
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.918
+Slack : 2.023
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.426
-TNS   : -13.615
+Slack : -0.432
+TNS   : -28.855
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -0.149
-TNS   : -2.429
+Slack : -0.111
+TNS   : -1.929
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.002
-TNS   : -0.002
+Slack : -0.061
+TNS   : -0.120
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 0.027
-TNS   : 0.000
+Slack : -0.056
+TNS   : -0.056
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 0.156
+Slack : 0.155
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -3.955
-TNS   : -202.358
+Slack : -59.339
+TNS   : -2061.666
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.825
-TNS   : -20.587
+Slack : -2.065
+TNS   : -23.671
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -1.573
-TNS   : -1.573
+Slack : -1.737
+TNS   : -1.737
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.045
-TNS   : -0.090
+Slack : -0.131
+TNS   : -0.260
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.270
-TNS   : -1.739
+Slack : -0.180
+TNS   : -0.642
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.070
+Slack : 0.135
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.345
+Slack : 0.375
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.363
+Slack : 1.466
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
-Slack : -2.488
-TNS   : -113.915
+Slack : -2.830
+TNS   : -134.206
 
 Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.332
-TNS   : -4.664
+Slack : -2.607
+TNS   : -5.214
 
 Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.769
-TNS   : -26.317
+Slack : -1.959
+TNS   : -27.043
 
 Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -1.463
-TNS   : -1.463
+Slack : -1.564
+TNS   : -1.564
 
 Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
-Slack : -0.210
-TNS   : -4.294
+Slack : -0.130
+TNS   : -0.130
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.116
+Slack : 0.114
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 1.175
+Slack : 1.197
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.629
+Slack : 1.726
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.431
-TNS   : -13.459
+Slack : -0.426
+TNS   : -28.148
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -0.118
-TNS   : -2.001
+Slack : -0.072
+TNS   : -1.254
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.018
-TNS   : 0.000
+Slack : -0.029
+TNS   : -0.056
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 0.057
-TNS   : 0.000
+Slack : -0.007
+TNS   : -0.007
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 0.161
+Slack : 0.158
 TNS   : 0.000
 
 ------------------------------------------------------------
