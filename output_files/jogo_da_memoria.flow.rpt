@@ -1,5 +1,5 @@
 Flow report for jogo_da_memoria
-Mon Jun  4 10:55:43 2018
+Mon Jun  4 12:20:03 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,14 +40,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Jun  4 10:55:43 2018       ;
+; Flow Status                     ; Successful - Mon Jun  4 12:20:03 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,956 / 32,070 ( 6 % )                      ;
+; Logic utilization (in ALMs)     ; 1,928 / 32,070 ( 6 % )                      ;
 ; Total registers                 ; 1058                                        ;
 ; Total pins                      ; 65 / 457 ( 14 % )                           ;
 ; Total virtual pins              ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/04/2018 10:53:07 ;
+; Start date & time ; 06/04/2018 12:17:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; jogo_da_memoria     ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name  ; Section Id     ;
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273440552278846.152812038706359        ; --              ; --           ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273440552275620.152812545003555        ; --              ; --           ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --              ; --           ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>          ; --           ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --           ; eda_simulation ;
@@ -99,26 +99,26 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:24     ; 1.0                     ; 1242 MB             ; 00:00:35                           ;
-; Fitter                    ; 00:01:50     ; 1.1                     ; 2594 MB             ; 00:03:20                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 1117 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 2.1                     ; 1390 MB             ; 00:00:17                           ;
+; Analysis & Synthesis      ; 00:00:24     ; 1.0                     ; 1250 MB             ; 00:00:33                           ;
+; Fitter                    ; 00:01:47     ; 1.1                     ; 2597 MB             ; 00:03:20                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 1113 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 2.1                     ; 1391 MB             ; 00:00:17                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1323 MB             ; 00:00:02                           ;
-; Total                     ; 00:02:31     ; --                      ; --                  ; 00:04:20                           ;
+; Total                     ; 00:02:28     ; --                      ; --                  ; 00:04:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                   ;
-+---------------------------+--------------------------+-------------+-------------+----------------+
-; Module Name               ; Machine Hostname         ; OS Name     ; OS Version  ; Processor type ;
-+---------------------------+--------------------------+-------------+-------------+----------------+
-; Analysis & Synthesis      ; mexico.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; Fitter                    ; mexico.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; Assembler                 ; mexico.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; TimeQuest Timing Analyzer ; mexico.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; mexico.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-+---------------------------+--------------------------+-------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                      ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
+; Module Name               ; Machine Hostname            ; OS Name     ; OS Version  ; Processor type ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
+; Analysis & Synthesis      ; nicaragua.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; Fitter                    ; nicaragua.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; Assembler                 ; nicaragua.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; TimeQuest Timing Analyzer ; nicaragua.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
+; EDA Netlist Writer        ; nicaragua.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
++---------------------------+-----------------------------+-------------+-------------+----------------+
 
 
 ------------

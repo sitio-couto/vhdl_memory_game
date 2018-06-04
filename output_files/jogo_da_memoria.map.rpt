@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Mon Jun  4 10:53:32 2018
+Mon Jun  4 12:17:54 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -25,22 +25,21 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst
  18. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl
  19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6
- 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
- 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
- 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
- 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 27. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 28. Port Connectivity Checks: "ascii_2_num:translate"
- 29. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
- 30. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
- 31. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
- 32. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
- 33. Post-Synthesis Netlist Statistics for Top Partition
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 27. Port Connectivity Checks: "ascii_2_num:translate"
+ 28. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
+ 29. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
+ 30. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
+ 31. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -66,13 +65,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun  4 10:53:32 2018       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun  4 12:17:54 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1040                                        ;
+; Total registers                 ; 1041                                        ;
 ; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -192,37 +191,37 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; game_control.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd           ;         ;
-; bin2dec.vhd                      ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/bin2dec.vhd                ;         ;
-; ps2_iobase.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd             ;         ;
-; kbdex_ctrl.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd             ;         ;
-; kbd_alphanum.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd           ;         ;
-; ff_t.vhd                         ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/ff_t.vhd                   ;         ;
-; ff_d.vhd                         ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/ff_d.vhd                   ;         ;
-; code2ascii.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/code2ascii.vhd             ;         ;
-; ascii_2_num.vhd                  ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/ascii_2_num.vhd            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/aglobal171.inc          ;         ;
-; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_4am.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_qse.tdf       ;         ;
-; db/lpm_divide_a2m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_a2m.tdf      ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_dkh.tdf ;         ;
-; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_0te.tdf       ;         ;
-; db/lpm_divide_65m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_65m.tdf      ;         ;
-; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf ;         ;
-; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf       ;         ;
-; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_45m.tdf      ;         ;
-; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf ;         ;
-; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; game_control.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd           ;         ;
+; bin2dec.vhd                      ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/bin2dec.vhd                ;         ;
+; ps2_iobase.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/ps2_iobase.vhd             ;         ;
+; kbdex_ctrl.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd             ;         ;
+; kbd_alphanum.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd           ;         ;
+; ff_t.vhd                         ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/ff_t.vhd                   ;         ;
+; ff_d.vhd                         ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/ff_d.vhd                   ;         ;
+; code2ascii.vhd                   ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/code2ascii.vhd             ;         ;
+; ascii_2_num.vhd                  ; yes             ; User VHDL File               ; /home/ec2016/ra170600/Documents/MC613/git/ascii_2_num.vhd            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_4am.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_qse.tdf       ;         ;
+; db/lpm_divide_a2m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_a2m.tdf      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_dkh.tdf ;         ;
+; db/alt_u_div_0te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_0te.tdf       ;         ;
+; db/lpm_divide_65m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_65m.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_o2f.tdf       ;         ;
+; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_45m.tdf      ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_7nh.tdf ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_k2f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -230,24 +229,24 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 2024           ;
+; Estimate of Logic utilization (ALMs needed) ; 1996           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 3460           ;
-;     -- 7 input functions                    ; 21             ;
-;     -- 6 input functions                    ; 467            ;
-;     -- 5 input functions                    ; 345            ;
-;     -- 4 input functions                    ; 925            ;
-;     -- <=3 input functions                  ; 1702           ;
+; Combinational ALUT usage for logic          ; 3420           ;
+;     -- 7 input functions                    ; 40             ;
+;     -- 6 input functions                    ; 412            ;
+;     -- 5 input functions                    ; 378            ;
+;     -- 4 input functions                    ; 909            ;
+;     -- <=3 input functions                  ; 1681           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 1040           ;
+; Dedicated logic registers                   ; 1041           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 65             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 2              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1016           ;
-; Total fan-out                               ; 16129          ;
+; Maximum fan-out                             ; 1017           ;
+; Total fan-out                               ; 16001          ;
 ; Average fan-out                             ; 3.48           ;
 +---------------------------------------------+----------------+
 
@@ -257,17 +256,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                          ; 3460 (659)          ; 1040 (901)                ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                 ; game_control        ; work         ;
-;    |ascii_2_num:translate|             ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                           ; ascii_2_num         ; work         ;
+; |game_control                          ; 3420 (680)          ; 1041 (902)                ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                 ; game_control        ; work         ;
+;    |ascii_2_num:translate|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                           ; ascii_2_num         ; work         ;
 ;    |bin2dec:print0|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print1|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print1                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print2|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print3|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print3                                                                                  ; bin2dec             ; work         ;
-;    |bin2dec:print4|                    ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print5|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                  ; bin2dec             ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|    ; 201 (60)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                  ; kbd_alphanum        ; work         ;
-;       |code2ascii:\G1:0:translate|     ; 108 (108)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                       ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|     ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                       ; code2ascii          ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|    ; 180 (57)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                  ; kbd_alphanum        ; work         ;
+;       |code2ascii:\G1:0:translate|     ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                       ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|     ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                       ; code2ascii          ; work         ;
 ;       |ff_d:shift_flop|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                  ; ff_d                ; work         ;
 ;       |ff_t:caps_flop|                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                   ; ff_t                ; work         ;
 ;    |kbdex_ctrl:kbdex_ctrl_inst|        ; 189 (67)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                      ; kbdex_ctrl          ; work         ;
@@ -296,14 +294,10 @@ refer to the applicable agreement for further details.
 ;       |lpm_divide_a2m:auto_generated|  ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider| ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
 ;             |alt_u_div_0te:divider|    ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |lpm_divide:Mod5|                   ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |lpm_divide:Mod6|                   ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod5|                   ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|    ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -380,6 +374,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[8..12]                  ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4]     ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_clk~reg0 ; Stuck at GND due to stuck port data_in                              ;
+; p3[2,3]                                                     ; Merged with p3[1]                                                   ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key1code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key1code[13]                 ;
 ; deck[0][1]                                                  ; Merged with deck[0][0]                                              ;
 ; deck[0][2]                                                  ; Merged with deck[0][0]                                              ;
@@ -409,6 +404,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; deck[7][4]                                                  ; Merged with deck[0][0]                                              ;
 ; deck[7][5]                                                  ; Merged with deck[0][0]                                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key2code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key2code[13]                 ;
+; flag[2..6]                                                  ; Merged with flag[1]                                                 ;
 ; deck[1][3]                                                  ; Merged with deck[1][1]                                              ;
 ; deck[2][2]                                                  ; Merged with deck[1][1]                                              ;
 ; deck[2][4]                                                  ; Merged with deck[1][1]                                              ;
@@ -922,7 +918,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; deck[79][2]                                                 ; Merged with deck[10][1]                                             ;
 ; deck[79][3]                                                 ; Merged with deck[10][1]                                             ;
 ; deck[79][6]                                                 ; Merged with deck[10][1]                                             ;
-; flag[2..6]                                                  ; Merged with flag[1]                                                 ;
 ; deck[9][0]                                                  ; Merged with deck[8][3]                                              ;
 ; deck[9][3]                                                  ; Merged with deck[8][3]                                              ;
 ; deck[2][1]                                                  ; Merged with deck[1][0]                                              ;
@@ -941,6 +936,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[2]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                     ;
 ; kbdex_ctrl:kbdex_ctrl_inst|siguplights                      ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                     ;
+; p3[1]                                                       ; Stuck at GND due to stuck port data_in                              ;
 ; flag[1]                                                     ; Stuck at GND due to stuck port data_in                              ;
 ; aux[6]                                                      ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]                         ; Stuck at GND due to stuck port data_in                              ;
@@ -950,7 +946,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; deck[0][0]                                                  ; Stuck at GND due to stuck port data_in                              ;
 ; next_state[3]                                               ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[3]     ; Merged with kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[0] ;
-; Total Number of Removed Registers = 601                     ;                                                                     ;
+; Total Number of Removed Registers = 604                     ;                                                                     ;
 +-------------------------------------------------------------+---------------------------------------------------------------------+
 
 
@@ -973,12 +969,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1040  ;
+; Total registers                              ; 1041  ;
 ; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 59    ;
 ; Number of registers using Asynchronous Clear ; 97    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 866   ;
+; Number of registers using Clock Enable       ; 867   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1023,14 +1019,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[1] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[7] ;
 ; 16:1               ; 4 bits    ; 40 LEs        ; 4 LEs                ; 36 LEs                 ; Yes        ; |game_control|p1[0]                                                    ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |game_control|rand[6]                                                  ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |game_control|deck[10][1]                                              ;
-; 17:1               ; 7 bits    ; 77 LEs        ; 14 LEs               ; 63 LEs                 ; Yes        ; |game_control|i[4]                                                     ;
-; 17:1               ; 5 bits    ; 55 LEs        ; 5 LEs                ; 50 LEs                 ; Yes        ; |game_control|seed[30]                                                 ;
-; 17:1               ; 15 bits   ; 165 LEs       ; 0 LEs                ; 165 LEs                ; Yes        ; |game_control|seed[16]                                                 ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |game_control|rand[3]                                                  ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |game_control|deck[10][0]                                              ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 14 LEs               ; 63 LEs                 ; Yes        ; |game_control|i[0]                                                     ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 5 LEs                ; 50 LEs                 ; Yes        ; |game_control|seed[28]                                                 ;
+; 17:1               ; 15 bits   ; 165 LEs       ; 0 LEs                ; 165 LEs                ; Yes        ; |game_control|seed[6]                                                  ;
 ; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |game_control|deck[8][3]                                               ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|deck[3][1]                                               ;
-; 23:1               ; 4 bits    ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|deck[1][1]                                               ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |game_control|next_state[2]                                            ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0] ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8] ;
 ; 17:1               ; 11 bits   ; 121 LEs       ; 11 LEs               ; 110 LEs                ; Yes        ; |game_control|seed[0]                                                  ;
@@ -1076,29 +1072,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
 ; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod6 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -1327,34 +1300,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1040                        ;
+; arriav_ff             ; 1041                        ;
 ;     CLR               ; 25                          ;
 ;     CLR SLD           ; 21                          ;
-;     ENA               ; 777                         ;
+;     ENA               ; 778                         ;
 ;     ENA CLR           ; 51                          ;
 ;     ENA SCLR SLD      ; 7                           ;
 ;     ENA SLD           ; 31                          ;
 ;     SCLR              ; 1                           ;
 ;     plain             ; 127                         ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 3466                        ;
-;     arith             ; 1169                        ;
-;         0 data inputs ; 104                         ;
-;         1 data inputs ; 300                         ;
-;         2 data inputs ; 29                          ;
-;         3 data inputs ; 233                         ;
-;         4 data inputs ; 449                         ;
-;         5 data inputs ; 54                          ;
-;     extend            ; 21                          ;
-;         7 data inputs ; 21                          ;
-;     normal            ; 2264                        ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 788                         ;
+; arriav_lcell_comb     ; 3426                        ;
+;     arith             ; 1147                        ;
+;         0 data inputs ; 99                          ;
+;         1 data inputs ; 292                         ;
+;         2 data inputs ; 27                          ;
 ;         3 data inputs ; 231                         ;
-;         4 data inputs ; 476                         ;
-;         5 data inputs ; 291                         ;
-;         6 data inputs ; 467                         ;
+;         4 data inputs ; 444                         ;
+;         5 data inputs ; 54                          ;
+;     extend            ; 40                          ;
+;         7 data inputs ; 40                          ;
+;     normal            ; 2227                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 772                         ;
+;         3 data inputs ; 243                         ;
+;         4 data inputs ; 465                         ;
+;         5 data inputs ; 324                         ;
+;         6 data inputs ; 412                         ;
 ;     shared            ; 12                          ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 4                           ;
@@ -1362,7 +1335,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 139.80                      ;
-; Average LUT depth     ; 77.59                       ;
+; Average LUT depth     ; 78.21                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1381,199 +1354,195 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun  4 10:53:07 2018
+    Info: Processing started: Mon Jun  4 12:17:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file game_control.vhd
-    Info (12022): Found design unit 1: game_control-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 23
-    Info (12023): Found entity 1: game_control File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 7
+    Info (12022): Found design unit 1: game_control-rtl File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 23
+    Info (12023): Found entity 1: game_control File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bin2dec.vhd
-    Info (12022): Found design unit 1: bin2dec-Behavior File: /home/ec2016/ra188115/Documents/MC613/Projeto/bin2dec.vhd Line: 8
-    Info (12023): Found entity 1: bin2dec File: /home/ec2016/ra188115/Documents/MC613/Projeto/bin2dec.vhd Line: 4
+    Info (12022): Found design unit 1: bin2dec-Behavior File: /home/ec2016/ra170600/Documents/MC613/git/bin2dec.vhd Line: 8
+    Info (12023): Found entity 1: bin2dec File: /home/ec2016/ra170600/Documents/MC613/git/bin2dec.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ram_block.vhd
-    Info (12022): Found design unit 1: ram_block-direct File: /home/ec2016/ra188115/Documents/MC613/Projeto/ram_block.vhd Line: 15
-    Info (12023): Found entity 1: ram_block File: /home/ec2016/ra188115/Documents/MC613/Projeto/ram_block.vhd Line: 5
+    Info (12022): Found design unit 1: ram_block-direct File: /home/ec2016/ra170600/Documents/MC613/git/ram_block.vhd Line: 15
+    Info (12023): Found entity 1: ram_block File: /home/ec2016/ra170600/Documents/MC613/git/ram_block.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
-    Info (12022): Found design unit 1: ram-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ram.vhd Line: 14
-    Info (12023): Found entity 1: ram File: /home/ec2016/ra188115/Documents/MC613/Projeto/ram.vhd Line: 4
+    Info (12022): Found design unit 1: ram-rtl File: /home/ec2016/ra170600/Documents/MC613/git/ram.vhd Line: 14
+    Info (12023): Found entity 1: ram File: /home/ec2016/ra170600/Documents/MC613/git/ram.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ps2_iobase.vhd
-    Info (12022): Found design unit 1: ps2_iobase-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 41
-    Info (12023): Found entity 1: ps2_iobase File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 20
+    Info (12022): Found design unit 1: ps2_iobase-rtl File: /home/ec2016/ra170600/Documents/MC613/git/ps2_iobase.vhd Line: 41
+    Info (12023): Found entity 1: ps2_iobase File: /home/ec2016/ra170600/Documents/MC613/git/ps2_iobase.vhd Line: 20
 Info (12021): Found 2 design units, including 1 entities, in source file kbdex_ctrl.vhd
-    Info (12022): Found design unit 1: kbdex_ctrl-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 63
-    Info (12023): Found entity 1: kbdex_ctrl File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 47
+    Info (12022): Found design unit 1: kbdex_ctrl-rtl File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 63
+    Info (12023): Found entity 1: kbdex_ctrl File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 47
 Info (12021): Found 2 design units, including 1 entities, in source file kbd_alphanum.vhd
-    Info (12022): Found design unit 1: kbd_alphanum-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 14
-    Info (12023): Found entity 1: kbd_alphanum File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 4
+    Info (12022): Found design unit 1: kbd_alphanum-rtl File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 14
+    Info (12023): Found entity 1: kbd_alphanum File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ff_t.vhd
-    Info (12022): Found design unit 1: ff_t-structural File: /home/ec2016/ra188115/Documents/MC613/Projeto/ff_t.vhd Line: 15
-    Info (12023): Found entity 1: ff_t File: /home/ec2016/ra188115/Documents/MC613/Projeto/ff_t.vhd Line: 4
+    Info (12022): Found design unit 1: ff_t-structural File: /home/ec2016/ra170600/Documents/MC613/git/ff_t.vhd Line: 15
+    Info (12023): Found entity 1: ff_t File: /home/ec2016/ra170600/Documents/MC613/git/ff_t.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ff_d.vhd
-    Info (12022): Found design unit 1: ff_d-structural File: /home/ec2016/ra188115/Documents/MC613/Projeto/ff_d.vhd Line: 15
-    Info (12023): Found entity 1: ff_d File: /home/ec2016/ra188115/Documents/MC613/Projeto/ff_d.vhd Line: 4
+    Info (12022): Found design unit 1: ff_d-structural File: /home/ec2016/ra170600/Documents/MC613/git/ff_d.vhd Line: 15
+    Info (12023): Found entity 1: ff_d File: /home/ec2016/ra170600/Documents/MC613/git/ff_d.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file code2ascii.vhd
-    Info (12022): Found design unit 1: code2ascii-tradution File: /home/ec2016/ra188115/Documents/MC613/Projeto/code2ascii.vhd Line: 12
-    Info (12023): Found entity 1: code2ascii File: /home/ec2016/ra188115/Documents/MC613/Projeto/code2ascii.vhd Line: 4
+    Info (12022): Found design unit 1: code2ascii-tradution File: /home/ec2016/ra170600/Documents/MC613/git/code2ascii.vhd Line: 12
+    Info (12023): Found entity 1: code2ascii File: /home/ec2016/ra170600/Documents/MC613/git/code2ascii.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bin2hex.vhd
-    Info (12022): Found design unit 1: bin2hex-Behavior File: /home/ec2016/ra188115/Documents/MC613/Projeto/bin2hex.vhd Line: 9
-    Info (12023): Found entity 1: bin2hex File: /home/ec2016/ra188115/Documents/MC613/Projeto/bin2hex.vhd Line: 4
+    Info (12022): Found design unit 1: bin2hex-Behavior File: /home/ec2016/ra170600/Documents/MC613/git/bin2hex.vhd Line: 9
+    Info (12023): Found entity 1: bin2hex File: /home/ec2016/ra170600/Documents/MC613/git/bin2hex.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ascii_2_num.vhd
-    Info (12022): Found design unit 1: ascii_2_num-Behavior File: /home/ec2016/ra188115/Documents/MC613/Projeto/ascii_2_num.vhd Line: 9
-    Info (12023): Found entity 1: ascii_2_num File: /home/ec2016/ra188115/Documents/MC613/Projeto/ascii_2_num.vhd Line: 4
+    Info (12022): Found design unit 1: ascii_2_num-Behavior File: /home/ec2016/ra170600/Documents/MC613/git/ascii_2_num.vhd Line: 9
+    Info (12023): Found entity 1: ascii_2_num File: /home/ec2016/ra170600/Documents/MC613/git/ascii_2_num.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file initialize.vhd
-    Info (12022): Found design unit 1: initialize-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/initialize.vhd Line: 12
-    Info (12023): Found entity 1: initialize File: /home/ec2016/ra188115/Documents/MC613/Projeto/initialize.vhd Line: 5
+    Info (12022): Found design unit 1: initialize-rtl File: /home/ec2016/ra170600/Documents/MC613/git/initialize.vhd Line: 12
+    Info (12023): Found entity 1: initialize File: /home/ec2016/ra170600/Documents/MC613/git/initialize.vhd Line: 5
 Info (12127): Elaborating entity "game_control" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(82): object "n_players" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 82
-Warning (10873): Using initial value X (don't care) for net "LEDR[5..0]" at game_control.vhd(19) File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 98
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(150): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 150
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(152): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 152
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(203): signal "sigfetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 203
-Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(212): inferring latch(es) for signal or variable "selE0", which holds its previous value in one or more paths through the process File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 212
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(237): signal "key0en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 237
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(247): signal "key1en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 247
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(257): signal "key2en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 257
-Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(266): inferring latch(es) for signal or variable "relbt", which holds its previous value in one or more paths through the process File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 266
-Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(276): inferring latch(es) for signal or variable "selbt", which holds its previous value in one or more paths through the process File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 276
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 293
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 293
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 293
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(294): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 294
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(294): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 294
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(295): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 295
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(297): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 297
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(299): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 299
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(306): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 306
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(307): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 307
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(309): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 309
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(311): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 311
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(314): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 314
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(315): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 315
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(317): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 317
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(319): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 319
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(324): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 324
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(324): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 324
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(326): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 326
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(326): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 326
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(328): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 328
-Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(328): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 328
-Info (10041): Inferred latch for "selbt" at kbdex_ctrl.vhd(276) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 276
-Info (10041): Inferred latch for "relbt" at kbdex_ctrl.vhd(266) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 266
-Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 212
-Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 161
-Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 113
-Warning (10036): Verilog HDL or VHDL warning at kbd_alphanum.vhd(56): object "dp_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 56
-Info (12128): Elaborating entity "ff_d" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 72
-Info (12128): Elaborating entity "ff_t" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 82
-Info (12128): Elaborating entity "code2ascii" for hierarchy "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 96
-Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 122
-Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 270
-Info (278001): Inferred 9 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 297
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 252
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 252
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 251
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 162
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 224
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 225
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
+Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(82): object "n_players" assigned a value but never read File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 82
+Warning (10873): Using initial value X (don't care) for net "LEDR[5..0]" at game_control.vhd(19) File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(150): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(152): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(203): signal "sigfetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 203
+Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(212): inferring latch(es) for signal or variable "selE0", which holds its previous value in one or more paths through the process File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 212
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(237): signal "key0en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 237
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(247): signal "key1en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 247
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(257): signal "key2en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 257
+Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(266): inferring latch(es) for signal or variable "relbt", which holds its previous value in one or more paths through the process File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 266
+Warning (10631): VHDL Process Statement warning at kbdex_ctrl.vhd(276): inferring latch(es) for signal or variable "selbt", which holds its previous value in one or more paths through the process File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(293): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(294): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 294
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(294): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 294
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(295): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(297): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 297
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(299): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 299
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(306): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 306
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(307): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 307
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(309): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 309
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(311): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 311
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(314): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 314
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(315): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 315
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(317): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 317
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(319): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 319
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(324): signal "key0code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 324
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(324): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 324
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(326): signal "key1code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(326): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(328): signal "key2code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 328
+Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(328): signal "datacode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 328
+Info (10041): Inferred latch for "selbt" at kbdex_ctrl.vhd(276) File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 276
+Info (10041): Inferred latch for "relbt" at kbdex_ctrl.vhd(266) File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 266
+Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212) File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 212
+Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl" File: /home/ec2016/ra170600/Documents/MC613/git/kbdex_ctrl.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra170600/Documents/MC613/git/ps2_iobase.vhd Line: 161
+Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 115
+Warning (10036): Verilog HDL or VHDL warning at kbd_alphanum.vhd(56): object "dp_on" assigned a value but never read File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 56
+Info (12128): Elaborating entity "ff_d" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop" File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 72
+Info (12128): Elaborating entity "ff_t" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop" File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 82
+Info (12128): Elaborating entity "code2ascii" for hierarchy "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate" File: /home/ec2016/ra170600/Documents/MC613/git/kbd_alphanum.vhd Line: 96
+Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 124
+Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 274
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 255
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 255
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 254
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 164
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 226
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 227
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
-    Info (12023): Found entity 1: lpm_divide_4am File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_4am.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_4am File: /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_4am.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_akh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
-    Info (12023): Found entity 1: alt_u_div_qse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_qse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
-Info (12133): Instantiated megafunction "lpm_divide:Mod6" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 303
+    Info (12023): Found entity 1: alt_u_div_qse File: /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_qse.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod5" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
+Info (12133): Instantiated megafunction "lpm_divide:Mod5" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 307
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_a2m.tdf
-    Info (12023): Found entity 1: lpm_divide_a2m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_a2m.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_a2m File: /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_a2m.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_dkh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_dkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
-    Info (12023): Found entity 1: alt_u_div_0te File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_0te.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 297
-Info (12133): Instantiated megafunction "lpm_divide:Mod5" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 297
-    Info (12134): Parameter "LPM_WIDTHN" = "7"
-    Info (12134): Parameter "LPM_WIDTHD" = "7"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 252
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 252
+    Info (12023): Found entity 1: alt_u_div_0te File: /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_0te.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 255
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 255
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 162
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 162
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 164
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 164
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 224
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 224
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 226
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 226
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_65m.tdf
-    Info (12023): Found entity 1: lpm_divide_65m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_65m.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_65m File: /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_65m.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_9nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
-    Info (12023): Found entity 1: alt_u_div_o2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 225
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 225
+    Info (12023): Found entity 1: alt_u_div_o2f File: /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_o2f.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 227
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 227
     Info (12134): Parameter "LPM_WIDTHN" = "31"
     Info (12134): Parameter "LPM_WIDTHD" = "31"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_45m.tdf
-    Info (12023): Found entity 1: lpm_divide_45m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_45m.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_45m File: /home/ec2016/ra170600/Documents/MC613/git/db/lpm_divide_45m.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: /home/ec2016/ra170600/Documents/MC613/git/db/sign_div_unsign_7nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
-    Info (12023): Found entity 1: alt_u_div_k2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf Line: 22
+    Info (12023): Found entity 1: alt_u_div_k2f File: /home/ec2016/ra170600/Documents/MC613/git/db/alt_u_div_k2f.tdf Line: 22
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 25
+    Warning (13310): Register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~1" File: /home/ec2016/ra170600/Documents/MC613/git/ps2_iobase.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 19
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 14
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 14
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 14
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 12
-Info (21057): Implemented 4352 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/ec2016/ra170600/Documents/MC613/git/game_control.vhd Line: 12
+Info (21057): Implemented 4312 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 52 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 4285 logic cells
+    Info (21061): Implemented 4245 logic cells
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 1242 megabytes
-    Info: Processing ended: Mon Jun  4 10:53:32 2018
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 1251 megabytes
+    Info: Processing ended: Mon Jun  4 12:17:54 2018
     Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Total CPU time (on all processors): 00:00:33
 
 

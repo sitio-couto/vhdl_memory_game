@@ -1,5 +1,5 @@
 Fitter report for jogo_da_memoria
-Mon Jun  4 10:55:22 2018
+Mon Jun  4 12:19:41 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -66,14 +66,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Mon Jun  4 10:55:22 2018       ;
+; Fitter Status                   ; Successful - Mon Jun  4 12:19:41 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,956 / 32,070 ( 6 % )                      ;
+; Logic utilization (in ALMs)     ; 1,928 / 32,070 ( 6 % )                      ;
 ; Total registers                 ; 1058                                        ;
 ; Total pins                      ; 65 / 457 ( 14 % )                           ;
 ; Total virtual pins              ; 0                                           ;
@@ -156,14 +156,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.11        ;
+; Average used               ; 1.12        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.3%      ;
-;     Processor 3            ;   3.7%      ;
-;     Processor 4            ;   3.4%      ;
+;     Processor 2            ;   4.5%      ;
+;     Processor 3            ;   3.8%      ;
+;     Processor 4            ;   3.6%      ;
 +----------------------------+-------------+
 
 
@@ -173,24 +173,23 @@ refer to the applicable agreement for further details.
 ; Node                                                             ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                           ; Destination Port ; Destination Port Name ;
 +------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------------+------------------+-----------------------+
 ; CLOCK_50~inputCLKENA0                                            ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                            ;                  ;                       ;
-; i[4]                                                             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; i[4]~DUPLICATE                                                             ;                  ;                       ;
-; i[5]                                                             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; i[5]~DUPLICATE                                                             ;                  ;                       ;
+; aux[2]                                                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; aux[2]~DUPLICATE                                                           ;                  ;                       ;
+; aux[5]                                                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; aux[5]~DUPLICATE                                                           ;                  ;                       ;
 ; kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop|temp               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop|temp~DUPLICATE               ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|cmdstate.SENDVAL                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|cmdstate.SENDVAL~DUPLICATE                      ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|hdata[3]~DUPLICATE                              ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[1]~DUPLICATE ;                  ;                       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[2]~DUPLICATE ;                  ;                       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|\FROMPS2:count[3]~DUPLICATE ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[0]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[0]~DUPLICATE       ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[5]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[5]~DUPLICATE       ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[7]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[7]~DUPLICATE       ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[13]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[13]~DUPLICATE      ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[16]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[16]~DUPLICATE      ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[1]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[1]~DUPLICATE       ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[4]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[4]~DUPLICATE       ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[6]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[6]~DUPLICATE       ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[10]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[10]~DUPLICATE      ;                  ;                       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[17]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[17]~DUPLICATE      ;                  ;                       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[18]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[18]~DUPLICATE      ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[19]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|countclk[19]~DUPLICATE      ;                  ;                       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|send_rdy          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|send_rdy~DUPLICATE          ;                  ;                       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|state.DECODE                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|state.DECODE~DUPLICATE                          ;                  ;                       ;
-; set_table                                                        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; set_table~DUPLICATE                                                        ;                  ;                       ;
-; table_map[28]                                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; table_map[28]~DUPLICATE                                                    ;                  ;                       ;
+; kbdex_ctrl:kbdex_ctrl_inst|state.EXT0                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; kbdex_ctrl:kbdex_ctrl_inst|state.EXT0~DUPLICATE                            ;                  ;                       ;
+; table_map[25]                                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; table_map[25]~DUPLICATE                                                    ;                  ;                       ;
+; table_map[74]                                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; table_map[74]~DUPLICATE                                                    ;                  ;                       ;
 +------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -401,8 +400,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 4635 ) ; 0.00 % ( 0 / 4635 )        ; 0.00 % ( 0 / 4635 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 4635 ) ; 0.00 % ( 0 / 4635 )        ; 0.00 % ( 0 / 4635 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 4596 ) ; 0.00 % ( 0 / 4596 )        ; 0.00 % ( 0 / 4596 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 4596 ) ; 0.00 % ( 0 / 4596 )        ; 0.00 % ( 0 / 4596 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -425,7 +424,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 4635 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 4596 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -433,7 +432,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/output_files/jogo_da_memoria.pin.
+The pin-out file can be found in /home/ec2016/ra170600/Documents/MC613/git/output_files/jogo_da_memoria.pin.
 
 
 +---------------------------------------------------------------------------------------------+
@@ -441,41 +440,41 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 +-------------------------------------------------------------+-----------------------+-------+
 ; Resource                                                    ; Usage                 ; %     ;
 +-------------------------------------------------------------+-----------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 1,956 / 32,070        ; 6 %   ;
-; ALMs needed [=A-B+C]                                        ; 1,956                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 2,172 / 32,070        ; 7 %   ;
-;         [a] ALMs used for LUT logic and registers           ; 238                   ;       ;
-;         [b] ALMs used for LUT logic                         ; 1,666                 ;       ;
-;         [c] ALMs used for registers                         ; 268                   ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 1,928 / 32,070        ; 6 %   ;
+; ALMs needed [=A-B+C]                                        ; 1,928                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 2,155 / 32,070        ; 7 %   ;
+;         [a] ALMs used for LUT logic and registers           ; 228                   ;       ;
+;         [b] ALMs used for LUT logic                         ; 1,664                 ;       ;
+;         [c] ALMs used for registers                         ; 263                   ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 227 / 32,070          ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 11 / 32,070           ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 236 / 32,070          ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 9 / 32,070            ; < 1 % ;
 ;         [a] Due to location constrained logic               ; 0                     ;       ;
-;         [b] Due to LAB-wide signal conflicts                ; 1                     ;       ;
-;         [c] Due to LAB input limits                         ; 10                    ;       ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                     ;       ;
+;         [c] Due to LAB input limits                         ; 9                     ;       ;
 ;         [d] Due to virtual I/Os                             ; 0                     ;       ;
 ;                                                             ;                       ;       ;
 ; Difficulty packing design                                   ; Low                   ;       ;
 ;                                                             ;                       ;       ;
-; Total LABs:  partially or completely used                   ; 277 / 3,207           ; 9 %   ;
-;     -- Logic LABs                                           ; 277                   ;       ;
+; Total LABs:  partially or completely used                   ; 297 / 3,207           ; 9 %   ;
+;     -- Logic LABs                                           ; 297                   ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ;       ;
 ;                                                             ;                       ;       ;
-; Combinational ALUT usage for logic                          ; 3,462                 ;       ;
-;     -- 7 input functions                                    ; 21                    ;       ;
-;     -- 6 input functions                                    ; 467                   ;       ;
-;     -- 5 input functions                                    ; 345                   ;       ;
-;     -- 4 input functions                                    ; 925                   ;       ;
-;     -- <=3 input functions                                  ; 1,704                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 216                   ;       ;
+; Combinational ALUT usage for logic                          ; 3,422                 ;       ;
+;     -- 7 input functions                                    ; 40                    ;       ;
+;     -- 6 input functions                                    ; 412                   ;       ;
+;     -- 5 input functions                                    ; 378                   ;       ;
+;     -- 4 input functions                                    ; 909                   ;       ;
+;     -- <=3 input functions                                  ; 1,683                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 263                   ;       ;
 ;                                                             ;                       ;       ;
 ; Dedicated logic registers                                   ; 1,058                 ;       ;
 ;     -- By type:                                             ;                       ;       ;
-;         -- Primary logic registers                          ; 1,011 / 64,140        ; 2 %   ;
-;         -- Secondary logic registers                        ; 47 / 64,140           ; < 1 % ;
+;         -- Primary logic registers                          ; 980 / 64,140          ; 2 %   ;
+;         -- Secondary logic registers                        ; 78 / 64,140           ; < 1 % ;
 ;     -- By function:                                         ;                       ;       ;
-;         -- Design implementation registers                  ; 1,040                 ;       ;
-;         -- Routing optimization registers                   ; 18                    ;       ;
+;         -- Design implementation registers                  ; 1,041                 ;       ;
+;         -- Routing optimization registers                   ; 17                    ;       ;
 ;                                                             ;                       ;       ;
 ; Virtual pins                                                ; 0                     ;       ;
 ; I/O pins                                                    ; 65 / 457              ; 14 %  ;
@@ -531,11 +530,11 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 ; Impedance control blocks                                    ; 0 / 4                 ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2                 ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 2.0% / 2.1% / 1.8%    ;       ;
-; Peak interconnect usage (total/H/V)                         ; 13.5% / 14.2% / 15.0% ;       ;
-; Maximum fan-out                                             ; 1029                  ;       ;
-; Highest non-global fan-out                                  ; 116                   ;       ;
-; Total fan-out                                               ; 16417                 ;       ;
-; Average fan-out                                             ; 3.37                  ;       ;
+; Peak interconnect usage (total/H/V)                         ; 15.3% / 14.8% / 17.0% ;       ;
+; Maximum fan-out                                             ; 1028                  ;       ;
+; Highest non-global fan-out                                  ; 128                   ;       ;
+; Total fan-out                                               ; 16328                 ;       ;
+; Average fan-out                                             ; 3.35                  ;       ;
 +-------------------------------------------------------------+-----------------------+-------+
 
 
@@ -544,44 +543,44 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 1956 / 32070 ( 6 % )  ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 1956                  ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 2172 / 32070 ( 7 % )  ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 238                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 1666                  ; 0                              ;
-;         [c] ALMs used for registers                         ; 268                   ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 1928 / 32070 ( 6 % )  ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 1928                  ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 2155 / 32070 ( 7 % )  ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 228                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 1664                  ; 0                              ;
+;         [c] ALMs used for registers                         ; 263                   ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 227 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 11 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 236 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 9 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
-;         [b] Due to LAB-wide signal conflicts                ; 1                     ; 0                              ;
-;         [c] Due to LAB input limits                         ; 10                    ; 0                              ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
+;         [c] Due to LAB input limits                         ; 9                     ; 0                              ;
 ;         [d] Due to virtual I/Os                             ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 277 / 3207 ( 9 % )    ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 277                   ; 0                              ;
+; Total LABs:  partially or completely used                   ; 297 / 3207 ( 9 % )    ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 297                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 3462                  ; 0                              ;
-;     -- 7 input functions                                    ; 21                    ; 0                              ;
-;     -- 6 input functions                                    ; 467                   ; 0                              ;
-;     -- 5 input functions                                    ; 345                   ; 0                              ;
-;     -- 4 input functions                                    ; 925                   ; 0                              ;
-;     -- <=3 input functions                                  ; 1704                  ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 216                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 3422                  ; 0                              ;
+;     -- 7 input functions                                    ; 40                    ; 0                              ;
+;     -- 6 input functions                                    ; 412                   ; 0                              ;
+;     -- 5 input functions                                    ; 378                   ; 0                              ;
+;     -- 4 input functions                                    ; 909                   ; 0                              ;
+;     -- <=3 input functions                                  ; 1683                  ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 263                   ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 1011 / 64140 ( 2 % )  ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 47 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 980 / 64140 ( 2 % )   ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 78 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
-;         -- Design implementation registers                  ; 1040                  ; 0                              ;
-;         -- Routing optimization registers                   ; 18                    ; 0                              ;
+;         -- Design implementation registers                  ; 1041                  ; 0                              ;
+;         -- Routing optimization registers                   ; 17                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -599,8 +598,8 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 16440                 ; 0                              ;
-;     -- Registered Connections                               ; 3067                  ; 0                              ;
+;     -- Total Connections                                    ; 16351                 ; 0                              ;
+;     -- Registered Connections                               ; 3024                  ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 4                     ; 0                              ;
@@ -632,7 +631,7 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 1031                  ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 1030                  ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[0]    ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[1]    ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[2]    ; AF9   ; 3A       ; 8            ; 0            ; 34           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
@@ -642,7 +641,7 @@ The pin-out file can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/o
 ; SW[6]    ; AE11  ; 3A       ; 4            ; 0            ; 34           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[7]    ; AC9   ; 3A       ; 4            ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; SW[8]    ; AD10  ; 3A       ; 4            ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; SW[9]    ; AE12  ; 3A       ; 2            ; 0            ; 57           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; SW[9]    ; AE12  ; 3A       ; 2            ; 0            ; 57           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -1721,53 +1720,48 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name         ; Library Name ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                          ; 1955.5 (511.3)       ; 2171.0 (703.7)                   ; 225.5 (194.0)                                     ; 10.0 (1.5)                       ; 0.0 (0.0)            ; 3462 (659)          ; 1058 (905)                ; 0 (0)         ; 0                 ; 0     ; 2          ; 65   ; 0            ; |game_control                                                                                                 ; game_control        ; work         ;
-;    |ascii_2_num:translate|             ; 2.8 (2.8)            ; 2.8 (2.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                           ; ascii_2_num         ; work         ;
+; |game_control                          ; 1927.5 (510.7)       ; 2154.0 (706.8)                   ; 235.5 (197.3)                                     ; 9.0 (1.2)                        ; 0.0 (0.0)            ; 3422 (680)          ; 1058 (906)                ; 0 (0)         ; 0                 ; 0     ; 2          ; 65   ; 0            ; |game_control                                                                                                 ; game_control        ; work         ;
+;    |ascii_2_num:translate|             ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                           ; ascii_2_num         ; work         ;
 ;    |bin2dec:print0|                    ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print1|                    ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print1                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print2|                    ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print3|                    ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print3                                                                                  ; bin2dec             ; work         ;
-;    |bin2dec:print4|                    ; 2.0 (2.0)            ; 2.0 (2.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                  ; bin2dec             ; work         ;
 ;    |bin2dec:print5|                    ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                  ; bin2dec             ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|    ; 118.7 (37.6)         ; 124.6 (40.3)                     ; 5.8 (2.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 201 (60)            ; 3 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                  ; kbd_alphanum        ; work         ;
-;       |code2ascii:\G1:0:translate|     ; 61.3 (61.3)          ; 61.9 (61.9)                      ; 0.6 (0.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 108 (108)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                       ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|     ; 18.7 (18.7)          ; 21.5 (21.5)                      ; 2.8 (2.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (32)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                       ; code2ascii          ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|    ; 111.8 (41.0)         ; 111.8 (41.0)                     ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 180 (57)            ; 3 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                  ; kbd_alphanum        ; work         ;
+;       |code2ascii:\G1:0:translate|     ; 55.3 (55.3)          ; 56.1 (56.1)                      ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 97 (97)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                       ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|     ; 13.3 (13.3)          ; 13.3 (13.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 25 (25)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                       ; code2ascii          ; work         ;
 ;       |ff_d:shift_flop|                ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                  ; ff_d                ; work         ;
-;       |ff_t:caps_flop|                 ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                   ; ff_t                ; work         ;
-;    |kbdex_ctrl:kbdex_ctrl_inst|        ; 114.2 (45.2)         ; 122.7 (51.0)                     ; 8.4 (5.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 191 (68)            ; 150 (62)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                      ; kbdex_ctrl          ; work         ;
-;       |ps2_iobase:ps2_ctrl|            ; 69.0 (69.0)          ; 71.7 (71.7)                      ; 2.7 (2.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 123 (123)           ; 88 (88)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                  ; ps2_iobase          ; work         ;
-;    |lpm_divide:Div0|                   ; 19.2 (0.0)           ; 19.3 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_4am:auto_generated|  ; 19.2 (0.0)           ; 19.3 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
-;          |sign_div_unsign_akh:divider| ; 19.2 (0.0)           ; 19.3 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;             |alt_u_div_qse:divider|    ; 19.2 (19.2)          ; 19.3 (19.3)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (39)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |ff_t:caps_flop|                 ; 0.3 (0.3)            ; 1.0 (1.0)                        ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                   ; ff_t                ; work         ;
+;    |kbdex_ctrl:kbdex_ctrl_inst|        ; 114.2 (46.6)         ; 124.7 (49.4)                     ; 10.5 (2.8)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 191 (68)            ; 149 (61)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                      ; kbdex_ctrl          ; work         ;
+;       |ps2_iobase:ps2_ctrl|            ; 67.7 (67.7)          ; 75.3 (75.3)                      ; 7.7 (7.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 123 (123)           ; 88 (88)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                  ; ps2_iobase          ; work         ;
+;    |lpm_divide:Div0|                   ; 19.2 (0.0)           ; 19.7 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_4am:auto_generated|  ; 19.2 (0.0)           ; 19.7 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;          |sign_div_unsign_akh:divider| ; 19.2 (0.0)           ; 19.7 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_qse:divider|    ; 19.2 (19.2)          ; 19.7 (19.7)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (39)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
 ;    |lpm_divide:Div1|                   ; 13.5 (0.0)           ; 13.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
 ;       |lpm_divide_4am:auto_generated|  ; 13.5 (0.0)           ; 13.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
 ;          |sign_div_unsign_akh:divider| ; 13.5 (0.0)           ; 13.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
 ;             |alt_u_div_qse:divider|    ; 13.5 (13.5)          ; 13.5 (13.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 27 (27)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
-;    |lpm_divide:Mod1|                   ; 485.1 (0.0)          ; 495.2 (0.0)                      ; 15.7 (0.0)                                        ; 5.6 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_65m:auto_generated|  ; 485.1 (0.0)          ; 495.2 (0.0)                      ; 15.7 (0.0)                                        ; 5.6 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m      ; work         ;
-;          |sign_div_unsign_9nh:divider| ; 485.1 (0.0)          ; 495.2 (0.0)                      ; 15.7 (0.0)                                        ; 5.6 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
-;             |alt_u_div_o2f:divider|    ; 485.1 (485.1)        ; 495.2 (495.2)                    ; 15.7 (15.7)                                       ; 5.6 (5.6)                        ; 0.0 (0.0)            ; 960 (960)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
-;    |lpm_divide:Mod2|                   ; 597.2 (0.0)          ; 597.7 (0.0)                      ; 3.2 (0.0)                                         ; 2.8 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_45m:auto_generated|  ; 597.2 (0.0)          ; 597.7 (0.0)                      ; 3.2 (0.0)                                         ; 2.8 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
-;          |sign_div_unsign_7nh:divider| ; 597.2 (0.0)          ; 597.7 (0.0)                      ; 3.2 (0.0)                                         ; 2.8 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
-;             |alt_u_div_k2f:divider|    ; 597.2 (597.2)        ; 597.7 (597.7)                    ; 3.2 (3.2)                                         ; 2.8 (2.8)                        ; 0.0 (0.0)            ; 1191 (1191)         ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
-;    |lpm_divide:Mod3|                   ; 22.0 (0.0)           ; 22.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 22.0 (0.0)           ; 22.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 22.0 (0.0)           ; 22.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 22.0 (22.0)          ; 22.0 (22.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod1|                   ; 484.5 (0.0)          ; 504.7 (0.0)                      ; 25.7 (0.0)                                        ; 5.5 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_65m:auto_generated|  ; 484.5 (0.0)          ; 504.7 (0.0)                      ; 25.7 (0.0)                                        ; 5.5 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m      ; work         ;
+;          |sign_div_unsign_9nh:divider| ; 484.5 (0.0)          ; 504.7 (0.0)                      ; 25.7 (0.0)                                        ; 5.5 (0.0)                        ; 0.0 (0.0)            ; 960 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;             |alt_u_div_o2f:divider|    ; 484.5 (484.5)        ; 504.7 (504.7)                    ; 25.7 (25.7)                                       ; 5.5 (5.5)                        ; 0.0 (0.0)            ; 960 (960)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
+;    |lpm_divide:Mod2|                   ; 598.4 (0.0)          ; 598.5 (0.0)                      ; 2.5 (0.0)                                         ; 2.4 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_45m:auto_generated|  ; 598.4 (0.0)          ; 598.5 (0.0)                      ; 2.5 (0.0)                                         ; 2.4 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
+;          |sign_div_unsign_7nh:divider| ; 598.4 (0.0)          ; 598.5 (0.0)                      ; 2.5 (0.0)                                         ; 2.4 (0.0)                        ; 0.0 (0.0)            ; 1191 (0)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;             |alt_u_div_k2f:divider|    ; 598.4 (598.4)        ; 598.5 (598.5)                    ; 2.5 (2.5)                                         ; 2.4 (2.4)                        ; 0.0 (0.0)            ; 1191 (1191)         ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
+;    |lpm_divide:Mod3|                   ; 23.3 (0.0)           ; 23.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|  ; 23.3 (0.0)           ; 23.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 23.3 (0.0)           ; 23.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|    ; 23.3 (23.3)          ; 23.3 (23.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
 ;    |lpm_divide:Mod4|                   ; 14.5 (0.0)           ; 14.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
 ;       |lpm_divide_a2m:auto_generated|  ; 14.5 (0.0)           ; 14.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider| ; 14.5 (0.0)           ; 14.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
 ;             |alt_u_div_0te:divider|    ; 14.5 (14.5)          ; 14.5 (14.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 31 (31)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |lpm_divide:Mod5|                   ; 19.0 (0.0)           ; 19.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 36 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 19.0 (0.0)           ; 19.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 36 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 19.0 (0.0)           ; 19.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 36 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 19.0 (19.0)          ; 19.0 (19.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 36 (36)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |lpm_divide:Mod6|                   ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 16.5 (16.5)          ; 16.5 (16.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (32)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod6|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod5|                   ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|  ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 16.5 (0.0)           ; 16.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|    ; 16.5 (16.5)          ; 16.5 (16.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 32 (32)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1830,15 +1824,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[7]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[8]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[9]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; PS2_DAT  ; Bidir    ; -- ; --   ; (0)  ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; PS2_DAT  ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; PS2_CLK  ; Bidir    ; -- ; (0)  ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; CLOCK_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[4]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[5]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[5]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[6]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[7]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[7]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[0]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[1]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[1]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[2]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[3]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[9]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
@@ -1852,15 +1846,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------+-------------------+---------+
 ; SW[8]                                                              ;                   ;         ;
 ; PS2_DAT                                                            ;                   ;         ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[4]~0   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[6]~1   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[7]~2   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[0]~3   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[1]~4   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[2]~5   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[3]~6   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[5]~7   ; 1                 ; 0       ;
-;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked~0 ; 1                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[1]~0   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[6]~1   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[7]~2   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[0]~3   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[2]~4   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[3]~5   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[4]~6   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sdata[5]~7   ; 0                 ; 0       ;
+;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked~0 ; 0                 ; 0       ;
 ; PS2_CLK                                                            ;                   ;         ;
 ;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0]~2  ; 0                 ; 0       ;
 ;      - kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8]~2  ; 0                 ; 0       ;
@@ -1889,21 +1883,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[4]                                                              ;                   ;         ;
 ;      - l_aux[0]                                                    ; 0                 ; 0       ;
 ; SW[5]                                                              ;                   ;         ;
-;      - l_aux[1]                                                    ; 0                 ; 0       ;
+;      - l_aux[1]~feeder                                             ; 1                 ; 0       ;
 ; SW[6]                                                              ;                   ;         ;
-;      - l_aux[2]                                                    ; 1                 ; 0       ;
+;      - l_aux[2]~feeder                                             ; 1                 ; 0       ;
 ; SW[7]                                                              ;                   ;         ;
-;      - l_aux[3]                                                    ; 0                 ; 0       ;
+;      - l_aux[3]                                                    ; 1                 ; 0       ;
 ; SW[0]                                                              ;                   ;         ;
 ;      - c_aux[0]~feeder                                             ; 1                 ; 0       ;
 ; SW[1]                                                              ;                   ;         ;
-;      - c_aux[1]~feeder                                             ; 0                 ; 0       ;
+;      - c_aux[1]~feeder                                             ; 1                 ; 0       ;
 ; SW[2]                                                              ;                   ;         ;
-;      - c_aux[2]                                                    ; 0                 ; 0       ;
+;      - c_aux[2]~feeder                                             ; 0                 ; 0       ;
 ; SW[3]                                                              ;                   ;         ;
-;      - c_aux[3]~feeder                                             ; 0                 ; 0       ;
+;      - c_aux[3]                                                    ; 0                 ; 0       ;
 ; SW[9]                                                              ;                   ;         ;
-;      - next_state[0]~4                                             ; 1                 ; 0       ;
+;      - Mux634~0                                                    ; 1                 ; 0       ;
+;      - next_state[2]~9                                             ; 1                 ; 0       ;
 +--------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1912,149 +1907,149 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------+----------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                        ; Location             ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------+----------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                    ; PIN_AF14             ; 1029    ; Clock                      ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50                                                    ; PIN_AF14             ; 1028    ; Clock                      ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 ; CLOCK_50                                                    ; PIN_AF14             ; 3       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; aux[5]~0                                                    ; LABCELL_X53_Y22_N51  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; deck[1][1]~4                                                ; LABCELL_X50_Y24_N3   ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; flag[0]                                                     ; FF_X61_Y20_N44       ; 12      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; game_table[0][6]~91                                         ; LABCELL_X63_Y17_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[100][6]~42                                       ; MLABCELL_X59_Y18_N6  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[10][6]~103                                       ; LABCELL_X62_Y18_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[11][6]~104                                       ; LABCELL_X61_Y18_N0   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[12][6]~97                                        ; LABCELL_X60_Y19_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[13][6]~98                                        ; LABCELL_X60_Y18_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[14][6]~105                                       ; LABCELL_X62_Y18_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[15][6]~106                                       ; LABCELL_X61_Y18_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[16][6]~75                                        ; LABCELL_X60_Y18_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[17][6]~76                                        ; LABCELL_X60_Y18_N9   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[18][6]~83                                        ; MLABCELL_X52_Y17_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[19][6]~84                                        ; LABCELL_X60_Y19_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[1][6]~92                                         ; LABCELL_X60_Y18_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[20][6]~77                                        ; MLABCELL_X52_Y16_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[21][6]~78                                        ; LABCELL_X53_Y17_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[22][6]~85                                        ; LABCELL_X53_Y20_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[23][6]~86                                        ; LABCELL_X53_Y17_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[24][6]~79                                        ; LABCELL_X53_Y19_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[25][6]~80                                        ; MLABCELL_X52_Y17_N33 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[26][6]~87                                        ; LABCELL_X55_Y20_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[27][6]~88                                        ; MLABCELL_X52_Y17_N54 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[28][6]~81                                        ; MLABCELL_X52_Y16_N15 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[29][6]~82                                        ; LABCELL_X53_Y18_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[2][6]~99                                         ; MLABCELL_X59_Y21_N24 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[30][6]~89                                        ; MLABCELL_X52_Y18_N12 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[31][6]~90                                        ; LABCELL_X53_Y17_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[32][6]~43                                        ; LABCELL_X55_Y21_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[33][6]~51                                        ; LABCELL_X57_Y21_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[34][6]~45                                        ; LABCELL_X55_Y21_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[35][6]~53                                        ; MLABCELL_X59_Y20_N21 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[36][6]~47                                        ; LABCELL_X57_Y21_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[37][6]~55                                        ; MLABCELL_X59_Y20_N15 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[38][6]~49                                        ; LABCELL_X57_Y21_N39  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[39][6]~57                                        ; MLABCELL_X59_Y20_N30 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[3][6]~100                                        ; LABCELL_X63_Y18_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[40][6]~44                                        ; LABCELL_X53_Y19_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[41][6]~52                                        ; LABCELL_X57_Y21_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[42][6]~46                                        ; MLABCELL_X59_Y21_N39 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[43][6]~54                                        ; MLABCELL_X59_Y21_N54 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[44][6]~48                                        ; LABCELL_X57_Y21_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[45][6]~56                                        ; LABCELL_X61_Y22_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[46][6]~50                                        ; LABCELL_X57_Y21_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[47][6]~58                                        ; LABCELL_X60_Y20_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[48][6]~59                                        ; LABCELL_X60_Y18_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[49][6]~67                                        ; MLABCELL_X59_Y20_N0  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[4][6]~93                                         ; LABCELL_X63_Y17_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[50][6]~61                                        ; LABCELL_X55_Y21_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[51][6]~69                                        ; LABCELL_X55_Y20_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[52][6]~63                                        ; LABCELL_X57_Y21_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[53][6]~71                                        ; LABCELL_X60_Y20_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[54][6]~65                                        ; LABCELL_X57_Y21_N9   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[55][6]~73                                        ; LABCELL_X60_Y20_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[56][6]~60                                        ; LABCELL_X53_Y21_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[57][6]~68                                        ; LABCELL_X57_Y21_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[58][6]~62                                        ; MLABCELL_X59_Y21_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[59][6]~70                                        ; MLABCELL_X59_Y21_N36 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[5][6]~94                                         ; LABCELL_X62_Y17_N39  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[60][6]~64                                        ; LABCELL_X57_Y21_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[61][6]~72                                        ; MLABCELL_X59_Y20_N33 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[62][6]~66                                        ; LABCELL_X57_Y21_N15  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[63][6]~74                                        ; LABCELL_X60_Y20_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[64][6]~2                                         ; LABCELL_X53_Y19_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[65][6]~10                                        ; LABCELL_X55_Y20_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[66][6]~4                                         ; LABCELL_X53_Y19_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[67][6]~12                                        ; LABCELL_X53_Y20_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[68][6]~6                                         ; LABCELL_X60_Y19_N24  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[69][6]~14                                        ; LABCELL_X57_Y19_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[6][6]~101                                        ; LABCELL_X62_Y18_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[70][6]~8                                         ; LABCELL_X57_Y21_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[71][6]~16                                        ; LABCELL_X62_Y19_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[72][6]~3                                         ; LABCELL_X53_Y19_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[73][6]~11                                        ; LABCELL_X55_Y20_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[74][6]~5                                         ; MLABCELL_X59_Y19_N27 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[75][6]~13                                        ; LABCELL_X55_Y20_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[76][6]~7                                         ; MLABCELL_X59_Y19_N30 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[77][6]~15                                        ; LABCELL_X57_Y19_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[78][6]~9                                         ; MLABCELL_X59_Y19_N3  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[79][6]~17                                        ; LABCELL_X56_Y19_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[7][6]~102                                        ; LABCELL_X61_Y18_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[80][6]~18                                        ; LABCELL_X60_Y18_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[81][6]~20                                        ; MLABCELL_X59_Y20_N42 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[82][6]~29                                        ; MLABCELL_X59_Y20_N45 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[83][6]~30                                        ; LABCELL_X61_Y17_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[84][6]~22                                        ; LABCELL_X60_Y16_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[85][6]~23                                        ; LABCELL_X61_Y17_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[86][6]~31                                        ; MLABCELL_X59_Y20_N36 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[87][6]~32                                        ; LABCELL_X61_Y17_N24  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[88][6]~24                                        ; LABCELL_X61_Y17_N39  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[89][6]~26                                        ; LABCELL_X61_Y17_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[8][6]~95                                         ; MLABCELL_X59_Y18_N24 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[90][6]~33                                        ; MLABCELL_X59_Y18_N21 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[91][6]~34                                        ; LABCELL_X61_Y17_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[92][6]~27                                        ; LABCELL_X61_Y17_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[93][6]~28                                        ; LABCELL_X61_Y17_N15  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[94][6]~35                                        ; MLABCELL_X59_Y18_N18 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[95][6]~36                                        ; MLABCELL_X59_Y18_N36 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[96][6]~38                                        ; MLABCELL_X59_Y18_N45 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[97][6]~39                                        ; MLABCELL_X59_Y18_N54 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[98][6]~40                                        ; MLABCELL_X59_Y18_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[99][6]~41                                        ; MLABCELL_X59_Y18_N0  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; game_table[9][6]~96                                         ; MLABCELL_X59_Y21_N15 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; i[3]~0                                                      ; LABCELL_X60_Y22_N0   ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0clearn~2                     ; LABCELL_X51_Y21_N27  ; 11      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0en~0                         ; LABCELL_X48_Y22_N6   ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key1clearn~4                     ; LABCELL_X51_Y21_N15  ; 9       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key1en~0                         ; MLABCELL_X47_Y21_N57 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key2clearn~5                     ; LABCELL_X51_Y21_N48  ; 9       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key2en~1                         ; MLABCELL_X47_Y21_N51 ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|process_13~0                     ; LABCELL_X48_Y21_N54  ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|Equal2~4     ; LABCELL_X46_Y20_N30  ; 29      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|TOPS2~0      ; LABCELL_X48_Y20_N24  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|count[12]~0  ; LABCELL_X51_Y20_N54  ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0]~2  ; LABCELL_X7_Y2_N15    ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked   ; FF_X50_Y20_N59       ; 7       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~0   ; MLABCELL_X47_Y20_N27 ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~2   ; MLABCELL_X25_Y7_N24  ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~5   ; LABCELL_X48_Y20_N21  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8]~2  ; LABCELL_X7_Y2_N30    ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigclkheld   ; FF_X46_Y20_N41       ; 5       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsendend   ; FF_X48_Y20_N47       ; 19      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsendend~0 ; MLABCELL_X47_Y20_N36 ; 5       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsending   ; FF_X46_Y20_N20       ; 55      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger   ; FF_X7_Y2_N11         ; 23      ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                          ; FF_X43_Y20_N17       ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsending                       ; FF_X48_Y21_N17       ; 10      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|state.CLRDP                      ; FF_X48_Y21_N29       ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; kbdex_ctrl:kbdex_ctrl_inst|state.FETCH                      ; FF_X48_Y21_N50       ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; l_aux[3]~0                                                  ; LABCELL_X50_Y24_N57  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; n_pairs[0]~0                                                ; LABCELL_X50_Y24_N24  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; next_state[1]                                               ; FF_X50_Y25_N47       ; 19      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; next_state[2]                                               ; FF_X50_Y25_N20       ; 61      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; p1[3]~0                                                     ; LABCELL_X50_Y24_N33  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; process_0~1                                                 ; MLABCELL_X52_Y21_N12 ; 18      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; rand[6]~2                                                   ; LABCELL_X61_Y22_N21  ; 7       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; rand[6]~3                                                   ; LABCELL_X61_Y18_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; rtl~0                                                       ; LABCELL_X50_Y22_N3   ; 3       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; seed[0]~0                                                   ; LABCELL_X50_Y24_N6   ; 31      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; t_cards[0]~0                                                ; LABCELL_X50_Y25_N33  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; aux[5]~0                                                    ; LABCELL_X79_Y20_N36  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; deck[1][1]~4                                                ; LABCELL_X75_Y25_N24  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; flag[0]                                                     ; FF_X79_Y17_N17       ; 12      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; game_table[0][6]~91                                         ; MLABCELL_X78_Y18_N51 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[100][6]~42                                       ; LABCELL_X80_Y17_N24  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[10][6]~96                                        ; LABCELL_X79_Y19_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[11][6]~98                                        ; LABCELL_X73_Y18_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[12][6]~103                                       ; LABCELL_X71_Y19_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[13][6]~105                                       ; LABCELL_X74_Y19_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[14][6]~104                                       ; LABCELL_X70_Y18_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[15][6]~106                                       ; LABCELL_X70_Y18_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[16][6]~75                                        ; LABCELL_X77_Y18_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[17][6]~77                                        ; LABCELL_X74_Y17_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[18][6]~76                                        ; LABCELL_X80_Y17_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[19][6]~78                                        ; MLABCELL_X78_Y19_N21 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[1][6]~93                                         ; LABCELL_X79_Y16_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[20][6]~83                                        ; LABCELL_X75_Y19_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[21][6]~85                                        ; LABCELL_X77_Y17_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[22][6]~84                                        ; MLABCELL_X78_Y17_N39 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[23][6]~86                                        ; LABCELL_X77_Y17_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[24][6]~79                                        ; LABCELL_X75_Y19_N0   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[25][6]~81                                        ; LABCELL_X74_Y17_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[26][6]~80                                        ; LABCELL_X80_Y17_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[27][6]~82                                        ; LABCELL_X75_Y19_N9   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[28][6]~87                                        ; LABCELL_X77_Y17_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[29][6]~89                                        ; LABCELL_X77_Y17_N15  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[2][6]~92                                         ; LABCELL_X79_Y19_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[30][6]~88                                        ; LABCELL_X77_Y17_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[31][6]~90                                        ; LABCELL_X77_Y17_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[32][6]~43                                        ; MLABCELL_X78_Y18_N45 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[33][6]~51                                        ; LABCELL_X77_Y18_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[34][6]~47                                        ; LABCELL_X79_Y19_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[35][6]~55                                        ; LABCELL_X75_Y18_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[36][6]~45                                        ; MLABCELL_X78_Y18_N12 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[37][6]~53                                        ; LABCELL_X73_Y17_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[38][6]~49                                        ; LABCELL_X79_Y19_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[39][6]~57                                        ; LABCELL_X75_Y18_N9   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[3][6]~94                                         ; LABCELL_X77_Y18_N24  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[40][6]~44                                        ; MLABCELL_X78_Y18_N0  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[41][6]~52                                        ; LABCELL_X74_Y16_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[42][6]~48                                        ; LABCELL_X79_Y19_N0   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[43][6]~56                                        ; LABCELL_X75_Y18_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[44][6]~46                                        ; LABCELL_X75_Y19_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[45][6]~54                                        ; LABCELL_X75_Y18_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[46][6]~50                                        ; LABCELL_X79_Y19_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[47][6]~58                                        ; LABCELL_X75_Y18_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[48][6]~59                                        ; LABCELL_X77_Y18_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[49][6]~67                                        ; MLABCELL_X78_Y19_N54 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[4][6]~99                                         ; LABCELL_X71_Y16_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[50][6]~63                                        ; LABCELL_X80_Y17_N33  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[51][6]~71                                        ; MLABCELL_X78_Y19_N36 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[52][6]~61                                        ; LABCELL_X74_Y18_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[53][6]~69                                        ; LABCELL_X77_Y17_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[54][6]~65                                        ; LABCELL_X77_Y16_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[55][6]~73                                        ; LABCELL_X79_Y15_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[56][6]~60                                        ; LABCELL_X75_Y19_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[57][6]~68                                        ; MLABCELL_X72_Y17_N27 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[58][6]~64                                        ; LABCELL_X80_Y17_N39  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[59][6]~72                                        ; LABCELL_X75_Y19_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[5][6]~101                                        ; LABCELL_X74_Y19_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[60][6]~62                                        ; LABCELL_X75_Y19_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[61][6]~70                                        ; LABCELL_X75_Y18_N0   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[62][6]~66                                        ; LABCELL_X79_Y19_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[63][6]~74                                        ; LABCELL_X79_Y15_N15  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[64][6]~1                                         ; MLABCELL_X78_Y18_N48 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[65][6]~9                                         ; LABCELL_X77_Y18_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[66][6]~5                                         ; LABCELL_X80_Y18_N24  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[67][6]~13                                        ; LABCELL_X74_Y16_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[68][6]~3                                         ; MLABCELL_X78_Y18_N18 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[69][6]~11                                        ; LABCELL_X75_Y18_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[6][6]~100                                        ; LABCELL_X77_Y16_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[70][6]~7                                         ; LABCELL_X79_Y18_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[71][6]~15                                        ; LABCELL_X74_Y16_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[72][6]~2                                         ; MLABCELL_X78_Y18_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[73][6]~10                                        ; LABCELL_X74_Y18_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[74][6]~6                                         ; LABCELL_X80_Y18_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[75][6]~14                                        ; LABCELL_X73_Y18_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[76][6]~4                                         ; LABCELL_X74_Y18_N36  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[77][6]~12                                        ; LABCELL_X74_Y18_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[78][6]~8                                         ; LABCELL_X79_Y18_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[79][6]~16                                        ; LABCELL_X74_Y16_N21  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[7][6]~102                                        ; LABCELL_X73_Y18_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[80][6]~17                                        ; LABCELL_X77_Y18_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[81][6]~21                                        ; LABCELL_X80_Y17_N45  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[82][6]~19                                        ; LABCELL_X80_Y17_N48  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[83][6]~22                                        ; LABCELL_X80_Y17_N0   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[84][6]~28                                        ; LABCELL_X80_Y17_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[85][6]~30                                        ; LABCELL_X80_Y17_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[86][6]~29                                        ; LABCELL_X80_Y17_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[87][6]~31                                        ; MLABCELL_X82_Y17_N57 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[88][6]~23                                        ; LABCELL_X81_Y16_N12  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[89][6]~26                                        ; LABCELL_X81_Y16_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[8][6]~95                                         ; LABCELL_X71_Y16_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[90][6]~25                                        ; LABCELL_X81_Y16_N6   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[91][6]~27                                        ; LABCELL_X81_Y16_N54  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[92][6]~32                                        ; LABCELL_X80_Y17_N27  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[93][6]~34                                        ; LABCELL_X81_Y17_N9   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[94][6]~33                                        ; MLABCELL_X82_Y17_N3  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[95][6]~35                                        ; LABCELL_X81_Y16_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[96][6]~37                                        ; LABCELL_X80_Y17_N18  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[97][6]~38                                        ; LABCELL_X79_Y17_N3   ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[98][6]~39                                        ; LABCELL_X80_Y17_N51  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[99][6]~41                                        ; MLABCELL_X72_Y18_N51 ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; game_table[9][6]~97                                         ; LABCELL_X73_Y18_N57  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; i[3]~0                                                      ; LABCELL_X79_Y20_N42  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0clearn~2                     ; LABCELL_X46_Y14_N27  ; 11      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0en~0                         ; LABCELL_X46_Y15_N51  ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key1clearn~4                     ; LABCELL_X46_Y14_N42  ; 9       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key1en~0                         ; LABCELL_X46_Y15_N12  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key2clearn~4                     ; LABCELL_X46_Y15_N36  ; 9       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key2en~1                         ; LABCELL_X46_Y15_N45  ; 9       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|process_13~0                     ; LABCELL_X45_Y15_N45  ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|Equal2~4     ; LABCELL_X42_Y15_N0   ; 28      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|TOPS2~0      ; LABCELL_X43_Y14_N6   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|count[12]~0  ; LABCELL_X43_Y13_N42  ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0]~2  ; MLABCELL_X8_Y2_N48   ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked   ; FF_X40_Y15_N35       ; 7       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~0   ; LABCELL_X42_Y15_N39  ; 1       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~2   ; LABCELL_X42_Y14_N51  ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~5   ; LABCELL_X43_Y14_N42  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8]~2  ; MLABCELL_X8_Y2_N0    ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigclkheld   ; FF_X42_Y13_N38       ; 5       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsendend   ; FF_X43_Y14_N53       ; 19      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsendend~0 ; LABCELL_X43_Y14_N57  ; 5       ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigsending   ; FF_X43_Y13_N59       ; 55      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger   ; FF_X8_Y2_N5          ; 24      ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                          ; FF_X45_Y13_N37       ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsending                       ; FF_X45_Y15_N8        ; 11      ; Async. clear               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|state.CLRDP                      ; FF_X45_Y15_N23       ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; kbdex_ctrl:kbdex_ctrl_inst|state.FETCH                      ; FF_X45_Y15_N59       ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; n_pairs[0]~0                                                ; LABCELL_X75_Y25_N39  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; next_state[1]                                               ; FF_X47_Y15_N26       ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; next_state[2]                                               ; FF_X47_Y15_N32       ; 58      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; p1[3]~0                                                     ; LABCELL_X79_Y20_N27  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; p3[0]~0                                                     ; LABCELL_X48_Y16_N42  ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; process_0~1                                                 ; LABCELL_X48_Y16_N30  ; 19      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; rand[3]~2                                                   ; LABCELL_X88_Y20_N39  ; 7       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; rand[6]~3                                                   ; LABCELL_X80_Y15_N30  ; 7       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; rtl~0                                                       ; LABCELL_X48_Y15_N0   ; 3       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; seed[0]~0                                                   ; LABCELL_X79_Y20_N30  ; 31      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; t_cards[0]~0                                                ; LABCELL_X48_Y16_N45  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------+----------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -2063,7 +2058,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_AF14 ; 1029    ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50 ; PIN_AF14 ; 1028    ; Global Clock         ; GCLK6            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -2085,8 +2080,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+---------------------------+----------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
 ; Name             ; Mode                      ; Location       ; Sign Representation ; Data AX Input Register ; Data AY Input Register ; Data AZ Input Register ; Data BX Input Register ; Data BY Input Register ; Data BZ Input Register ; Output Register ; Dedicated Shift Register Chain ; Dedicated Pre-Adder ; Dedicated Coefficient Storage ; Dedicated Output Adder Chain ; Dedicated Output Accumulator ;
 +------------------+---------------------------+----------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
-; Mult0~8          ; Two Independent 18x18     ; DSP_X86_Y24_N0 ; Unsigned            ; no                     ; no                     ; --                     ; --                     ; --                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
-; Mult0~mult_hlmac ; Independent 18x18 plus 36 ; DSP_X86_Y22_N0 ; Unsigned            ; no                     ; no                     ; --                     ; no                     ; no                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
+; Mult0~8          ; Two Independent 18x18     ; DSP_X86_Y22_N0 ; Unsigned            ; no                     ; no                     ; --                     ; --                     ; --                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
+; Mult0~mult_hlmac ; Independent 18x18 plus 36 ; DSP_X86_Y24_N0 ; Unsigned            ; no                     ; no                     ; --                     ; no                     ; no                     ; --                     ; no              ; no                             ; no                  ; no                            ; no                           ; no                           ;
 +------------------+---------------------------+----------------+---------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------+--------------------------------+---------------------+-------------------------------+------------------------------+------------------------------+
 
 
@@ -2095,14 +2090,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 7,254 / 289,320 ( 3 % ) ;
-; C12 interconnects                           ; 56 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 2,439 / 119,108 ( 2 % ) ;
-; C4 interconnects                            ; 1,179 / 56,300 ( 2 % )  ;
+; Block interconnects                         ; 7,209 / 289,320 ( 2 % ) ;
+; C12 interconnects                           ; 70 / 13,420 ( < 1 % )   ;
+; C2 interconnects                            ; 2,450 / 119,108 ( 2 % ) ;
+; C4 interconnects                            ; 1,167 / 56,300 ( 2 % )  ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 952 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 983 / 289,320 ( < 1 % ) ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -2158,13 +2153,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 1,332 / 84,580 ( 2 % )  ;
+; Local interconnects                         ; 1,307 / 84,580 ( 2 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 353 / 12,676 ( 3 % )    ;
-; R14/C12 interconnect drivers                ; 384 / 20,720 ( 2 % )    ;
-; R3 interconnects                            ; 3,058 / 130,992 ( 2 % ) ;
-; R6 interconnects                            ; 4,260 / 266,960 ( 2 % ) ;
-; Spine clocks                                ; 4 / 360 ( 1 % )         ;
+; R14 interconnects                           ; 373 / 12,676 ( 3 % )    ;
+; R14/C12 interconnect drivers                ; 415 / 20,720 ( 2 % )    ;
+; R3 interconnects                            ; 3,065 / 130,992 ( 2 % ) ;
+; R6 interconnects                            ; 4,144 / 266,960 ( 2 % ) ;
+; Spine clocks                                ; 6 / 360 ( 2 % )         ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
 
@@ -2344,12 +2339,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
 ; Source Clock(s)                                           ; Destination Clock(s)                                      ; Delay Added in ns ;
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 374.2             ;
-; CLOCK_50,kbdex_ctrl:kbdex_ctrl_inst|key0code[0]           ; CLOCK_50                                                  ; 73.4              ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 53.1              ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 22.8              ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 15.2              ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 12.7              ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 388.7             ;
+; CLOCK_50,kbdex_ctrl:kbdex_ctrl_inst|key0code[0]           ; CLOCK_50                                                  ; 63.3              ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 59.6              ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 20.3              ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 12.4              ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 11.0              ;
 +-----------------------------------------------------------+-----------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2360,106 +2355,106 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------+----------------------+-------------------+
 ; Source Register ; Destination Register ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; table_map[21]   ; table_map[73]        ; 21.215            ;
-; table_map[23]   ; table_map[73]        ; 21.215            ;
-; table_map[22]   ; table_map[73]        ; 21.215            ;
-; table_map[17]   ; table_map[73]        ; 21.215            ;
-; table_map[19]   ; table_map[73]        ; 21.215            ;
-; table_map[18]   ; table_map[73]        ; 21.215            ;
-; table_map[16]   ; table_map[73]        ; 21.215            ;
-; table_map[20]   ; table_map[73]        ; 21.215            ;
-; rand[2]         ; table_map[73]        ; 21.215            ;
-; rand[1]         ; table_map[73]        ; 21.215            ;
-; rand[0]         ; table_map[73]        ; 21.215            ;
-; table_map[37]   ; table_map[73]        ; 20.056            ;
-; table_map[39]   ; table_map[73]        ; 20.056            ;
-; table_map[38]   ; table_map[73]        ; 20.056            ;
-; table_map[33]   ; table_map[73]        ; 20.056            ;
-; table_map[35]   ; table_map[73]        ; 20.056            ;
-; table_map[34]   ; table_map[73]        ; 20.056            ;
-; table_map[32]   ; table_map[73]        ; 20.056            ;
-; table_map[36]   ; table_map[73]        ; 20.056            ;
-; flag[0]         ; table_map[73]        ; 19.190            ;
-; rand[4]         ; table_map[73]        ; 18.623            ;
-; table_map[45]   ; table_map[73]        ; 17.983            ;
-; table_map[47]   ; table_map[73]        ; 17.983            ;
-; table_map[46]   ; table_map[73]        ; 17.983            ;
-; table_map[41]   ; table_map[73]        ; 17.983            ;
-; table_map[43]   ; table_map[73]        ; 17.983            ;
-; table_map[42]   ; table_map[73]        ; 17.983            ;
-; table_map[40]   ; table_map[73]        ; 17.983            ;
-; table_map[44]   ; table_map[73]        ; 17.983            ;
-; aux[4]          ; game_table[64][6]    ; 16.006            ;
-; table_map[53]   ; table_map[73]        ; 13.700            ;
-; table_map[55]   ; table_map[73]        ; 13.700            ;
-; table_map[54]   ; table_map[73]        ; 13.700            ;
-; table_map[49]   ; table_map[73]        ; 13.700            ;
-; table_map[51]   ; table_map[73]        ; 13.700            ;
-; table_map[50]   ; table_map[73]        ; 13.700            ;
-; table_map[48]   ; table_map[73]        ; 13.700            ;
-; table_map[52]   ; table_map[73]        ; 13.700            ;
-; table_map[61]   ; table_map[73]        ; 13.700            ;
-; table_map[63]   ; table_map[73]        ; 13.700            ;
-; table_map[62]   ; table_map[73]        ; 13.700            ;
-; table_map[57]   ; table_map[73]        ; 13.700            ;
-; table_map[59]   ; table_map[73]        ; 13.700            ;
-; table_map[58]   ; table_map[73]        ; 13.700            ;
-; table_map[56]   ; table_map[73]        ; 13.700            ;
-; table_map[60]   ; table_map[73]        ; 13.700            ;
-; table_map[64]   ; table_map[73]        ; 13.700            ;
-; table_map[72]   ; table_map[73]        ; 13.700            ;
-; table_map[65]   ; table_map[73]        ; 13.700            ;
-; table_map[73]   ; table_map[73]        ; 13.700            ;
-; table_map[68]   ; table_map[73]        ; 13.700            ;
-; table_map[76]   ; table_map[73]        ; 13.700            ;
-; table_map[69]   ; table_map[73]        ; 13.700            ;
-; table_map[77]   ; table_map[73]        ; 13.700            ;
-; table_map[66]   ; table_map[73]        ; 13.700            ;
-; table_map[74]   ; table_map[73]        ; 13.700            ;
-; table_map[67]   ; table_map[73]        ; 13.700            ;
-; table_map[75]   ; table_map[73]        ; 13.700            ;
-; table_map[70]   ; table_map[73]        ; 13.700            ;
-; table_map[78]   ; table_map[73]        ; 13.700            ;
-; table_map[71]   ; table_map[73]        ; 13.700            ;
-; table_map[79]   ; table_map[73]        ; 13.700            ;
-; table_map[5]    ; table_map[73]        ; 13.700            ;
-; table_map[7]    ; table_map[73]        ; 13.700            ;
-; table_map[6]    ; table_map[73]        ; 13.700            ;
-; table_map[1]    ; table_map[73]        ; 13.700            ;
-; table_map[3]    ; table_map[73]        ; 13.700            ;
-; table_map[2]    ; table_map[73]        ; 13.700            ;
-; table_map[0]    ; table_map[73]        ; 13.700            ;
-; table_map[4]    ; table_map[73]        ; 13.700            ;
-; table_map[13]   ; table_map[73]        ; 13.700            ;
-; table_map[15]   ; table_map[73]        ; 13.700            ;
-; table_map[14]   ; table_map[73]        ; 13.700            ;
-; table_map[9]    ; table_map[73]        ; 13.700            ;
-; table_map[11]   ; table_map[73]        ; 13.700            ;
-; table_map[10]   ; table_map[73]        ; 13.700            ;
-; table_map[8]    ; table_map[73]        ; 13.700            ;
-; table_map[12]   ; table_map[73]        ; 13.700            ;
-; table_map[29]   ; table_map[73]        ; 13.700            ;
-; table_map[31]   ; table_map[73]        ; 13.700            ;
-; table_map[30]   ; table_map[73]        ; 13.700            ;
-; table_map[25]   ; table_map[73]        ; 13.700            ;
-; table_map[27]   ; table_map[73]        ; 13.700            ;
-; table_map[26]   ; table_map[73]        ; 13.700            ;
-; table_map[24]   ; table_map[73]        ; 13.700            ;
-; table_map[28]   ; table_map[73]        ; 13.700            ;
-; rand[6]         ; table_map[73]        ; 13.700            ;
-; rand[5]         ; table_map[73]        ; 13.700            ;
-; rand[3]         ; table_map[73]        ; 13.700            ;
-; deck[1][1]      ; game_table[64][6]    ; 10.498            ;
-; aux[5]          ; game_table[64][6]    ; 10.498            ;
-; counter[2]      ; seed[23]             ; 8.185             ;
-; counter[3]      ; seed[23]             ; 8.178             ;
-; counter[9]      ; seed[23]             ; 7.987             ;
-; counter[8]      ; seed[23]             ; 7.983             ;
-; counter[5]      ; seed[23]             ; 7.978             ;
-; counter[6]      ; seed[23]             ; 7.964             ;
-; counter[11]     ; seed[23]             ; 7.774             ;
-; counter[10]     ; seed[23]             ; 7.771             ;
-; counter[16]     ; seed[23]             ; 7.215             ;
+; flag[0]         ; table_map[34]        ; 19.270            ;
+; i[5]            ; table_map[79]        ; 18.510            ;
+; i[6]            ; table_map[79]        ; 17.997            ;
+; table_map[37]   ; table_map[34]        ; 13.802            ;
+; table_map[39]   ; table_map[34]        ; 13.802            ;
+; table_map[38]   ; table_map[34]        ; 13.802            ;
+; table_map[33]   ; table_map[34]        ; 13.802            ;
+; table_map[35]   ; table_map[34]        ; 13.802            ;
+; table_map[34]   ; table_map[34]        ; 13.802            ;
+; table_map[32]   ; table_map[34]        ; 13.802            ;
+; table_map[36]   ; table_map[34]        ; 13.802            ;
+; table_map[45]   ; table_map[34]        ; 13.802            ;
+; table_map[47]   ; table_map[34]        ; 13.802            ;
+; table_map[46]   ; table_map[34]        ; 13.802            ;
+; table_map[41]   ; table_map[34]        ; 13.802            ;
+; table_map[43]   ; table_map[34]        ; 13.802            ;
+; table_map[42]   ; table_map[34]        ; 13.802            ;
+; table_map[40]   ; table_map[34]        ; 13.802            ;
+; table_map[44]   ; table_map[34]        ; 13.802            ;
+; table_map[53]   ; table_map[34]        ; 13.802            ;
+; table_map[55]   ; table_map[34]        ; 13.802            ;
+; table_map[54]   ; table_map[34]        ; 13.802            ;
+; table_map[49]   ; table_map[34]        ; 13.802            ;
+; table_map[51]   ; table_map[34]        ; 13.802            ;
+; table_map[50]   ; table_map[34]        ; 13.802            ;
+; table_map[48]   ; table_map[34]        ; 13.802            ;
+; table_map[52]   ; table_map[34]        ; 13.802            ;
+; table_map[61]   ; table_map[34]        ; 13.802            ;
+; table_map[63]   ; table_map[34]        ; 13.802            ;
+; table_map[62]   ; table_map[34]        ; 13.802            ;
+; table_map[57]   ; table_map[34]        ; 13.802            ;
+; table_map[59]   ; table_map[34]        ; 13.802            ;
+; table_map[58]   ; table_map[34]        ; 13.802            ;
+; table_map[56]   ; table_map[34]        ; 13.802            ;
+; table_map[60]   ; table_map[34]        ; 13.802            ;
+; table_map[70]   ; table_map[34]        ; 13.802            ;
+; table_map[78]   ; table_map[34]        ; 13.802            ;
+; table_map[71]   ; table_map[34]        ; 13.802            ;
+; table_map[79]   ; table_map[34]        ; 13.802            ;
+; table_map[66]   ; table_map[34]        ; 13.802            ;
+; table_map[74]   ; table_map[34]        ; 13.802            ;
+; table_map[67]   ; table_map[34]        ; 13.802            ;
+; table_map[75]   ; table_map[34]        ; 13.802            ;
+; table_map[68]   ; table_map[34]        ; 13.802            ;
+; table_map[76]   ; table_map[34]        ; 13.802            ;
+; table_map[69]   ; table_map[34]        ; 13.802            ;
+; table_map[77]   ; table_map[34]        ; 13.802            ;
+; table_map[64]   ; table_map[34]        ; 13.802            ;
+; table_map[72]   ; table_map[34]        ; 13.802            ;
+; table_map[65]   ; table_map[34]        ; 13.802            ;
+; table_map[73]   ; table_map[34]        ; 13.802            ;
+; table_map[5]    ; table_map[34]        ; 13.802            ;
+; table_map[7]    ; table_map[34]        ; 13.802            ;
+; table_map[6]    ; table_map[34]        ; 13.802            ;
+; table_map[1]    ; table_map[34]        ; 13.802            ;
+; table_map[3]    ; table_map[34]        ; 13.802            ;
+; table_map[2]    ; table_map[34]        ; 13.802            ;
+; table_map[0]    ; table_map[34]        ; 13.802            ;
+; table_map[4]    ; table_map[34]        ; 13.802            ;
+; table_map[13]   ; table_map[34]        ; 13.802            ;
+; table_map[15]   ; table_map[34]        ; 13.802            ;
+; table_map[14]   ; table_map[34]        ; 13.802            ;
+; table_map[9]    ; table_map[34]        ; 13.802            ;
+; table_map[11]   ; table_map[34]        ; 13.802            ;
+; table_map[10]   ; table_map[34]        ; 13.802            ;
+; table_map[8]    ; table_map[34]        ; 13.802            ;
+; table_map[12]   ; table_map[34]        ; 13.802            ;
+; table_map[21]   ; table_map[34]        ; 13.802            ;
+; table_map[23]   ; table_map[34]        ; 13.802            ;
+; table_map[22]   ; table_map[34]        ; 13.802            ;
+; table_map[17]   ; table_map[34]        ; 13.802            ;
+; table_map[19]   ; table_map[34]        ; 13.802            ;
+; table_map[18]   ; table_map[34]        ; 13.802            ;
+; table_map[16]   ; table_map[34]        ; 13.802            ;
+; table_map[20]   ; table_map[34]        ; 13.802            ;
+; table_map[29]   ; table_map[34]        ; 13.802            ;
+; table_map[31]   ; table_map[34]        ; 13.802            ;
+; table_map[30]   ; table_map[34]        ; 13.802            ;
+; table_map[25]   ; table_map[34]        ; 13.802            ;
+; table_map[27]   ; table_map[34]        ; 13.802            ;
+; table_map[26]   ; table_map[34]        ; 13.802            ;
+; table_map[24]   ; table_map[34]        ; 13.802            ;
+; table_map[28]   ; table_map[34]        ; 13.802            ;
+; rand[6]         ; table_map[34]        ; 13.802            ;
+; rand[5]         ; table_map[34]        ; 13.802            ;
+; rand[2]         ; table_map[34]        ; 13.802            ;
+; rand[1]         ; table_map[34]        ; 13.802            ;
+; rand[0]         ; table_map[34]        ; 13.802            ;
+; rand[3]         ; table_map[34]        ; 13.802            ;
+; rand[4]         ; table_map[34]        ; 13.802            ;
+; i[4]            ; table_map[79]        ; 13.156            ;
+; i[3]            ; table_map[79]        ; 13.156            ;
+; n_pairs[3]      ; table_map[79]        ; 13.156            ;
+; n_pairs[2]      ; table_map[79]        ; 13.156            ;
+; n_pairs[0]      ; table_map[79]        ; 13.156            ;
+; n_pairs[1]      ; table_map[79]        ; 13.156            ;
+; counter[9]      ; seed[21]             ; 8.465             ;
+; counter[5]      ; seed[21]             ; 8.458             ;
+; counter[8]      ; seed[21]             ; 8.423             ;
+; counter[2]      ; seed[21]             ; 8.284             ;
 +-----------------+----------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
@@ -2477,7 +2472,7 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): CLOCK_50~inputCLKENA0 with 1014 fanout uses global clock CLKCTRL_G6
+    Info (11162): CLOCK_50~inputCLKENA0 with 1015 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Warning (335093): TimeQuest Timing Analyzer is analyzing 4 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -2685,34 +2680,34 @@ Warning (15705): Ignored locations or region assignments to the following nodes
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:13
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:07
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:08
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:09
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 10% of the available device resources in the region that extends from location X56_Y11 to location X66_Y22
+    Info (170196): Router estimated peak interconnect usage is 10% of the available device resources in the region that extends from location X78_Y23 to location X89_Y34
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:46
-Info (11888): Total time spent on timing analysis during the Fitter is 5.40 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:43
+Info (11888): Total time spent on timing analysis during the Fitter is 5.66 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:09
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file /home/ec2016/ra188115/Documents/MC613/Projeto/output_files/jogo_da_memoria.fit.smsg
+Info (144001): Generated suppressed messages file /home/ec2016/ra170600/Documents/MC613/git/output_files/jogo_da_memoria.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 200 warnings
-    Info: Peak virtual memory: 2594 megabytes
-    Info: Processing ended: Mon Jun  4 10:55:23 2018
-    Info: Elapsed time: 00:01:51
-    Info: Total CPU time (on all processors): 00:03:22
+    Info: Peak virtual memory: 2597 megabytes
+    Info: Processing ended: Mon Jun  4 12:19:43 2018
+    Info: Elapsed time: 00:01:49
+    Info: Total CPU time (on all processors): 00:03:21
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/ec2016/ra188115/Documents/MC613/Projeto/output_files/jogo_da_memoria.fit.smsg.
+The suppressed messages can be found in /home/ec2016/ra170600/Documents/MC613/git/output_files/jogo_da_memoria.fit.smsg.
 
 

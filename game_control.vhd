@@ -90,6 +90,8 @@ architecture rtl of game_control is
   
   signal p1 : std_logic_vector (3 downto 0);
   signal p2 : std_logic_vector (3 downto 0);
+  signal p3 : std_logic_vector (3 downto 0);
+  
   
   signal c_aux, l_aux : integer range 0 to 9;
 begin
@@ -234,6 +236,7 @@ begin
 								flag := 0;
 							else -- a posicao ja tem uma carta
 								rand := rand + 1; -- vai pra prox posicao
+								--rand := (rand mod n_cards);
 								if rand >= n_cards then rand := 0;-- ultrapassou o limite de cartas
 								end if;
 							end if;
@@ -241,7 +244,7 @@ begin
 					else
 						-- Quando pronta a mesa, passa para o proximo estado
 						next_state <= "0101";
-						set_table <= '0';
+						--set_table <= '0';
 					end if;
 	
 				when "0101" =>
@@ -250,8 +253,9 @@ begin
 					
 					p1 <= std_logic_vector(to_unsigned((game_table(l_aux*8 + c_aux) mod 10), 4));
 					p2 <= std_logic_vector(to_unsigned((game_table(l_aux*8 + c_aux)/10 mod 10), 4));
-					
+					p3 <= "000" & table_map(l_aux*8 + c_aux);
 					if SW(9) = '1' then next_state <= "0111";
+						set_table <= '0';
 					end if;				
 					
 				when others =>
@@ -294,7 +298,7 @@ begin
 	
 	print4 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(n_cards mod 10, 4)),
+		  p3,
 		  HEX4
 	) ;
 	
