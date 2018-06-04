@@ -88,12 +88,13 @@ architecture rtl of game_control is
   signal table_size : integer range 0 to 9;
   signal set_table  : std_logic;
   
-  signal p1 : std_logic_vector (3 downto 0);
-  signal p2 : std_logic_vector (3 downto 0);
-  signal p3 : std_logic_vector (3 downto 0);
+  signal p1, p2, p3, p4 : std_logic_vector (3 downto 0);
   
+  
+  signal asdf : integer range 0 to 100;
   
   signal c_aux, l_aux : integer range 0 to 9;
+  signal flag2 : std_logic;
 begin
 	
 
@@ -213,38 +214,48 @@ begin
 					
 						-- Zera o mapeamento das posicoes da mesa.
 						table_map(i) <= '0';
-				
 						i := i + 1;
 					end loop;
 				
 					next_state <= "0100";
 					i := 0;
+					set_table <= '1';
 					
 				when "0100" =>			
-					if i < n_cards then
-						if flag = 0 then -- determina indice inicial posicao da carta
-							seed := (seed*A + B) mod M;
-							rand := (seed mod n_cards); -- rand eh o indice na mesa
+					flag2 <= not flag2;
+					if (flag2 = '1') then
+						p1 <= std_logic_vector(to_unsigned((i mod 10), 4));
+						p2 <= std_logic_vector(to_unsigned((i/10 mod 10), 4));
+					
+						p3 <= std_logic_vector(to_unsigned((rand mod 10), 4));
+						p4 <= std_logic_vector(to_unsigned((rand/10 mod 10), 4));
+					
+						if i < n_cards then
+							if flag = 0 then -- determina indice inicial posicao da carta
+								seed := (seed*A + B) mod M;
+								rand := (seed mod n_cards); -- rand eh o indice na mesa
 
-							aux := i/2;	-- indice no deck
-							flag := 1;	-- posicao selecionada
-						else
-							if table_map(rand) = '0' then -- nao tem carta naquela posicao
-								table_map(rand) <= '1';    -- Marca posicao como ocupada
-								game_table(rand) <= deck(aux);
-								i := i + 1;
-								flag := 0;
-							else -- a posicao ja tem uma carta
-								rand := rand + 1; -- vai pra prox posicao
-								--rand := (rand mod n_cards);
-								if rand >= n_cards then rand := 0;-- ultrapassou o limite de cartas
+								aux := i/2;	-- indice no deck
+								flag := 1;	-- posicao selecionada
+							else
+								if table_map(rand) = '0' then -- nao tem carta naquela posicao
+									table_map(rand) <= '1';    -- Marca posicao como ocupada
+									game_table(rand) <= deck(aux);
+									i := i + 1;
+									flag := 0;
+								else -- a posicao ja tem uma carta
+									rand := rand + 1; -- vai pra prox posicao
+									rand := (rand mod n_cards);
+									--if rand >= n_cards then rand := 0;-- ultrapassou o limite de cartas
+									--end if;
 								end if;
 							end if;
+						else
+							asdf <= i;
+							-- Quando pronta a mesa, passa para o proximo estado
+							next_state <= "0101";
+							set_table <= '1';
 						end if;
-					else
-						-- Quando pronta a mesa, passa para o proximo estado
-						next_state <= "0101";
-						--set_table <= '0';
 					end if;
 	
 				when "0101" =>
@@ -285,26 +296,27 @@ begin
 	
 	print2 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(c_aux, 4)),
+		  p3,
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(l_aux, 4)),
+		  p4,
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  p3,
+		  --p3,
+		  std_logic_vector(to_unsigned((asdf mod 10), 4)),
 		  HEX4
 	) ;
 	
 	print5 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((n_cards/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((asdf/10 mod 10), 4)),
 		  HEX5
 	) ;
 	
