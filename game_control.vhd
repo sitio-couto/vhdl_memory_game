@@ -9,6 +9,7 @@ entity game_control is
     CLOCK_50 : in std_logic;
     PS2_DAT : inout STD_LOGIC;
     PS2_CLK : inout STD_LOGIC;
+	 SW	: in  std_logic_vector(9 downto 0);
 	 HEX5 : out std_logic_vector(6 downto 0);
 	 HEX4 : out std_logic_vector(6 downto 0);
 	 HEX3 : out std_logic_vector(6 downto 0);
@@ -89,6 +90,8 @@ architecture rtl of game_control is
   
   signal p1 : std_logic_vector (3 downto 0);
   signal p2 : std_logic_vector (3 downto 0);
+  
+  signal c_aux, l_aux : integer range 0 to 9;
 begin
 	
 
@@ -222,17 +225,16 @@ begin
 							rand := (seed mod n_cards); -- rand eh o indice na mesa
 
 							aux := i/2;	-- indice no deck
-							flag := 1;
+							flag := 1;	-- posicao selecionada
 						else
 							if table_map(rand) = '0' then -- nao tem carta naquela posicao
-								table_map(rand) <= '1'; -- Marca posicao como ocupada
+								table_map(rand) <= '1';    -- Marca posicao como ocupada
 								game_table(rand) <= deck(aux);
 								i := i + 1;
 								flag := 0;
 							else -- a posicao ja tem uma carta
 								rand := rand + 1; -- vai pra prox posicao
-								if rand >= n_cards then -- ultrapassou o limite de cartas
-									rand := 0;
+								if rand >= n_cards then rand := 0;-- ultrapassou o limite de cartas
 								end if;
 							end if;
 						end if;
@@ -241,11 +243,18 @@ begin
 						next_state <= "0101";
 						set_table <= '0';
 					end if;
+	
+				when "0101" =>
+					c_aux <= to_integer(unsigned(SW(3 downto 0)));
+					l_aux <= to_integer(unsigned(SW(7 downto 4))); 
+					
+					p1 <= std_logic_vector(to_unsigned((game_table(l_aux*8 + c_aux) mod 10), 4));
+					p2 <= std_logic_vector(to_unsigned((game_table(l_aux*8 + c_aux)/10 mod 10), 4));
+					
+					if SW(9) = '1' then next_state <= "0111";
+					end if;				
 					
 				when others =>
-					p1 <= std_logic_vector(to_unsigned((game_table(0) mod 10), 4));
-					p2 <= std_logic_vector(to_unsigned((game_table(0)/10 mod 10), 4));
-				
 					next_state <= "0000";
 			end case;
 		end if;
@@ -266,32 +275,32 @@ begin
 	
 	print1 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck(0)/10 mod 10), 4)),
+		  p2,
 		  HEX1
 	) ;
 	
 	print2 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck(1) mod 10), 4)),
+		  std_logic_vector(to_unsigned(c_aux, 4)),
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck(1)/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned(l_aux, 4)),
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck(2) mod 10), 4)),
+		  std_logic_vector(to_unsigned(n_cards mod 10, 4)),
 		  HEX4
 	) ;
 	
 	print5 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((deck(2)/10 mod 10), 4)),
+		  std_logic_vector(to_unsigned((n_cards/10 mod 10), 4)),
 		  HEX5
 	) ;
 	
