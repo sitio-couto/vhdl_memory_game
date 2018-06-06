@@ -51,18 +51,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE game_control.vhd
-set_global_assignment -name VHDL_FILE bin2dec.vhd
-set_global_assignment -name VHDL_FILE ram_block.vhd
-set_global_assignment -name VHDL_FILE ram.vhd
-set_global_assignment -name VHDL_FILE ps2_iobase.vhd
-set_global_assignment -name VHDL_FILE kbdex_ctrl.vhd
-set_global_assignment -name VHDL_FILE kbd_alphanum.vhd
-set_global_assignment -name VHDL_FILE ff_t.vhd
-set_global_assignment -name VHDL_FILE ff_d.vhd
-set_global_assignment -name VHDL_FILE code2ascii.vhd
-set_global_assignment -name VHDL_FILE bin2hex.vhd
-set_global_assignment -name VHDL_FILE ascii_2_num.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -324,8 +312,20 @@ set_location_assignment PIN_E12 -to VGA_R[6]
 set_location_assignment PIN_F13 -to VGA_R[7]
 set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_D11 -to VGA_VS
+set_global_assignment -name VHDL_FILE ready_table.vhd
+set_global_assignment -name VHDL_FILE config_table.vhd
+set_global_assignment -name VHDL_FILE game_control.vhd
+set_global_assignment -name VHDL_FILE bin2dec.vhd
+set_global_assignment -name VHDL_FILE ram_block.vhd
+set_global_assignment -name VHDL_FILE ram.vhd
+set_global_assignment -name VHDL_FILE ps2_iobase.vhd
+set_global_assignment -name VHDL_FILE kbdex_ctrl.vhd
+set_global_assignment -name VHDL_FILE kbd_alphanum.vhd
+set_global_assignment -name VHDL_FILE ff_t.vhd
+set_global_assignment -name VHDL_FILE ff_d.vhd
+set_global_assignment -name VHDL_FILE code2ascii.vhd
+set_global_assignment -name VHDL_FILE bin2hex.vhd
+set_global_assignment -name VHDL_FILE ascii_2_num.vhd
 set_global_assignment -name VHDL_FILE initialize.vhd
 set_global_assignment -name VHDL_FILE game_package.vhd
-set_global_assignment -name VHDL_FILE output_files/config_table.vhd
-set_global_assignment -name VHDL_FILE output_files/ready_table.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

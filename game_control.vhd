@@ -167,7 +167,7 @@ begin
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
-		  key_number(3 downto 0),
+		  p1,
 		  HEX0
 	) ;
 	
@@ -179,20 +179,20 @@ begin
 	
 	print2 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(n_players, 4)),
+		  std_logic_vector(to_unsigned(c_aux, 4)),
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(t_cards, 4)),
+		  std_logic_vector(to_unsigned(l_aux, 4)),
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned(n_pairs, 4)),
+		  std_logic_vector(to_unsigned(n_cards, 4)),
 		  HEX4
 	) ;
 	
