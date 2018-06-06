@@ -3,6 +3,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.game_package.all;
 
 entity game_control is
   port (
@@ -19,57 +20,8 @@ entity game_control is
 	 LEDR : out std_logic_vector(9 downto 0)
   );
 end game_control ;
-
 architecture rtl of game_control is
-  component kbd_alphanum is
-    port (
-      clk : in std_logic;
-      key_on : in std_logic_vector(2 downto 0);
-      key_code : in std_logic_vector(47 downto 0);
-      HEX1 : out std_logic_vector(3 downto 0); -- GFEDCBA
-      HEX0 : out std_logic_vector(3 downto 0) -- GFEDCBA
-    );
-  end component;
-  
-  component kbdex_ctrl is
-    generic(
-      clkfreq : integer
-    );
-    port(
-      ps2_data : inout std_logic;
-      ps2_clk : inout std_logic;
-      clk :	in std_logic;
-      en : in std_logic;
-      resetn : in std_logic;
-      lights : in std_logic_vector(2 downto 0);
-      key_on : out std_logic_vector(2 downto 0);
-      key_code : out std_logic_vector(47 downto 0)
-    );
-  end component;
-  		  
-  component ram is
-    port (
-      Clock : in std_logic;
-      Address : in std_logic_vector(9 downto 0);
-      DataIn : in std_logic_vector(31 downto 0);
-      DataOut : out std_logic_vector(31 downto 0);
-      WrEn : in std_logic
-    );
-  end component;
-  
-  component ascii_2_num is
-    port (key_pressed: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		    numeric : OUT std_logic_vector (7 downto 0)
-	 );
-  end component;
-  
-  component bin2dec is
-	 port (SW : in std_logic_vector (3 downto 0);
-			 HEX0 : out std_logic_vector (6 downto 0)
-	 );
-  end component;
-  
-  type vetor is array (0 to 100) of integer range 0 to 100;
+
   signal mesa : vetor;
 
   signal state, next_state : std_logic_vector (3 downto 0);
@@ -95,6 +47,12 @@ architecture rtl of game_control is
   
   signal c_aux, l_aux : integer range 0 to 9;
   signal flag2 : std_logic;
+  
+  -- Singnals for block control.
+  signal configure: std_logic := '0';
+  signal config_ready : std_logic;
+  signal seed_in : integer range 0 to 50000000;
+  signal n_cards_aux : integer range 0 to 79;
 begin
 	
 
@@ -128,13 +86,17 @@ begin
 			key_number
 	);
 	
-	-- Define numero de cartas na mesa.
-	with n_pairs select n_cards <=
-		 8 when 1,
-		16 when 2,
-		32 when 3,
-		64 when 4,
-		 0 when others;
+	settings : config_table 
+		port map (
+			CLOCK_50,
+			configure,
+			key_on,
+			key_number,
+			config_ready,
+			n_players, t_cards, n_pairs,
+			n_cards,
+			seed_in
+		);
 	
 	process
 		variable counter  : integer range 0 to 50000000;
@@ -157,39 +119,19 @@ begin
 		--FIM CONTADOR
 	
 		if (key_on /= "000" and key_on_prev = "000") or set_table = '1' then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
-				
-			
 		
 			case state is
 				when "0000" =>
-					p1 <= std_logic_vector(to_unsigned((deck(0) mod 10), 4));
-					n_players <= to_integer(unsigned(key_number(3 downto 0)));
-					if to_integer(unsigned(key_number(3 downto 0))) > 1 and to_integer(unsigned(key_number(3 downto 0))) < 5 then 
-						next_state <= "0001";
-					end if;
-					seed := counter;
+					-- Sinaliza "game_config" para que execute.
+					configure <= '1';
+					next_state <= "0001";
 				when "0001" =>
-					t_cards <= to_integer(unsigned(key_number(3 downto 0)));
-					if to_integer(unsigned(key_number(3 downto 0))) > 0 and to_integer(unsigned(key_number(3 downto 0))) < 4 then 
+					-- Aguarda "game_config" sinalizar que terminou a execucao.
+					if (config_ready = '1') then
+						configure <= '0';		 -- Deixa "game_config" em espera.
 						next_state <= "0010";
 					end if;
 				when "0010" =>
-					n_pairs <= to_integer(unsigned(key_number(3 downto 0)));
-					
-					if t_cards = 1 then -- Se for apenas cor (8 pares);
-						if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-							next_state <= "0011"; -- Valido
-						end if;
-					elsif t_cards = 2 then -- Se for apenas numero (10 pares)
-						if to_integer(unsigned(key_number(3 downto 0))) < 3 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-							next_state <= "0011"; -- Valido
-						end if;
-					elsif t_cards = 3 then -- Se for numeros e cores (80 pares)
-						if to_integer(unsigned(key_number(3 downto 0))) < 5 and to_integer(unsigned(key_number(3 downto 0))) /= 0 then 
-							next_state <= "0011"; -- Valido
-						end if;
-					end if;
-					
 					-- ZERAMENTO DO DECK.
 					i := 0;
 					while (i < 80) loop
@@ -199,6 +141,7 @@ begin
 					
 					-- FLAG PARA INICILIZAR A MESA.
 					set_table <= '1';
+					next_state <= "0011";
 					
 				when "0011" => 
 					-- INICIALIZAÇAO DO DECK.
@@ -280,11 +223,10 @@ begin
 	
 	state <= next_state;
 	
-	
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
 	print0 : bin2dec 
 		port map (
-		  p1,
+		  key_number(3 downto 0),
 		  HEX0
 	) ;
 	
@@ -296,21 +238,20 @@ begin
 	
 	print2 : bin2dec 
 		port map (
-		  p3,
+		  std_logic_vector(to_unsigned(n_players, 4)),
 		  HEX2
 	) ;
 	
 	
 	print3 : bin2dec 
 		port map (
-		  p4,
+		  std_logic_vector(to_unsigned(t_cards, 4)),
 		  HEX3
 	) ;
 	
 	print4 : bin2dec 
 		port map (
-		  --p3,
-		  std_logic_vector(to_unsigned((asdf mod 10), 4)),
+		  std_logic_vector(to_unsigned(n_pairs, 4)),
 		  HEX4
 	) ;
 	

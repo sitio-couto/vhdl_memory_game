@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Jun  4 13:57:49 2018
+Analysis & Synthesis Status : Successful - Wed Jun  6 09:59:27 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : jogo_da_memoria
 Top-level Entity Name : game_control
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1056
+Total registers : 1028
 Total pins : 65
 Total virtual pins : 0
 Total block memory bits : 0
