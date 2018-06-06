@@ -66,16 +66,17 @@ package game_package is
 	  );
 	end component;
   
-  component create_table is
-    port (
+  component ready_table is
+	 port (
 		 CLOCK_50    : in std_logic;
-		 set_table   : in std_logic;
+		 set_table 	 : in std_logic;
 		 table_ready : out std_logic;
 		 t_cards     : in integer range 0 to 9;
 		 n_cards     : in integer range 0 to 79;
 		 seed_in     : in integer range 0 to 50000000;
-		 game_table  : out vetor
-	 );
-  end component;
-  
+		 game_table  : out vetor;
+		 LEDR			 : out std_logic_vector (1 downto 0)
+	  );
+	end component;
+
 end game_package;

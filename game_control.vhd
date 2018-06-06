@@ -38,7 +38,6 @@ architecture rtl of game_control is
   signal deck, game_table : vetor;
   signal table_map  : std_logic_vector(0 to 79);
   signal table_size : integer range 0 to 9;
-  signal set_table  : std_logic;
   
   signal p1, p2, p3, p4 : std_logic_vector (3 downto 0);
   
@@ -49,9 +48,12 @@ architecture rtl of game_control is
   signal flag2 : std_logic;
   
   -- Singnals for block control.
-  signal configure: std_logic := '0';
+  signal configure : std_logic := '0';
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
+  
+  signal set_table : std_logic := '0';
+  signal table_ready : std_logic;
 begin
 	
 
@@ -96,16 +98,22 @@ begin
 			n_cards,
 			seed_in
 		);
+		
+	ramdomize : ready_table 
+		port map (
+			CLOCK_50,
+			set_table,
+			table_ready,
+			t_cards,
+			n_cards,
+			seed_in,
+			game_table,
+		   LEDR(1 downto 0)
+		);
 	
 	process
-		variable counter  : integer range 0 to 50000000;
 		variable i, aux, lin1, col1, lin2, col2, index : integer range 0 to 100;
 		variable rand, rand1, rand2, lin, col, flag 	 : integer range 0 to 100;
-		
-		variable seed: positive := 61631;
-		constant M: integer := 502321;
-		constant A: integer := 6521;
-		constant B: integer := 88977;
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
 		if (key_on /= "000" and key_on_prev = "000") or set_table = '1' then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
@@ -122,76 +130,19 @@ begin
 						next_state <= "0010";
 					end if;
 				when "0010" =>
-					-- ZERAMENTO DO DECK.
-					i := 0;
-					while (i < 80) loop
-						deck(i) <= 0;
-						i := i + 1;
-					end loop; 
-					
+				
 					-- FLAG PARA INICILIZAR A MESA.
 					set_table <= '1';
 					next_state <= "0011";
 					
 				when "0011" => 
-					-- INICIALIZAÇAO DO DECK.
-					i := 0;
-					while (i < 80) loop
-						if t_cards = 1 and i < 8 then
-							deck(i) <= i*10;
-						elsif t_cards = 2 and i < 10 then 
-							deck(i) <= i;
-						elsif t_cards = 3 then 
-							deck(i) <= i;
-						end if;
 					
-						-- Zera o mapeamento das posicoes da mesa.
-						table_map(i) <= '0';
-						i := i + 1;
-					end loop;
-				
-					next_state <= "0100";
-					i := 0;
-					set_table <= '1';
-					
-				when "0100" =>			
-					flag2 <= not flag2;
-					if (flag2 = '1') then
-						p1 <= std_logic_vector(to_unsigned((i mod 10), 4));
-						p2 <= std_logic_vector(to_unsigned((i/10 mod 10), 4));
-					
-						p3 <= std_logic_vector(to_unsigned((rand mod 10), 4));
-						p4 <= std_logic_vector(to_unsigned((rand/10 mod 10), 4));
-					
-						if i < n_cards then
-							if flag = 0 then -- determina indice inicial posicao da carta
-								seed := (seed*A + B) mod M;
-								rand := (seed mod n_cards); -- rand eh o indice na mesa
-
-								aux := i/2;	-- indice no deck
-								flag := 1;	-- posicao selecionada
-							else
-								if table_map(rand) = '0' then -- nao tem carta naquela posicao
-									table_map(rand) <= '1';    -- Marca posicao como ocupada
-									game_table(rand) <= deck(aux);
-									i := i + 1;
-									flag := 0;
-								else -- a posicao ja tem uma carta
-									rand := rand + 1; -- vai pra prox posicao
-									rand := (rand mod n_cards);
-									--if rand >= n_cards then rand := 0;-- ultrapassou o limite de cartas
-									--end if;
-								end if;
-							end if;
-						else
-							asdf <= i;
-							-- Quando pronta a mesa, passa para o proximo estado
-							next_state <= "0101";
-							set_table <= '1';
-						end if;
+					if (table_ready = '1') then
+						set_table <= '0';
+						next_state <= "0100";
 					end if;
 	
-				when "0101" =>
+				when "0100" =>
 					c_aux <= to_integer(unsigned(SW(3 downto 0)));
 					l_aux <= to_integer(unsigned(SW(7 downto 4))); 
 					
@@ -247,7 +198,7 @@ begin
 	
 	print5 : bin2dec 
 		port map (
-		  std_logic_vector(to_unsigned((asdf/10 mod 10), 4)),
+		  "0000",
 		  HEX5
 	) ;
 	
