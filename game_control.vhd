@@ -52,7 +52,6 @@ architecture rtl of game_control is
   signal configure: std_logic := '0';
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
-  signal n_cards_aux : integer range 0 to 79;
 begin
 	
 
@@ -109,15 +108,6 @@ begin
 		constant B: integer := 88977;
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-	
-		--CONTADOR PARA GERAR NUMEROS ALEATORIOS
-		counter := counter + 1;
-		
-		if (counter = 50000000) then 
-			counter := 0;
-		end if;
-		--FIM CONTADOR
-	
 		if (key_on /= "000" and key_on_prev = "000") or set_table = '1' then	-- nao havia tecla pressionada no clock anterior e foi pressionada agora
 		
 			case state is
