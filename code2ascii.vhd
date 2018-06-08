@@ -119,6 +119,10 @@ begin
 						 x"37" when x"1006C",--7
 						 x"38" when x"10075",--8
 						 x"39" when x"1007D",--9
+						 
+						 -- tecla Enter
+						 x"0D" when x"1005A", -- Com capital
+						 x"0D" when x"0005A", -- Sem capital
 						
 						 x"00" when others; 
 						 

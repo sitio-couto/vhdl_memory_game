@@ -116,6 +116,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[6]",
 					"strict" : false
 				},

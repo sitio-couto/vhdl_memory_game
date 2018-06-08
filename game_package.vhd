@@ -43,7 +43,8 @@ package game_package is
   
   component ascii_2_num is
     port (key_pressed: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		    numeric : OUT std_logic_vector (7 downto 0)
+		    numeric : OUT std_logic_vector (7 downto 0);
+			 enter_on : OUT std_logic
 	 );
   end component;
   

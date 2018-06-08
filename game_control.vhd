@@ -27,6 +27,7 @@ architecture rtl of game_control is
   signal key_pressed, key_number : std_logic_vector (7  downto 0);
   signal key_code    : std_logic_vector (47 downto 0);
   
+  signal enter_on : std_logic;
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 79;
   
@@ -38,6 +39,8 @@ architecture rtl of game_control is
   signal seed_in : integer range 0 to 50000000;
   
 begin
+	
+	LEDR(0) <= enter_on;
 	
   kbdex_ctrl_inst : kbdex_ctrl
     generic map (
@@ -66,7 +69,8 @@ begin
 	translate : ascii_2_num 
 	  port map (
 			key_pressed,
-			key_number
+			key_number,
+			enter_on
 	);
 	
 	settings : config_table 
@@ -104,6 +108,14 @@ begin
 				next_state <= "0010";
 			end if;
 			
+		when "0010" =>
+			if (enter_on = '1') then
+				next_state <= "0011";
+			end if;
+		when "0011" =>
+			if (enter_on = '0') then 
+				next_state <= "0010";
+			end if;
 		when others =>
 		end case;
 	
