@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Fri Jun  8 13:10:34 2018
+Fri Jun  8 15:25:12 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,29 +13,37 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |game_control|kbdex_ctrl:kbdex_ctrl_inst|cmdstate
-  9. State Machine - |game_control|kbdex_ctrl:kbdex_ctrl_inst|state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst
- 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl
- 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
- 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 23. Port Connectivity Checks: "config_table:settings"
- 24. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
- 25. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
- 26. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
- 27. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |game_control|kbdex_ctrl:kbdex_ctrl_inst|cmdstate
+ 10. State Machine - |game_control|kbdex_ctrl:kbdex_ctrl_inst|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst
+ 18. Parameter Settings for User Entity Instance: kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0
+ 28. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1
+ 29. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2
+ 30. Port Connectivity Checks: "config_table:settings"
+ 31. Port Connectivity Checks: "ascii_2_num:translate"
+ 32. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
+ 33. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
+ 34. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
+ 35. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -61,17 +69,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun  8 13:10:34 2018       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun  8 15:25:12 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 182                                         ;
+; Total registers                 ; 1712                                        ;
 ; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total DSP Blocks                ; 2                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -192,6 +200,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; ready_table.vhd                  ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd            ;         ;
 ; config_table.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd           ;         ;
 ; game_control.vhd                 ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd           ;         ;
 ; bin2dec.vhd                      ; yes             ; User VHDL File               ; /home/ec2016/ra188115/Documents/MC613/Projeto/bin2dec.vhd                ;         ;
@@ -216,6 +225,15 @@ refer to the applicable agreement for further details.
 ; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_42m.tdf      ;         ;
 ; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7kh.tdf ;         ;
 ; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_kse.tdf       ;         ;
+; db/lpm_divide_65m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_65m.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf       ;         ;
+; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_45m.tdf      ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf       ;         ;
+; db/lpm_divide_c2m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_c2m.tdf      ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_fkh.tdf ;         ;
+; db/alt_u_div_4te.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_4te.tdf       ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
 
 
@@ -224,69 +242,107 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 360            ;
+; Estimate of Logic utilization (ALMs needed) ; 2591           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 592            ;
-;     -- 7 input functions                    ; 4              ;
-;     -- 6 input functions                    ; 116            ;
-;     -- 5 input functions                    ; 104            ;
-;     -- 4 input functions                    ; 121            ;
-;     -- <=3 input functions                  ; 247            ;
+; Combinational ALUT usage for logic          ; 3867           ;
+;     -- 7 input functions                    ; 17             ;
+;     -- 6 input functions                    ; 640            ;
+;     -- 5 input functions                    ; 383            ;
+;     -- 4 input functions                    ; 1101           ;
+;     -- <=3 input functions                  ; 1726           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 182            ;
+; Dedicated logic registers                   ; 1712           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 65             ;
 ;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
+; Total DSP Blocks                            ; 2              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 158            ;
-; Total fan-out                               ; 2996           ;
-; Average fan-out                             ; 3.31           ;
+; Maximum fan-out                             ; 1688           ;
+; Total fan-out                               ; 21233          ;
+; Average fan-out                             ; 3.72           ;
 +---------------------------------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                  ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name         ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                          ; 592 (8)             ; 182 (20)                  ; 0                 ; 0          ; 65   ; 0            ; |game_control                                                                                                 ; game_control        ; work         ;
-;    |ascii_2_num:translate|             ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                           ; ascii_2_num         ; work         ;
-;    |bin2dec:print0|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                  ; bin2dec             ; work         ;
-;    |bin2dec:print2|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                  ; bin2dec             ; work         ;
-;    |bin2dec:print4|                    ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                  ; bin2dec             ; work         ;
-;    |bin2dec:print5|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                  ; bin2dec             ; work         ;
-;    |config_table:settings|             ; 20 (20)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                           ; config_table        ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|    ; 232 (84)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                  ; kbd_alphanum        ; work         ;
-;       |code2ascii:\G1:0:translate|     ; 103 (103)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                       ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|     ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                       ; code2ascii          ; work         ;
-;       |ff_d:shift_flop|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                  ; ff_d                ; work         ;
-;       |ff_t:caps_flop|                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                   ; ff_t                ; work         ;
-;    |kbdex_ctrl:kbdex_ctrl_inst|        ; 192 (71)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                      ; kbdex_ctrl          ; work         ;
-;       |ps2_iobase:ps2_ctrl|            ; 121 (121)           ; 78 (78)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                  ; ps2_iobase          ; work         ;
-;    |lpm_divide:Div0|                   ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_4am:auto_generated|  ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
-;          |sign_div_unsign_akh:divider| ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;             |alt_u_div_qse:divider|    ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
-;    |lpm_divide:Mod0|                   ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_42m:auto_generated|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|    ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |lpm_divide:Mod1|                   ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_42m:auto_generated|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|    ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |lpm_divide:Mod2|                   ; 37 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 37 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 37 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-;    |lpm_divide:Mod3|                   ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|  ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|    ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                           ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |game_control                             ; 3867 (264)          ; 1712 (24)                 ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                                       ; game_control        ; work         ;
+;    |ascii_2_num:translate|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                 ; ascii_2_num         ; work         ;
+;    |bin2dec:print0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                                        ; bin2dec             ; work         ;
+;    |bin2dec:print2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                                        ; bin2dec             ; work         ;
+;    |bin2dec:print4|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                                        ; bin2dec             ; work         ;
+;    |bin2dec:print5|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                                        ; bin2dec             ; work         ;
+;    |config_table:settings|                ; 66 (66)             ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                                                 ; config_table        ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|       ; 234 (84)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                        ; kbd_alphanum        ; work         ;
+;       |code2ascii:\G1:0:translate|        ; 105 (105)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                                             ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|        ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                             ; code2ascii          ; work         ;
+;       |ff_d:shift_flop|                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                                        ; ff_d                ; work         ;
+;       |ff_t:caps_flop|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                                         ; ff_t                ; work         ;
+;    |kbdex_ctrl:kbdex_ctrl_inst|           ; 194 (72)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                            ; kbdex_ctrl          ; work         ;
+;       |ps2_iobase:ps2_ctrl|               ; 122 (122)           ; 78 (78)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                                        ; ps2_iobase          ; work         ;
+;    |lpm_divide:Div0|                      ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_4am:auto_generated|     ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                         ; lpm_divide_4am      ; work         ;
+;          |sign_div_unsign_akh:divider|    ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                             ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_qse:divider|       ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                       ; alt_u_div_qse       ; work         ;
+;    |lpm_divide:Div1|                      ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_4am:auto_generated|     ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                                         ; lpm_divide_4am      ; work         ;
+;          |sign_div_unsign_akh:divider|    ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                             ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_qse:divider|       ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                       ; alt_u_div_qse       ; work         ;
+;    |lpm_divide:Mod0|                      ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_42m:auto_generated|     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
+;          |sign_div_unsign_7kh:divider|    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_kse:divider|       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
+;    |lpm_divide:Mod1|                      ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_42m:auto_generated|     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
+;          |sign_div_unsign_7kh:divider|    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_kse:divider|       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
+;    |lpm_divide:Mod2|                      ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|     ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|       ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod3|                      ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|     ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 28 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|       ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod4|                      ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|     ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 45 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|       ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod5|                      ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|     ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|       ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
+;    |ready_table:randomize|                ; 2863 (638)          ; 1474 (1474)               ; 0                 ; 2          ; 0    ; 0            ; |game_control|ready_table:randomize                                                                                                 ; ready_table         ; work         ;
+;       |lpm_divide:Mod0|                   ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_65m:auto_generated|  ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m      ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_o2f:divider|    ; 959 (959)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_45m:auto_generated|  ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 1192 (1192)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
+;       |lpm_divide:Mod2|                   ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_c2m:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated                                                   ; lpm_divide_c2m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_4te:divider|    ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider ; alt_u_div_4te       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Independent 18x18 plus 36       ; 1           ;
+; Total number of DSP blocks      ; 2           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 2           ;
++---------------------------------+-------------+
 
 
 Encoding Type:  One-Hot
@@ -351,41 +407,591 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; p2[1..3]                                                    ; Merged with p2[0]                                                   ;
 ; p4[1..3]                                                    ; Merged with p2[0]                                                   ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key1code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key1code[13]                 ;
-; state[3]                                                    ; Merged with state[2]                                                ;
-; kbdex_ctrl:kbdex_ctrl_inst|key2code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key2code[13]                 ;
-; next_state[3]                                               ; Merged with next_state[2]                                           ;
+; ready_table:randomize|deck[0][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[0][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[0][3]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[0][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[0][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[0][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[10][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[10][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[10][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[10][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[10][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[11][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[11][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[11][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[11][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[12][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[12][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[12][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[12][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[12][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[13][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[13][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[13][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[13][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[14][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[14][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[14][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[14][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[15][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[15][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[15][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[16][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[17][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[17][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[17][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[17][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[17][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[18][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[18][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[18][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[18][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[18][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[19][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[19][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[19][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[19][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[1][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[1][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[1][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[1][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[20][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[20][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[20][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[20][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[20][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[21][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[21][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[21][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[21][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[22][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[22][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[22][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[22][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[23][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[23][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[23][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[24][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[24][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[24][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[24][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[24][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[25][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[25][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[25][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[25][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[26][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[26][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[26][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[26][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[27][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[27][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[27][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[28][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[28][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[28][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[28][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[29][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[29][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[29][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[2][0]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[2][3]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[2][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[2][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[30][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[30][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[30][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[31][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[31][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[32][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[33][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[33][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[33][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[33][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[33][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[34][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[34][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[34][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[34][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[34][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[35][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[35][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[35][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[35][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[36][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[36][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[36][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[36][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[36][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[37][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[37][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[37][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[37][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[38][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[38][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[38][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[38][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[39][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[39][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[39][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[3][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[3][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[40][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[40][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[40][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[40][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[40][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[41][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[41][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[41][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[41][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[42][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[42][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[42][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[42][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[43][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[43][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[43][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[44][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[44][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[44][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[44][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[45][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[45][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[45][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[46][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[46][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[46][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[47][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[47][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[48][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[48][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[48][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[48][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[48][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[49][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[49][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[49][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[49][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[4][0]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[4][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[4][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[4][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[50][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[50][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[50][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[50][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[51][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[51][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[51][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[52][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[52][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[52][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[52][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[53][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[53][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[53][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[54][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[54][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[54][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[55][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[55][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[56][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[56][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[56][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[56][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[57][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[57][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[57][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[58][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[58][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[58][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[59][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[59][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[5][3]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[5][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[60][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[60][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[60][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[61][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[61][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[62][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[62][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[63][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[64][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[65][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[65][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[65][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[65][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[65][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[66][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[66][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[66][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[66][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[66][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[67][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[67][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[67][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[67][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[68][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[68][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[68][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[68][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[68][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[69][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[69][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[69][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[69][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[6][0]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[6][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[70][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[70][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[70][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[70][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[71][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[71][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[71][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[72][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[72][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[72][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[72][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[72][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[73][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[73][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[73][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[73][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[74][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[74][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[74][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[74][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[75][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[75][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[75][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[76][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[76][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[76][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[76][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[77][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[77][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[77][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[78][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[78][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[78][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[79][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[79][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[7][3]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[7][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[7][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][0]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[8][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[9][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[9][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[9][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[9][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[9][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|divider[0,1,6]                        ; Merged with ready_table:randomize|deck[0][0]                        ;
+; ready_table:randomize|deck[1][3]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[2][2]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[2][4]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[3][2]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[3][3]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[3][4]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[4][3]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[4][5]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[5][1]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[5][4]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[5][5]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[6][3]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[6][4]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[6][5]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[7][6]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
+; ready_table:randomize|deck[10][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[11][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[11][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[11][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[12][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[12][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[13][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[13][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[13][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[14][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[14][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[14][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[15][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[15][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[15][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[15][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[16][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[17][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[17][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[18][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[18][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[19][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[19][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[19][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[20][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[20][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[21][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[21][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[21][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[22][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[22][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[22][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[23][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[23][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[23][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[23][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[24][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[24][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[25][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[25][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[25][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[26][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[26][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[26][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[27][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[27][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[27][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[27][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[28][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[28][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[28][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[29][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[29][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[29][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[29][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[30][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[30][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[30][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[30][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[31][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[31][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[31][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[31][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[31][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[32][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[33][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[33][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[34][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[34][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[35][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[35][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[35][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[36][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[36][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[37][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[37][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[37][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[38][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[38][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[38][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[39][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[39][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[39][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[39][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[40][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[40][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[41][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[41][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[41][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[42][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[42][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[42][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[43][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[43][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[43][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[43][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[44][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[44][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[44][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[45][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[45][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[45][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[45][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[46][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[46][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[46][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[46][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[47][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[47][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[47][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[47][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[47][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[48][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[48][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[49][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[49][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[49][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[50][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[50][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[50][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[51][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[51][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[51][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[51][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[52][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[52][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[52][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[53][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[53][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[53][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[53][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[54][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[54][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[54][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[54][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[55][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[55][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[55][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[55][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[55][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[56][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[56][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[56][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[57][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[57][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[57][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[57][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[58][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[58][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[58][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[58][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[59][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[59][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[59][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[59][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[59][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[60][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[60][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[60][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[60][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[61][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[61][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[61][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[61][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[61][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[62][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[62][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[62][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[62][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[62][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[63][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[64][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[65][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[65][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[66][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[66][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[67][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[67][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[67][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[68][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[68][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[69][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[69][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[69][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[70][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[70][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[70][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[71][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[71][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[71][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[71][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[72][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[72][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[73][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[73][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[73][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[74][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[74][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[74][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[75][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[75][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[75][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[75][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[76][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[76][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[76][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[77][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[77][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[77][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[77][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[78][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[78][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[78][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[78][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[79][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[79][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[79][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[79][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[79][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
+; ready_table:randomize|deck[9][0]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
+; ready_table:randomize|deck[9][3]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
+; ready_table:randomize|deck[2][1]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[3][0]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[4][2]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[5][0]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[5][2]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[6][1]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[7][0]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
+; ready_table:randomize|deck[6][2]                            ; Merged with ready_table:randomize|deck[3][1]                        ;
+; ready_table:randomize|deck[7][1]                            ; Merged with ready_table:randomize|deck[3][1]                        ;
+; ready_table:randomize|deck[7][2]                            ; Merged with ready_table:randomize|deck[3][1]                        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[5..7]  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[3] ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[2]     ; Merged with kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[0] ;
+; kbdex_ctrl:kbdex_ctrl_inst|key2code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key2code[13]                 ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[5..7]                      ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                     ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[2]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                     ;
 ; kbdex_ctrl:kbdex_ctrl_inst|siguplights                      ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                     ;
 ; p4[0]                                                       ; Stuck at GND due to stuck port data_in                              ;
 ; p2[0]                                                       ; Stuck at VCC due to stuck port data_in                              ;
+; ready_table:randomize|deck[0][0]                            ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]                         ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1]     ; Stuck at GND due to stuck port data_in                              ;
-; next_state[2]                                               ; Stuck at GND due to stuck port data_in                              ;
-; state[2]                                                    ; Stuck at GND due to stuck port data_in                              ;
+; next_state[3]                                               ; Stuck at GND due to stuck port data_in                              ;
+; state[3]                                                    ; Stuck at GND due to stuck port data_in                              ;
+; ready_table:randomize|deck[1][0]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[3]     ; Merged with kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[0] ;
-; p5[0]                                                       ; Stuck at GND due to stuck port data_in                              ;
-; Total Number of Removed Registers = 51                      ;                                                                     ;
+; Total Number of Removed Registers = 607                     ;                                                                     ;
 +-------------------------------------------------------------+---------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                  ;
-+----------------------------------------+---------------------------+---------------------------------------------------------+
-; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                  ;
-+----------------------------------------+---------------------------+---------------------------------------------------------+
-; kbdex_ctrl:kbdex_ctrl_inst|hdata[4]    ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4] ;
-;                                        ; due to stuck port data_in ;                                                         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key1code[8] ; Stuck at GND              ; next_state[2]                                           ;
-;                                        ; due to stuck port data_in ;                                                         ;
-; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]    ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1] ;
-;                                        ; due to stuck port data_in ;                                                         ;
-; state[2]                               ; Stuck at GND              ; p5[0]                                                   ;
-;                                        ; due to stuck port data_in ;                                                         ;
-+----------------------------------------+---------------------------+---------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++-------------------------------------+---------------------------+---------------------------------------------------------+
+; Register name                       ; Reason for Removal        ; Registers Removed due to This Register                  ;
++-------------------------------------+---------------------------+---------------------------------------------------------+
+; kbdex_ctrl:kbdex_ctrl_inst|hdata[4] ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4] ;
+;                                     ; due to stuck port data_in ;                                                         ;
+; kbdex_ctrl:kbdex_ctrl_inst|hdata[1] ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1] ;
+;                                     ; due to stuck port data_in ;                                                         ;
++-------------------------------------+---------------------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -393,12 +999,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 182   ;
+; Total registers                              ; 1712  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 29    ;
+; Number of registers using Synchronous Load   ; 613   ;
 ; Number of registers using Asynchronous Clear ; 97    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 112   ;
+; Number of registers using Clock Enable       ; 1609  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -408,8 +1014,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------+---------+
 ; Inverted Register                                             ; Fan out ;
 +---------------------------------------------------------------+---------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsending                         ; 9       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigclkreleased ; 3       ;
+; ready_table:randomize|seed[0]                                 ; 1       ;
+; ready_table:randomize|seed[1]                                 ; 1       ;
+; ready_table:randomize|seed[2]                                 ; 1       ;
+; ready_table:randomize|seed[3]                                 ; 1       ;
+; ready_table:randomize|seed[4]                                 ; 1       ;
+; ready_table:randomize|seed[5]                                 ; 1       ;
+; ready_table:randomize|seed[7]                                 ; 1       ;
+; ready_table:randomize|seed[12]                                ; 1       ;
+; ready_table:randomize|seed[13]                                ; 1       ;
+; ready_table:randomize|seed[14]                                ; 1       ;
+; ready_table:randomize|seed[15]                                ; 1       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsending                         ; 9       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[8]      ; 2       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[6]      ; 2       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[3]      ; 2       ;
@@ -420,7 +1037,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[3]      ; 2       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[2]      ; 2       ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[0]      ; 2       ;
-; Total number of inverted registers = 12                       ;         ;
+; Total number of inverted registers = 23                       ;         ;
 +---------------------------------------------------------------+---------+
 
 
@@ -429,14 +1046,103 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[7] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[4] ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 6 LEs                ; 15 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_control|ready_table:randomize|deck[1][0]                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[5] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[7] ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |game_control|ready_table:randomize|index[2]                           ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[28]                           ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 0 LEs                ; 75 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[8]                            ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p5[1]                                                    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[79][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[78][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[77][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[76][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[75][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[74][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[73][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[72][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[71][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[70][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[69][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[68][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[67][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[66][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[65][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[64][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[63][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[62][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[61][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[60][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[59][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[58][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[57][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[56][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[55][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[54][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[53][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[52][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[51][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[50][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[49][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[48][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[47][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[46][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[45][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[44][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[43][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[42][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[41][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[40][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[39][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[38][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[37][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[36][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[35][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[34][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[33][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[32][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[31][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[30][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[29][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[28][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[27][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[26][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[25][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[24][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[23][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[22][1]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[21][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[20][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[19][2]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[18][0]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[17][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[16][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[15][3]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[14][4]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[13][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[12][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[11][5]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[10][6]                  ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[9][0]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[8][5]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[7][0]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[6][3]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[5][3]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[4][1]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[3][6]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[2][5]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[1][1]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[0][0]                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|rand[4]                            ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
 ; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |game_control|config_table:settings|next_state[0]                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[8] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0] ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[3] ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[14]                           ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|nstate.CODE                   ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector13                    ;
+; 101:1              ; 7 bits    ; 469 LEs       ; 469 LEs              ; 0 LEs                  ; No         ; |game_control|Mux0                                                     ;
+; 101:1              ; 7 bits    ; 469 LEs       ; 469 LEs              ; 0 LEs                  ; No         ; |game_control|ready_table:randomize|Mux3                               ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector10                    ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector12                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 
@@ -508,7 +1214,76 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4 ;
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
@@ -576,14 +1351,91 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                      ;
+; LPM_WIDTHD             ; 32             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                                      ;
+; LPM_WIDTHD             ; 31             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                      ;
+; LPM_WIDTHD             ; 8              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_c2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "config_table:settings"                                                                 ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; n_pairs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; seed_in ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ascii_2_num:translate"                                                                  ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; enter_on ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -634,38 +1486,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 182                         ;
+; arriav_ff             ; 1712                        ;
 ;     CLR               ; 25                          ;
 ;     CLR SLD           ; 21                          ;
-;     ENA               ; 53                          ;
+;     ENA               ; 966                         ;
 ;     ENA CLR           ; 51                          ;
-;     ENA SLD           ; 8                           ;
-;     plain             ; 24                          ;
+;     ENA SLD           ; 592                         ;
+;     plain             ; 57                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 597                         ;
-;     arith             ; 107                         ;
-;         0 data inputs ; 14                          ;
-;         1 data inputs ; 64                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 12                          ;
-;     extend            ; 4                           ;
-;         7 data inputs ; 4                           ;
-;     normal            ; 470                         ;
+; arriav_lcell_comb     ; 3872                        ;
+;     arith             ; 1221                        ;
+;         0 data inputs ; 117                         ;
+;         1 data inputs ; 301                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 219                         ;
+;         4 data inputs ; 511                         ;
+;         5 data inputs ; 43                          ;
+;     extend            ; 17                          ;
+;         7 data inputs ; 17                          ;
+;     normal            ; 2608                        ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 78                          ;
-;         3 data inputs ; 52                          ;
-;         4 data inputs ; 109                         ;
-;         5 data inputs ; 104                         ;
-;         6 data inputs ; 116                         ;
-;     shared            ; 16                          ;
-;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 10                          ;
+;         2 data inputs ; 814                         ;
+;         3 data inputs ; 212                         ;
+;         4 data inputs ; 590                         ;
+;         5 data inputs ; 340                         ;
+;         6 data inputs ; 640                         ;
+;     shared            ; 26                          ;
+;         0 data inputs ; 11                          ;
+;         1 data inputs ; 14                          ;
+;         3 data inputs ; 1                           ;
+; arriav_mac            ; 2                           ;
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.20                       ;
-; Average LUT depth     ; 5.62                        ;
+; Max LUT depth         ; 141.00                      ;
+; Average LUT depth     ; 66.28                       ;
 +-----------------------+-----------------------------+
 
 
@@ -674,7 +1529,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:15     ;
 +----------------+--------------+
 
 
@@ -684,12 +1539,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun  8 13:10:22 2018
+    Info: Processing started: Fri Jun  8 15:24:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ready_table.vhd
-    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 18
+    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 17
     Info (12023): Found entity 1: ready_table File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file config_table.vhd
     Info (12022): Found design unit 1: config_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 18
@@ -727,10 +1582,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file ascii_2
 Info (12021): Found 1 design units, including 0 entities, in source file game_package.vhd
     Info (12022): Found design unit 1: game_package File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_package.vhd Line: 4
 Info (12127): Elaborating entity "game_control" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(26): object "enter_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 26
 Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(31): object "n_pairs" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(39): object "seed_in" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 39
-Warning (10873): Using initial value X (don't care) for net "LEDR[5..1]" at game_control.vhd(20) File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
-Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 45
+Warning (10873): Using initial value X (don't care) for net "LEDR[5..0]" at game_control.vhd(20) File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
+Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 47
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 125
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 148
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(150): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 150
@@ -769,23 +1624,30 @@ Info (10041): Inferred latch for "relbt" at kbdex_ctrl.vhd(266) File: /home/ec20
 Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 212
 Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 114
 Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 161
-Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 60
+Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 62
 Warning (10036): Verilog HDL or VHDL warning at kbd_alphanum.vhd(56): object "dp_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 56
 Info (12128): Elaborating entity "ff_d" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 72
 Info (12128): Elaborating entity "ff_t" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 82
 Info (12128): Elaborating entity "code2ascii" for hierarchy "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 96
-Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 69
-Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 76
+Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 71
+Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 78
 Warning (10036): Verilog HDL or VHDL warning at config_table.vhd(39): object "max_cards" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 39
-Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 127
-Info (278001): Inferred 5 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 103
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 101
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 99
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
+Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 90
+Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 146
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 137
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 113
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -796,8 +1658,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
     Info (12023): Found entity 1: alt_u_div_qse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_qse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
-Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 104
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -808,14 +1670,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_dkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
     Info (12023): Found entity 1: alt_u_div_0te File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_0te.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 103
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 103
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 101
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 101
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -826,6 +1694,42 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7kh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
     Info (12023): Found entity 1: alt_u_div_kse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_kse.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_65m.tdf
+    Info (12023): Found entity 1: lpm_divide_65m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_65m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
+    Info (12023): Found entity 1: alt_u_div_o2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_45m.tdf
+    Info (12023): Found entity 1: lpm_divide_45m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_45m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
+    Info (12023): Found entity 1: alt_u_div_k2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_c2m.tdf
+    Info (12023): Found entity 1: lpm_divide_c2m File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/lpm_divide_c2m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4te.tdf
+    Info (12023): Found entity 1: alt_u_div_4te File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_4te.tdf Line: 22
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
@@ -843,36 +1747,29 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
     Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
     Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-Info (21057): Implemented 725 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5493 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 52 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 660 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 1206 megabytes
-    Info: Processing ended: Fri Jun  8 13:10:34 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (21061): Implemented 5426 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 1252 megabytes
+    Info: Processing ended: Fri Jun  8 15:25:12 2018
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:37
 
 

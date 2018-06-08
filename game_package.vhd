@@ -75,8 +75,7 @@ package game_package is
 		 t_cards     : in integer range 0 to 9;
 		 n_cards     : in integer range 0 to 79;
 		 seed_in     : in integer range 0 to 50000000;
-		 game_table  : out vetor;
-		 LEDR			 : out std_logic_vector (1 downto 0)
+		 game_table  : out vetor
 	  );
 	end component;
 

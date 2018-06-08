@@ -21,15 +21,16 @@ entity game_control is
   );
 end game_control ;
 architecture rtl of game_control is
-
   signal state, next_state : std_logic_vector (3 downto 0) := "0000";
+
+  signal enter_on : std_logic;
   signal key_on, key_on_prev : std_logic_vector (2  downto 0);
   signal key_pressed, key_number : std_logic_vector (7  downto 0);
   signal key_code    : std_logic_vector (47 downto 0);
   
-  signal enter_on : std_logic;
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 79;
+  signal game_table : vetor;
   
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
   
@@ -38,9 +39,10 @@ architecture rtl of game_control is
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
   
+  signal set_table : std_logic := '0';
+  signal table_ready : std_logic;
+  
 begin
-	
-	LEDR(0) <= enter_on;
 	
   kbdex_ctrl_inst : kbdex_ctrl
     generic map (
@@ -84,8 +86,20 @@ begin
 			n_cards,
 			seed_in
 		);
+		
+	randomize : ready_table
+	  port map (
+			 CLOCK_50,
+			 set_table,
+			 table_ready,
+			 t_cards,
+			 n_cards,
+			 seed_in,
+			 game_table
+		 );
 	
 	process
+		variable l, c : integer range 0 to 100;
 	begin 
 	wait until CLOCK_50'event and CLOCK_50 = '1';
 		
@@ -109,14 +123,19 @@ begin
 			end if;
 			
 		when "0010" =>
-			if (enter_on = '1') then
-				next_state <= "0011";
-			end if;
+			set_table <= '1';
+			next_state <= "0011";
 		when "0011" =>
-			if (enter_on = '0') then 
-				next_state <= "0010";
+			if (table_ready = '1') then
+				set_table <= '0';
+				next_state <= "0100";
 			end if;
 		when others =>
+			l := to_integer(unsigned(SW(7 downto 4)));
+			c := to_integer(unsigned(SW(3 downto 0)));
+			
+			p5 <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
+			p6 <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
 		end case;
 	
 		state <= next_state; -- Atualiza estado;
