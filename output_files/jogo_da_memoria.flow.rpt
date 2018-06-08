@@ -1,5 +1,5 @@
 Flow report for jogo_da_memoria
-Fri Jun  8 18:56:31 2018
+Fri Jun  8 19:41:37 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -37,29 +37,24 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun  8 18:56:31 2018       ;
-; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                   ; jogo_da_memoria                             ;
-; Top-level Entity Name           ; game_control                                ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 2,011 / 32,070 ( 6 % )                      ;
-; Total registers                 ; 1115                                        ;
-; Total pins                      ; 65 / 457 ( 14 % )                           ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 2 / 87 ( 2 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Flow Summary                                                              ;
++-----------------------------+---------------------------------------------+
+; Flow Status                 ; Flow Failed - Fri Jun  8 19:41:37 2018      ;
+; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name               ; jogo_da_memoria                             ;
+; Top-level Entity Name       ; game_control                                ;
+; Family                      ; Cyclone V                                   ;
+; Device                      ; 5CSEMA5F31C6                                ;
+; Timing Models               ; Final                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2018 18:54:12 ;
+; Start date & time ; 06/08/2018 19:41:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; jogo_da_memoria     ;
 +-------------------+---------------------+
@@ -78,7 +73,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name  ; Section Id     ;
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273440552276190.152849485118007        ; --              ; --           ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273440552276190.152849768920576        ; --              ; --           ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --              ; --           ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>          ; --           ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --           ; eda_simulation ;
@@ -94,41 +89,29 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:24     ; 1.0                     ; 1246 MB             ; 00:00:34                           ;
-; Fitter                    ; 00:01:34     ; 1.1                     ; 2589 MB             ; 00:03:06                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 1120 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 2.1                     ; 1392 MB             ; 00:00:17                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1324 MB             ; 00:00:02                           ;
-; Total                     ; 00:02:16     ; --                      ; --                  ; 00:04:05                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 1137 MB             ; 00:00:20                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:20                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                 ;
-+---------------------------+------------------------+-------------+-------------+----------------+
-; Module Name               ; Machine Hostname       ; OS Name     ; OS Version  ; Processor type ;
-+---------------------------+------------------------+-------------+-------------+----------------+
-; Analysis & Synthesis      ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; Fitter                    ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; Assembler                 ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; TimeQuest Timing Analyzer ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-+---------------------------+------------------------+-------------+-------------+----------------+
++--------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                            ;
++----------------------+------------------------+-------------+-------------+----------------+
+; Module Name          ; Machine Hostname       ; OS Name     ; OS Version  ; Processor type ;
++----------------------+------------------------+-------------+-------------+----------------+
+; Analysis & Synthesis ; cuba.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
++----------------------+------------------------+-------------+-------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
-quartus_fit --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
-quartus_asm --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
-quartus_sta jogo_da_memoria -c jogo_da_memoria
-quartus_eda --read_settings_files=off --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 
 
 

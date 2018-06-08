@@ -33,7 +33,7 @@ architecture rtl of game_control is
   signal game_table : vetor;
   
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
-  signal p1g, p2g, p3g, p4g, p5g, p6g : std_logic_vector (3 downto 0);
+  signal pa, pb, pc, pd, pe, pf : std_logic_vector (3 downto 0);
   
   -- Signals for block control.
   signal configure : std_logic := '0';
@@ -112,7 +112,8 @@ begin
 			game_over,
 			n_players,
 			n_cards,
-			game_table
+			game_table,
+			pa, pb, pc, pd, pe, pf
 		);
 	
 	process
@@ -154,6 +155,13 @@ begin
 			play_game <= '1';
 			next_state <= "0110";
 		when "0110" =>
+			p1 <= pa;
+			p2 <= pb;
+			p3 <= pc;
+			p4 <= pd;
+			p5 <= pe;
+			p6 <= pf;
+		
 			if (game_over = '1') then
 				play_game <= '0';
 				next_state <= "1111";
