@@ -11,18 +11,15 @@ entity ready_table is
 		 t_cards     : in integer range 0 to 9;
 		 n_cards     : in integer range 0 to 79;
 		 seed_in     : in integer range 0 to 50000000;
-		 game_table  : out vetor;
-		 enter_on	 : in std_logic;
-		 pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0)
+		 game_table  : out vetor
 	 );
 end ready_table;
 architecture rtl of ready_table is
 	signal clk_flag : std_logic := '0';
 	signal state, next_state : std_logic_vector (2 downto 0) := "000";
-	signal table_map : std_logic_vector(0 to 79);
-	signal index, divider : integer range 0 to 100;
+
 	signal deck : vetor;
-	signal enter_on_prev : std_logic;
+	signal table_map : std_logic_vector(0 to 79);
 begin
 
 	process

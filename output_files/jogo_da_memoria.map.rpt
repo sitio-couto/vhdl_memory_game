@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Fri Jun  8 17:16:43 2018
+Fri Jun  8 17:36:04 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -35,8 +35,8 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  27. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0
  28. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1
  29. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2
- 30. Port Connectivity Checks: "ready_table:randomize"
- 31. Port Connectivity Checks: "config_table:settings"
+ 30. Port Connectivity Checks: "config_table:settings"
+ 31. Port Connectivity Checks: "ascii_2_num:translate"
  32. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
  33. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
  34. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun  8 17:16:43 2018       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun  8 17:36:04 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
@@ -259,7 +259,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1058           ;
-; Total fan-out                               ; 16576          ;
+; Total fan-out                               ; 16577          ;
 ; Average fan-out                             ; 3.46           ;
 +---------------------------------------------+----------------+
 
@@ -404,6 +404,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[8..12]                  ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4]     ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_clk~reg0 ; Stuck at GND due to stuck port data_in                              ;
+; p2[1..3]                                                    ; Merged with p2[0]                                                   ;
+; p4[1..3]                                                    ; Merged with p2[0]                                                   ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key1code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key1code[13]                 ;
 ; ready_table:randomize|deck[0][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[0][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
@@ -854,12 +856,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[2]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                     ;
 ; kbdex_ctrl:kbdex_ctrl_inst|siguplights                      ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                     ;
+; p4[0]                                                       ; Stuck at GND due to stuck port data_in                              ;
+; p2[0]                                                       ; Stuck at VCC due to stuck port data_in                              ;
 ; ready_table:randomize|deck[0][0]                            ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]                         ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1]     ; Stuck at GND due to stuck port data_in                              ;
-; p4[1..3]                                                    ; Stuck at VCC due to stuck port data_in                              ;
-; p4[0]                                                       ; Stuck at GND due to stuck port data_in                              ;
-; p2[0..3]                                                    ; Stuck at VCC due to stuck port data_in                              ;
 ; next_state[3]                                               ; Stuck at GND due to stuck port data_in                              ;
 ; state[3]                                                    ; Stuck at GND due to stuck port data_in                              ;
 ; ready_table:randomize|deck[1][0]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
@@ -932,19 +933,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_control|ready_table:randomize|deck[3][1]                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[7] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[7] ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |game_control|ready_table:randomize|i[1]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_control|ready_table:randomize|deck[1][0]                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[1] ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |game_control|ready_table:randomize|i[5]                               ;
 ; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[30]                           ;
-; 8:1                ; 15 bits   ; 75 LEs        ; 0 LEs                ; 75 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[25]                           ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |game_control|p4[0]                                                    ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |game_control|p3[3]                                                    ;
-; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p5[0]                                                    ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|rand[6]                            ;
-; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|next_state[2]                                            ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 0 LEs                ; 75 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[18]                           ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p5[3]                                                    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|rand[2]                            ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
 ; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |game_control|config_table:settings|next_state[2]                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[6] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[8] ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8] ;
 ; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[15]                           ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |game_control|ready_table:randomize|Mux3                               ;
@@ -1228,16 +1227,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ready_table:randomize"                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; pe   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pf   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "config_table:settings"                                                                 ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1245,6 +1234,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; n_pairs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ascii_2_num:translate"                                                                  ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; enter_on ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -1317,8 +1315,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 2318                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 867                         ;
-;         3 data inputs ; 195                         ;
+;         2 data inputs ; 866                         ;
+;         3 data inputs ; 196                         ;
 ;         4 data inputs ; 548                         ;
 ;         5 data inputs ; 281                         ;
 ;         6 data inputs ; 414                         ;
@@ -1348,12 +1346,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun  8 17:16:19 2018
+    Info: Processing started: Fri Jun  8 17:35:39 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ready_table.vhd
-    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 19
+    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 17
     Info (12023): Found entity 1: ready_table File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file config_table.vhd
     Info (12022): Found design unit 1: config_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 18
@@ -1391,11 +1389,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file ascii_2
 Info (12021): Found 1 design units, including 0 entities, in source file game_package.vhd
     Info (12022): Found design unit 1: game_package File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_package.vhd Line: 4
 Info (12127): Elaborating entity "game_control" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(26): object "enter_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 26
 Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(31): object "n_pairs" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(36): object "pe" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 36
-Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(36): object "pf" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 36
 Warning (10873): Using initial value X (don't care) for net "LEDR[5..0]" at game_control.vhd(20) File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
-Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 48
+Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 47
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 125
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 148
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(150): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 150
@@ -1434,36 +1431,30 @@ Info (10041): Inferred latch for "relbt" at kbdex_ctrl.vhd(266) File: /home/ec20
 Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 212
 Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 114
 Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 161
-Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 63
+Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 62
 Warning (10036): Verilog HDL or VHDL warning at kbd_alphanum.vhd(56): object "dp_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 56
 Info (12128): Elaborating entity "ff_d" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 72
 Info (12128): Elaborating entity "ff_t" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 82
 Info (12128): Elaborating entity "code2ascii" for hierarchy "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 96
-Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 72
-Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 79
+Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 71
+Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 78
 Warning (10036): Verilog HDL or VHDL warning at config_table.vhd(39): object "max_cards" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 39
-Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 91
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pa" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pd" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pe" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pf" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
-Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 156
+Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 90
+Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
 Info (278001): Inferred 11 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 146
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 116
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 71
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 72
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 81
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 137
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 113
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 78
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1474,8 +1465,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
     Info (12023): Found entity 1: alt_u_div_qse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_qse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
-Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1486,20 +1477,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_dkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
     Info (12023): Found entity 1: alt_u_div_0te File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_0te.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1510,8 +1501,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7kh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
     Info (12023): Found entity 1: alt_u_div_kse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_kse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 71
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 71
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1522,8 +1513,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
     Info (12023): Found entity 1: alt_u_div_o2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 72
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 72
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
     Info (12134): Parameter "LPM_WIDTHN" = "31"
     Info (12134): Parameter "LPM_WIDTHD" = "31"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1534,8 +1525,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
     Info (12023): Found entity 1: alt_u_div_k2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 81
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 81
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 78
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 78
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1582,10 +1573,10 @@ Info (21057): Implemented 4495 device resources after synthesis - the final reso
     Info (21060): Implemented 2 bidirectional pins
     Info (21061): Implemented 4428 logic cells
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
-    Info: Peak virtual memory: 1249 megabytes
-    Info: Processing ended: Fri Jun  8 17:16:43 2018
-    Info: Elapsed time: 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 1251 megabytes
+    Info: Processing ended: Fri Jun  8 17:36:04 2018
+    Info: Elapsed time: 00:00:25
     Info: Total CPU time (on all processors): 00:00:35
 
 
