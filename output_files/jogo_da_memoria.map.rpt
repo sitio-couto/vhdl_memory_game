@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Fri Jun  8 15:25:12 2018
+Fri Jun  8 16:52:12 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -32,18 +32,24 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
  25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
  26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 27. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Div0
  28. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1
- 29. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2
- 30. Port Connectivity Checks: "config_table:settings"
- 31. Port Connectivity Checks: "ascii_2_num:translate"
- 32. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
- 33. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
- 34. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
- 35. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 29. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0
+ 30. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Div1
+ 31. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod5
+ 32. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod4
+ 33. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2
+ 34. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod3
+ 35. Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod6
+ 36. Port Connectivity Checks: "ready_table:randomize"
+ 37. Port Connectivity Checks: "config_table:settings"
+ 38. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate"
+ 39. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop"
+ 40. Port Connectivity Checks: "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop"
+ 41. Port Connectivity Checks: "kbdex_ctrl:kbdex_ctrl_inst"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -69,13 +75,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun  8 15:25:12 2018       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun  8 16:52:12 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1712                                        ;
+; Total registers                 ; 1106                                        ;
 ; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -189,7 +195,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -242,25 +248,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 2591           ;
+; Estimate of Logic utilization (ALMs needed) ; 2249           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 3867           ;
-;     -- 7 input functions                    ; 17             ;
-;     -- 6 input functions                    ; 640            ;
-;     -- 5 input functions                    ; 383            ;
-;     -- 4 input functions                    ; 1101           ;
-;     -- <=3 input functions                  ; 1726           ;
+; Combinational ALUT usage for logic          ; 3851           ;
+;     -- 7 input functions                    ; 32             ;
+;     -- 6 input functions                    ; 526            ;
+;     -- 5 input functions                    ; 359            ;
+;     -- 4 input functions                    ; 1034           ;
+;     -- <=3 input functions                  ; 1900           ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 1712           ;
+; Dedicated logic registers                   ; 1106           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 65             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 2              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1688           ;
-; Total fan-out                               ; 21233          ;
-; Average fan-out                             ; 3.72           ;
+; Maximum fan-out                             ; 1082           ;
+; Total fan-out                               ; 17855          ;
+; Average fan-out                             ; 3.51           ;
 +---------------------------------------------+----------------+
 
 
@@ -269,19 +275,21 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                             ; 3867 (264)          ; 1712 (24)                 ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                                       ; game_control        ; work         ;
-;    |ascii_2_num:translate|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                 ; ascii_2_num         ; work         ;
+; |game_control                             ; 3851 (272)          ; 1106 (32)                 ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                                       ; game_control        ; work         ;
+;    |ascii_2_num:translate|                ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                 ; ascii_2_num         ; work         ;
 ;    |bin2dec:print0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                                        ; bin2dec             ; work         ;
+;    |bin2dec:print1|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print1                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                                        ; bin2dec             ; work         ;
+;    |bin2dec:print3|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print3                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print4|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print5|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                                        ; bin2dec             ; work         ;
 ;    |config_table:settings|                ; 66 (66)             ; 75 (75)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                                                 ; config_table        ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|       ; 234 (84)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                        ; kbd_alphanum        ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|       ; 245 (89)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                        ; kbd_alphanum        ; work         ;
 ;       |code2ascii:\G1:0:translate|        ; 105 (105)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                                             ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|        ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                             ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|        ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                             ; code2ascii          ; work         ;
 ;       |ff_d:shift_flop|                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                                        ; ff_d                ; work         ;
 ;       |ff_t:caps_flop|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                                         ; ff_t                ; work         ;
-;    |kbdex_ctrl:kbdex_ctrl_inst|           ; 194 (72)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                            ; kbdex_ctrl          ; work         ;
+;    |kbdex_ctrl:kbdex_ctrl_inst|           ; 193 (71)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                            ; kbdex_ctrl          ; work         ;
 ;       |ps2_iobase:ps2_ctrl|               ; 122 (122)           ; 78 (78)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                                        ; ps2_iobase          ; work         ;
 ;    |lpm_divide:Div0|                      ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
 ;       |lpm_divide_4am:auto_generated|     ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                         ; lpm_divide_4am      ; work         ;
@@ -291,14 +299,14 @@ refer to the applicable agreement for further details.
 ;       |lpm_divide_4am:auto_generated|     ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                                         ; lpm_divide_4am      ; work         ;
 ;          |sign_div_unsign_akh:divider|    ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                             ; sign_div_unsign_akh ; work         ;
 ;             |alt_u_div_qse:divider|       ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                       ; alt_u_div_qse       ; work         ;
-;    |lpm_divide:Mod0|                      ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
-;       |lpm_divide_42m:auto_generated|     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
-;          |sign_div_unsign_7kh:divider|    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
-;    |lpm_divide:Mod1|                      ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                                       ; lpm_divide          ; work         ;
-;       |lpm_divide_42m:auto_generated|     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
-;          |sign_div_unsign_7kh:divider|    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_kse:divider|       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
+;    |lpm_divide:Mod0|                      ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_42m:auto_generated|     ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
+;          |sign_div_unsign_7kh:divider|    ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_kse:divider|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
+;    |lpm_divide:Mod1|                      ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_42m:auto_generated|     ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                                         ; lpm_divide_42m      ; work         ;
+;          |sign_div_unsign_7kh:divider|    ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                             ; sign_div_unsign_7kh ; work         ;
+;             |alt_u_div_kse:divider|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                       ; alt_u_div_kse       ; work         ;
 ;    |lpm_divide:Mod2|                      ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                                       ; lpm_divide          ; work         ;
 ;       |lpm_divide_a2m:auto_generated|     ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider|    ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
@@ -315,19 +323,43 @@ refer to the applicable agreement for further details.
 ;       |lpm_divide_a2m:auto_generated|     ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider|    ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
 ;             |alt_u_div_0te:divider|       ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
-;    |ready_table:randomize|                ; 2863 (638)          ; 1474 (1474)               ; 0                 ; 2          ; 0    ; 0            ; |game_control|ready_table:randomize                                                                                                 ; ready_table         ; work         ;
-;       |lpm_divide:Mod0|                   ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_65m:auto_generated|  ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m      ; work         ;
-;             |sign_div_unsign_9nh:divider| ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
-;                |alt_u_div_o2f:divider|    ; 959 (959)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
-;       |lpm_divide:Mod1|                   ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_45m:auto_generated|  ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
-;             |sign_div_unsign_7nh:divider| ; 1192 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
-;                |alt_u_div_k2f:divider|    ; 1192 (1192)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
-;       |lpm_divide:Mod2|                   ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_c2m:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated                                                   ; lpm_divide_c2m      ; work         ;
-;             |sign_div_unsign_fkh:divider| ; 74 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
-;                |alt_u_div_4te:divider|    ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider ; alt_u_div_4te       ; work         ;
+;    |ready_table:randomize|                ; 2804 (374)          ; 860 (860)                 ; 0                 ; 2          ; 0    ; 0            ; |game_control|ready_table:randomize                                                                                                 ; ready_table         ; work         ;
+;       |lpm_divide:Div0|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |lpm_divide:Div1|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4am:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                   ; lpm_divide_4am      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_qse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider ; alt_u_div_qse       ; work         ;
+;       |lpm_divide:Mod0|                   ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_a2m:auto_generated|  ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;                |alt_u_div_0te:divider|    ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;       |lpm_divide:Mod1|                   ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_a2m:auto_generated|  ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;                |alt_u_div_0te:divider|    ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;       |lpm_divide:Mod2|                   ; 955 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_65m:auto_generated|  ; 955 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m      ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 955 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_o2f:divider|    ; 955 (955)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
+;       |lpm_divide:Mod3|                   ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_45m:auto_generated|  ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 1182 (1182)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
+;       |lpm_divide:Mod4|                   ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_a2m:auto_generated|  ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 48 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;                |alt_u_div_0te:divider|    ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;       |lpm_divide:Mod5|                   ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod5                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_a2m:auto_generated|  ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                   ; lpm_divide_a2m      ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 29 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                       ; sign_div_unsign_dkh ; work         ;
+;                |alt_u_div_0te:divider|    ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider ; alt_u_div_0te       ; work         ;
+;       |lpm_divide:Mod6|                   ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod6                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_c2m:auto_generated|  ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod6|lpm_divide_c2m:auto_generated                                                   ; lpm_divide_c2m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod6|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_4te:divider|    ; 63 (63)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod6|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider ; alt_u_div_4te       ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -404,8 +436,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[8..12]                  ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4]     ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_clk~reg0 ; Stuck at GND due to stuck port data_in                              ;
-; p2[1..3]                                                    ; Merged with p2[0]                                                   ;
-; p4[1..3]                                                    ; Merged with p2[0]                                                   ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key1code[14,15]                  ; Merged with kbdex_ctrl:kbdex_ctrl_inst|key1code[13]                 ;
 ; ready_table:randomize|deck[0][1]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[0][2]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
@@ -630,72 +660,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ready_table:randomize|deck[62][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[62][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[63][6]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[64][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[65][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[65][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[65][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[65][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[65][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[66][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[66][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[66][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[66][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[66][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[67][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[67][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[67][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[67][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[68][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[68][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[68][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[68][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[68][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[69][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[69][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[69][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[69][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[6][0]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[6][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[70][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[70][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[70][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[70][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[71][3]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[71][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[71][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[72][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[72][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[72][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[72][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[72][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[73][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[73][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[73][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[73][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[74][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[74][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[74][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[74][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[75][2]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[75][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[75][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[76][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[76][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[76][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[76][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[77][1]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[77][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[77][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[78][0]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[78][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[78][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[79][4]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|deck[79][5]                           ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[7][3]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[7][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[7][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
@@ -710,7 +676,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ready_table:randomize|deck[9][4]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[9][5]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[9][6]                            ; Merged with ready_table:randomize|deck[0][0]                        ;
-; ready_table:randomize|divider[0,1,6]                        ; Merged with ready_table:randomize|deck[0][0]                        ;
 ; ready_table:randomize|deck[1][3]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
 ; ready_table:randomize|deck[2][2]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
 ; ready_table:randomize|deck[2][4]                            ; Merged with ready_table:randomize|deck[1][1]                        ;
@@ -902,54 +867,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ready_table:randomize|deck[63][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
 ; ready_table:randomize|deck[63][4]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
 ; ready_table:randomize|deck[63][5]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[64][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[65][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[65][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[66][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[66][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[67][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[67][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[67][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[68][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[68][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[69][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[69][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[69][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[70][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[70][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[70][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[71][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[71][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[71][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[71][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[72][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[72][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[73][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[73][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[73][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[74][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[74][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[74][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[75][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[75][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[75][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[75][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[76][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[76][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[76][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[77][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[77][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[77][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[77][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[78][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[78][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[78][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[78][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[79][0]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[79][1]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[79][2]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[79][3]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
-; ready_table:randomize|deck[79][6]                           ; Merged with ready_table:randomize|deck[10][1]                       ;
 ; ready_table:randomize|deck[9][0]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
 ; ready_table:randomize|deck[9][3]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
 ; ready_table:randomize|deck[2][1]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
@@ -969,29 +886,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[2]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                     ;
 ; kbdex_ctrl:kbdex_ctrl_inst|siguplights                      ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[0]                         ; Merged with kbdex_ctrl:kbdex_ctrl_inst|hdata[3]                     ;
-; p4[0]                                                       ; Stuck at GND due to stuck port data_in                              ;
-; p2[0]                                                       ; Stuck at VCC due to stuck port data_in                              ;
 ; ready_table:randomize|deck[0][0]                            ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]                         ; Stuck at GND due to stuck port data_in                              ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1]     ; Stuck at GND due to stuck port data_in                              ;
 ; next_state[3]                                               ; Stuck at GND due to stuck port data_in                              ;
 ; state[3]                                                    ; Stuck at GND due to stuck port data_in                              ;
-; ready_table:randomize|deck[1][0]                            ; Merged with ready_table:randomize|deck[8][3]                        ;
+; ready_table:randomize|deck[8][3]                            ; Merged with ready_table:randomize|deck[1][0]                        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[3]     ; Merged with kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[0] ;
-; Total Number of Removed Registers = 607                     ;                                                                     ;
+; Total Number of Removed Registers = 484                     ;                                                                     ;
 +-------------------------------------------------------------+---------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                               ;
-+-------------------------------------+---------------------------+---------------------------------------------------------+
-; Register name                       ; Reason for Removal        ; Registers Removed due to This Register                  ;
-+-------------------------------------+---------------------------+---------------------------------------------------------+
-; kbdex_ctrl:kbdex_ctrl_inst|hdata[4] ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4] ;
-;                                     ; due to stuck port data_in ;                                                         ;
-; kbdex_ctrl:kbdex_ctrl_inst|hdata[1] ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1] ;
-;                                     ; due to stuck port data_in ;                                                         ;
-+-------------------------------------+---------------------------+---------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++----------------------------------------+---------------------------+---------------------------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                  ;
++----------------------------------------+---------------------------+---------------------------------------------------------+
+; kbdex_ctrl:kbdex_ctrl_inst|hdata[4]    ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[4] ;
+;                                        ; due to stuck port data_in ;                                                         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key1code[8] ; Stuck at GND              ; ready_table:randomize|deck[0][0]                        ;
+;                                        ; due to stuck port data_in ;                                                         ;
+; kbdex_ctrl:kbdex_ctrl_inst|hdata[1]    ; Stuck at GND              ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|hdata[1] ;
+;                                        ; due to stuck port data_in ;                                                         ;
++----------------------------------------+---------------------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -999,12 +916,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1712  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 613   ;
+; Total registers                              ; 1106  ;
+; Number of registers using Synchronous Clear  ; 80    ;
+; Number of registers using Synchronous Load   ; 53    ;
 ; Number of registers using Asynchronous Clear ; 97    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1609  ;
+; Number of registers using Clock Enable       ; 1003  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1046,103 +963,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_control|ready_table:randomize|deck[1][0]                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[5] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |game_control|ready_table:randomize|deck[3][1]                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[7] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[7] ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |game_control|ready_table:randomize|index[2]                           ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[28]                           ;
-; 8:1                ; 15 bits   ; 75 LEs        ; 0 LEs                ; 75 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[8]                            ;
-; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p5[1]                                                    ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[79][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[78][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[77][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[76][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[75][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[74][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[73][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[72][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[71][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[70][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[69][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[68][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[67][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[66][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[65][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[64][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[63][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[62][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[61][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[60][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[59][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[58][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[57][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[56][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[55][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[54][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[53][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[52][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[51][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[50][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[49][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[48][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[47][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[46][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[45][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[44][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[43][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[42][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[41][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[40][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[39][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[38][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[37][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[36][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[35][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[34][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[33][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[32][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[31][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[30][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[29][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[28][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[27][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[26][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[25][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[24][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[23][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[22][1]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[21][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[20][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[19][2]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[18][0]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[17][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[16][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[15][3]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[14][4]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[13][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[12][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[11][5]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[10][6]                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[9][0]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[8][5]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[7][0]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[6][3]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[5][3]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[4][1]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[3][6]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[2][5]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[1][1]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|deck_count[0][0]                   ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|rand[4]                            ;
-; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |game_control|config_table:settings|next_state[0]                      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[0] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[3] ;
-; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[14]                           ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |game_control|ready_table:randomize|i[1]                               ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[30]                           ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 0 LEs                ; 75 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[25]                           ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p4[0]                                                    ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |game_control|p6[1]                                                    ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |game_control|p1[0]                                                    ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |game_control|ready_table:randomize|rand[6]                            ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|next_state[2]                                            ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |game_control|config_table:settings|next_state[2]                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|fcount[6] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|rcount[8] ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 11 LEs               ; 44 LEs                 ; Yes        ; |game_control|ready_table:randomize|seed[15]                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |game_control|ready_table:randomize|Mux3                               ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|nstate.CODE                   ;
-; 101:1              ; 7 bits    ; 469 LEs       ; 469 LEs              ; 0 LEs                  ; No         ; |game_control|Mux0                                                     ;
-; 101:1              ; 7 bits    ; 469 LEs       ; 469 LEs              ; 0 LEs                  ; No         ; |game_control|ready_table:randomize|Mux3                               ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector10                    ;
+; 101:1              ; 7 bits    ; 469 LEs       ; 469 LEs              ; 0 LEs                  ; No         ; |game_control|Mux3                                                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector13                    ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|Selector12                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 
@@ -1352,7 +1191,145 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod5 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod4 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_a2m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
@@ -1375,7 +1352,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod1 ;
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod3 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
@@ -1398,7 +1375,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod2 ;
+; Parameter Settings for Inferred Entity Instance: ready_table:randomize|lpm_divide:Mod6 ;
 +------------------------+----------------+----------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                         ;
 +------------------------+----------------+----------------------------------------------+
@@ -1420,6 +1397,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ready_table:randomize"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; pe   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pf   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "config_table:settings"                                                                 ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1427,15 +1414,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; n_pairs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ascii_2_num:translate"                                                                  ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; enter_on ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -1486,41 +1464,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1712                        ;
+; arriav_ff             ; 1106                        ;
 ;     CLR               ; 25                          ;
 ;     CLR SLD           ; 21                          ;
-;     ENA               ; 966                         ;
+;     ENA               ; 840                         ;
 ;     ENA CLR           ; 51                          ;
-;     ENA SLD           ; 592                         ;
+;     ENA SCLR          ; 80                          ;
+;     ENA SLD           ; 32                          ;
 ;     plain             ; 57                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 3872                        ;
-;     arith             ; 1221                        ;
-;         0 data inputs ; 117                         ;
-;         1 data inputs ; 301                         ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 219                         ;
-;         4 data inputs ; 511                         ;
-;         5 data inputs ; 43                          ;
-;     extend            ; 17                          ;
-;         7 data inputs ; 17                          ;
-;     normal            ; 2608                        ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 814                         ;
-;         3 data inputs ; 212                         ;
-;         4 data inputs ; 590                         ;
-;         5 data inputs ; 340                         ;
-;         6 data inputs ; 640                         ;
-;     shared            ; 26                          ;
-;         0 data inputs ; 11                          ;
-;         1 data inputs ; 14                          ;
-;         3 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 3857                        ;
+;     arith             ; 1333                        ;
+;         0 data inputs ; 147                         ;
+;         1 data inputs ; 321                         ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 279                         ;
+;         4 data inputs ; 479                         ;
+;         5 data inputs ; 62                          ;
+;     extend            ; 32                          ;
+;         7 data inputs ; 32                          ;
+;     normal            ; 2438                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 810                         ;
+;         3 data inputs ; 237                         ;
+;         4 data inputs ; 555                         ;
+;         5 data inputs ; 297                         ;
+;         6 data inputs ; 526                         ;
+;     shared            ; 54                          ;
+;         0 data inputs ; 22                          ;
+;         1 data inputs ; 32                          ;
 ; arriav_mac            ; 2                           ;
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 141.00                      ;
-; Average LUT depth     ; 66.28                       ;
+; Max LUT depth         ; 139.80                      ;
+; Average LUT depth     ; 70.62                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1539,12 +1517,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Jun  8 15:24:46 2018
+    Info: Processing started: Fri Jun  8 16:51:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ready_table.vhd
-    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 17
+    Info (12022): Found design unit 1: ready_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 19
     Info (12023): Found entity 1: ready_table File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file config_table.vhd
     Info (12022): Found design unit 1: config_table-rtl File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 18
@@ -1582,10 +1560,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file ascii_2
 Info (12021): Found 1 design units, including 0 entities, in source file game_package.vhd
     Info (12022): Found design unit 1: game_package File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_package.vhd Line: 4
 Info (12127): Elaborating entity "game_control" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(26): object "enter_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 26
 Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(31): object "n_pairs" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 31
+Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(36): object "pe" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at game_control.vhd(36): object "pf" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 36
 Warning (10873): Using initial value X (don't care) for net "LEDR[5..0]" at game_control.vhd(20) File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
-Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 47
+Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 48
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(125): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 125
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(148): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 148
 Warning (10492): VHDL Process Statement warning at kbdex_ctrl.vhd(150): signal "fetchdata" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 150
@@ -1624,30 +1603,38 @@ Info (10041): Inferred latch for "relbt" at kbdex_ctrl.vhd(266) File: /home/ec20
 Info (10041): Inferred latch for "selE0" at kbdex_ctrl.vhd(212) File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 212
 Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbdex_ctrl.vhd Line: 114
 Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 161
-Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 62
+Info (12128): Elaborating entity "kbd_alphanum" for hierarchy "kbd_alphanum:kbd_alphanum_inst" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 63
 Warning (10036): Verilog HDL or VHDL warning at kbd_alphanum.vhd(56): object "dp_on" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 56
 Info (12128): Elaborating entity "ff_d" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 72
 Info (12128): Elaborating entity "ff_t" for hierarchy "kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 82
 Info (12128): Elaborating entity "code2ascii" for hierarchy "kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:2:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/kbd_alphanum.vhd Line: 96
-Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 71
-Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 78
+Info (12128): Elaborating entity "ascii_2_num" for hierarchy "ascii_2_num:translate" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 72
+Info (12128): Elaborating entity "config_table" for hierarchy "config_table:settings" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 79
 Warning (10036): Verilog HDL or VHDL warning at config_table.vhd(39): object "max_cards" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/config_table.vhd Line: 39
-Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 90
-Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 146
-Info (278001): Inferred 11 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 137
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 113
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 91
+Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pe" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
+Warning (10541): VHDL Signal Declaration warning at ready_table.vhd(16): used implicit default value for signal "pf" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 16
+Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 156
+Info (278001): Inferred 17 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 146
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 116
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 71
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 71
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 70
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 79
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 79
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 78
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 73
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 74
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 85
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1658,8 +1645,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
     Info (12023): Found entity 1: alt_u_div_qse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_qse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
-Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
+Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 121
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1670,20 +1657,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_dkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
     Info (12023): Found entity 1: alt_u_div_0te File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_0te.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 138
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 147
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 117
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 120
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 118
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1694,8 +1681,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7kh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
     Info (12023): Found entity 1: alt_u_div_kse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_kse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod0" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 73
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 73
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1706,8 +1693,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_9nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
     Info (12023): Found entity 1: alt_u_div_o2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_o2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 74
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod3" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 74
     Info (12134): Parameter "LPM_WIDTHN" = "31"
     Info (12134): Parameter "LPM_WIDTHD" = "31"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1718,8 +1705,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7nh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
     Info (12023): Found entity 1: alt_u_div_k2f File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_k2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
-Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod2" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 77
+Info (12130): Elaborated megafunction instantiation "ready_table:randomize|lpm_divide:Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 85
+Info (12133): Instantiated megafunction "ready_table:randomize|lpm_divide:Mod6" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 85
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1733,20 +1720,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|ps2_data~1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ps2_iobase.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 16
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 18
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
@@ -1760,16 +1733,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-Info (21057): Implemented 5493 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4770 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 52 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 5426 logic cells
+    Info (21061): Implemented 4703 logic cells
     Info (21062): Implemented 2 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 1252 megabytes
-    Info: Processing ended: Fri Jun  8 15:25:12 2018
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 1259 megabytes
+    Info: Processing ended: Fri Jun  8 16:52:12 2018
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:35
 
 
