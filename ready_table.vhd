@@ -34,7 +34,8 @@ begin
 		constant B: integer := 88977;
 	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-	if (enter_on_prev = '0' and enter_on = '1') then
+	if (clk_flag = '1') then
+	
 		case state is
 		when "000" =>
 		
@@ -66,17 +67,12 @@ begin
 			next_state <= "010";
 			
 		when "010" =>
-		
-			pc <= std_logic_vector(to_unsigned(i mod 10, 4));
-			pd <= std_logic_vector(to_unsigned(i/10 mod 10, 4));
-		
+	
 			seed := (seed*A + B) mod M;
 			rand := (seed mod n_cards);
 			next_state <= "011";
 		
 		when "011" =>
-			pa <= std_logic_vector(to_unsigned(rand mod 10, 4));
-			pb <= std_logic_vector(to_unsigned(rand/10 mod 10, 4));
 		
 			if (table_map(rand) = '0') then
 				table_map(rand) <= '1';
@@ -104,7 +100,7 @@ begin
 		end case;
 		
 	end if;
-		enter_on_prev <= enter_on;
+		clk_flag  <= not clk_flag;
 		state <= next_state;
 	end process;
 	
