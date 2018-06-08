@@ -33,14 +33,18 @@ architecture rtl of game_control is
   signal game_table : vetor;
   
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
+  signal p1g, p2g, p3g, p4g, p5g, p6g : std_logic_vector (3 downto 0);
   
-  -- Singnals for block control.
+  -- Signals for block control.
   signal configure : std_logic := '0';
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
   
   signal set_table : std_logic := '0';
   signal table_ready : std_logic;
+  
+  signal play_game : std_logic := '0';
+  signal game_over : std_logic;
   
 begin
 	
@@ -97,6 +101,19 @@ begin
 			 seed_in,
 			 game_table
 		 );
+		 
+	gameplay : play_table
+		port map (
+			CLOCK_50,
+			play_game,
+			enter_on,
+			key_on,
+			key_number,
+			game_over,
+			n_players,
+			n_cards,
+			game_table
+		);
 	
 	process
 		variable l, c : integer range 0 to 100;
@@ -109,26 +126,37 @@ begin
 			configure <= '1';
 			next_state <= "0001";
 		when "0001" =>
-			-- Aguarda "config_table" terminar de executar.
+			-- Imprime opcoes de configuracao.
 			p1 <= std_logic_vector(to_unsigned(n_players mod 10, 4));
 			p2 <= "1111";
 			p3 <= std_logic_vector(to_unsigned(t_cards mod 10, 4));
 			p4 <= "1110";
 			p5 <= std_logic_vector(to_unsigned(n_cards mod 10, 4));
 			p6 <= std_logic_vector(to_unsigned(n_cards/10 mod 10, 4));
-			
+			-- Aguarda "config_table" terminar de executar.
 			if (config_ready = '1') then
 				configure <= '0'; -- Sinaliza "config_table" que recebeu a resposta. 
 				next_state <= "0010";
 			end if;
-		
 		when "0010" =>
-			set_table <= '1';
-			next_state <= "0011";
+			-- Pausa para o usuario ver as opcoes selecionadas.
+			if (enter_on = '1') then next_state <= "0011";
+			end if;
 		when "0011" =>
+			set_table <= '1';
+			next_state <= "0100";
+		when "0100" =>
 			if (table_ready = '1') then
 				set_table <= '0';
-				next_state <= "0100";
+				next_state <= "0101";
+			end if;
+		when "0101" =>
+			play_game <= '1';
+			next_state <= "0110";
+		when "0110" =>
+			if (game_over = '1') then
+				play_game <= '0';
+				next_state <= "1111";
 			end if;
 		when others =>
 			l := to_integer(unsigned(SW(7 downto 4)));

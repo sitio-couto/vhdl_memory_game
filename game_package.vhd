@@ -79,4 +79,18 @@ package game_package is
 	  );
 	end component;
 
+	component play_table is
+		port (
+			CLOCK_50   : in std_logic;
+			play_game  : in std_logic;
+			enter_on   : in std_logic;
+			key_on     : in std_logic_vector (2 downto 0);
+			key_number : in std_logic_vector (7 downto 0);
+			game_over  : out std_logic;
+			n_players  : in integer range 0 to 9;
+			n_cards    : in integer range 0 to 100;
+			game_table : vetor
+		);
+	end component;
+	
 end game_package;

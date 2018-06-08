@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.game_package.all;
+
+entity play_table is
+	port (
+		CLOCK_50 : in std_logic;
+		play_game : in std_logic;
+		key_on : in std_logic_vector (2 downto 0);
+		key_number : in std_logic_vector (7 downto 0);
+		game_over,
+		n_players,
+		n_cards,
+		game_table
+	);
