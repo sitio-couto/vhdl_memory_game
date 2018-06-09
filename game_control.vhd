@@ -27,27 +27,27 @@ architecture rtl of game_control is
   signal key_on, key_on_prev : std_logic_vector (2  downto 0);
   signal key_pressed, key_number : std_logic_vector (7  downto 0);
   signal key_code    : std_logic_vector (47 downto 0);
-  
+
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 79;
   signal game_table : vetor;
-  
+
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
   signal pa, pb, pc, pd, pe, pf : std_logic_vector (3 downto 0);
-  
+
   -- Signals for block control.
   signal configure : std_logic := '0';
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
-  
+
   signal set_table : std_logic := '0';
   signal table_ready : std_logic;
-  
+
   signal play_game : std_logic := '0';
   signal game_over : std_logic;
-  
+
 begin
-	
+
   kbdex_ctrl_inst : kbdex_ctrl
     generic map (
       clkfreq => 50000
@@ -62,7 +62,7 @@ begin
       key_on => key_on,
       key_code => key_code
     );
-  
+
   kbd_alphanum_inst : kbd_alphanum
     port map (
       clk => CLOCK_50,
@@ -71,15 +71,16 @@ begin
       HEX1 => key_pressed(7 downto 4),
       HEX0 => key_pressed(3 downto 0)
 	);
-	
-	translate : ascii_2_num 
+
+	translate : ascii_2_num
 	  port map (
 			key_pressed,
 			key_number,
 			enter_on
 	);
-	
-	settings : config_table 
+
+  -- Bloco para configuracoes.
+	settings : config_table
 		port map (
 			CLOCK_50,
 			configure,
@@ -90,7 +91,8 @@ begin
 			n_cards,
 			seed_in
 		);
-		
+
+  -- Bloco para o preparo da mesa.
 	randomize : ready_table
 	  port map (
 			 CLOCK_50,
@@ -101,7 +103,8 @@ begin
 			 seed_in,
 			 game_table
 		 );
-		 
+
+  -- Block para execucao do gameplay.
 	gameplay : play_table
 		port map (
 			CLOCK_50,
@@ -116,12 +119,12 @@ begin
 			pa, pb, pc, pd, pe, pf,
 			LEDR(5 downto 0)
 		);
-	
+
 	process
 		variable l, c : integer range 0 to 100;
-	begin 
+	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-		
+
 		case state is
 		when "0000" =>
 			-- Sinaliza "config_table" para executar.
@@ -137,7 +140,7 @@ begin
 			p6 <= std_logic_vector(to_unsigned(n_cards/10 mod 10, 4));
 			-- Aguarda "config_table" terminar de executar.
 			if (config_ready = '1') then
-				configure <= '0'; -- Sinaliza "config_table" que recebeu a resposta. 
+				configure <= '0'; -- Sinaliza "config_table" que recebeu a resposta.
 				next_state <= "0010";
 			end if;
 		when "0010" =>
@@ -145,79 +148,85 @@ begin
 			if (enter_on = '1') then next_state <= "0011";
 			end if;
 		when "0011" =>
+      -- Sinaliza "ready_table" para executar.
 			set_table <= '1';
 			next_state <= "0100";
 		when "0100" =>
+      -- Aguarda "ready_table" terminar de executar.
 			if (table_ready = '1') then
-				set_table <= '0';
+				set_table <= '0'; -- Sinaliza "ready_table" que recebeu a resposta.
 				next_state <= "0101";
 			end if;
 		when "0101" =>
+      -- Sinaliza "play_table" para executar.
 			play_game <= '1';
 			next_state <= "0110";
 		when "0110" =>
+      -- Recebe valores de "play_table" para o display.
 			p1 <= pa;
 			p2 <= pb;
 			p3 <= pc;
 			p4 <= pd;
 			p5 <= pe;
 			p6 <= pf;
-		
+
+      -- Aguarda "play_table" terminar de executar.
 			if (game_over = '1') then
-				play_game <= '0';
+				play_game <= '0'; -- Sinaliza "play_table" que recebeu a resposta.
 				next_state <= "1111";
 			end if;
 		when others =>
+      -- Isso foi pra depurar o bloco "ready_table".
 			l := to_integer(unsigned(SW(7 downto 4)));
 			c := to_integer(unsigned(SW(3 downto 0)));
-		
+
 			p5 <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
 			p6 <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
-			
+
 		end case;
-	
+
 		state <= next_state; -- Atualiza estado;
 	end process;
-	
-	
+
+
 	-- DISPLAYS PARA MOSTRAR AS OPCOES SELECIONADAS
-	print0 : bin2dec 
+	print0 : bin2dec
 		port map (
 		  p1,
 		  HEX0
 	) ;
-	
-	print1 : bin2dec 
+
+	print1 : bin2dec
 		port map (
 		  p2,
 		  HEX1
 	) ;
-	
-	print2 : bin2dec 
+
+	print2 : bin2dec
 		port map (
 		  p3,
 		  HEX2
 	) ;
-	
-	
-	print3 : bin2dec 
+
+
+	print3 : bin2dec
 		port map (
 		  p4,
 		  HEX3
 	) ;
-	
-	print4 : bin2dec 
+
+	print4 : bin2dec
 		port map (
 		  p5,
 		  HEX4
 	) ;
-	
-	print5 : bin2dec 
+
+	print5 : bin2dec
 		port map (
 		  p6,
 		  HEX5
 	) ;
-	
+
 	LEDR(9 downto 6) <= state;
-	
+
 end rtl;
