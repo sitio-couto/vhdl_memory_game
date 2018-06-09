@@ -90,11 +90,7 @@ package game_package is
 			n_players  : in integer range 0 to 9;
 			n_cards    : in integer range 0 to 100;
 			game_table : in vetor;
-			player     : out std_logic_vector (3 downto 0); 
-			linha, coluna  : out integer range 0 to 9;
-			carta1, carta2 : out integer range 0 to 100;
-			player_score   : out vetor;
-			p1, p2, p3, p4, p5, p6 : out std_logic_vector (3 downto 0)
+			pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0)
 		);
 	end component;
 	

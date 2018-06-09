@@ -21,7 +21,7 @@ architecture rtl of play_table is
 	signal wait_keypress : std_logic := '0';
 	signal key_on_prev, state, next_state : std_logic_vector (2 downto 0) := "000";
 
-	signal table_map : std_logic_vector (0 downto 79);
+	signal table_map : std_logic_vector (79 downto 0);
 	signal c_aux, l_aux : integer range 0 to 9;
 	signal flag2, row_set : std_logic;
 	signal is_card_available : std_logic;
@@ -138,7 +138,7 @@ begin
 			end if;
 			
 			if (cards_found = n_cards) then -- todas as cartas foram encontradas
-				next_state <= "1000"; -- fim de jogo
+				next_state <= "111"; -- fim de jogo
 			else
 				next_state <= "100"; -- mostra pontuacao e atualiza valores pro prox jogador;
 				pe <= "0000";
