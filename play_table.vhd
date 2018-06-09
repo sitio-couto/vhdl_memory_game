@@ -23,16 +23,25 @@ architecture rtl of play_table is
 	signal state, next_state : std_logic_vector (3 downto 0) := "0000";
 	signal wait_keypress : std_logic := '0';
 	
+	signal clk_flag : std_logic := '0';
+	signal aux_player : std_logic_vector (3 downto 0);
 	signal card_flag, match : std_logic := '0';
 	signal table_map : std_logic_vector (79 downto 0);
 	signal c_aux, l_aux : integer range 0 to 9;
 	signal flag2, row_set : std_logic;
-	signal curr_player : integer range 0 to 100;
+	signal curr_player : integer range 0 to 5;
 	signal player_score : vetor;
 begin
 
-	LEDR(3 downto 0) <= state;
-	LEDR(4) <= card_flag;
+	LEDR(3 downto 0) <= aux_player;
+	LEDR(4) <= wait_keypress;
+	
+	with curr_player select aux_player <= 
+		"0001" when 0,
+		"0010" when 1,
+		"0100" when 2,
+		"1000" when 3,
+		"0000" when others;
 	
 	-- MAQUINA DE ESTADOS (controla entidade).
 	process
@@ -40,7 +49,7 @@ begin
 		variable i, max, winner, cards_found : integer range 0 to 100;
 	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-	if (key_on /= "000" and key_on_prev = "000") then
+	if (key_on /= "000" and key_on_prev = "000") or wait_keypress = '0' then
 
 		case state is
 		when "0000" =>
@@ -74,6 +83,7 @@ begin
 			next_state <= "0010";
 			
 		when "0010" => -- Seleciona uma linha.
+			
 			if (enter_on = '1') and (table_map(l*8 + c) = '1') then
 				wait_keypress <= '0';
 				next_state <= "0100";
@@ -85,6 +95,7 @@ begin
 			end if;
 
 		when "0011" => -- Seleciona coluna.
+		
 			if (enter_on = '1') and (table_map(l*8 + c) = '1')then
 				wait_keypress <= '0';
 				next_state <= "0100";
@@ -102,52 +113,56 @@ begin
 				pb <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
 				lin1 := l;
 				col1 := c;
+				wait_keypress <= '1';
 				next_state <= "0010";
+--				next_state <= "1110";-- CALL TABLE_MAP UPDATE STATE.
 			else
 				pc <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
 				pd <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
-				lin1 := l;
-				col1 := c;
+				lin2 := l;
+				col2 := c;
+				wait_keypress <= '1';
 				next_state <= "0110";
 			end if;
 			
 			table_map(l*8 + c) <= '0';
 			card_flag <= not card_flag;
-			wait_keypress <= '1';
 			
 		when "0110" =>
-			if (game_table(lin1*8 + col1) = game_table(lin2*8 + col2)) then
-				player_score(curr_player) <= player_score(curr_player) + 1;
-				cards_found := cards_found + 2;
-				LEDR(5) <= table_map(l*8 + c);
-				match <= '1';
-			else
-				table_map(lin1*8 + col1) <= '1';
-				table_map(lin2*8 + col2) <= '1';
-				curr_player <= (curr_player + 1) mod n_players;
-				match <= '0';	
+			clk_flag <= not clk_flag;
+			if (clk_flag = '1') then
+					if (game_table(lin1*8 + col1) = game_table(lin2*8 + col2)) then
+					player_score(curr_player) <= player_score(curr_player) + 1;
+					cards_found := cards_found + 2;
+					LEDR(5) <= table_map(l*8 + c); -- CALL TABLE_MAP UPDATE STATE.
+				else
+					table_map(lin1*8 + col1) <= '1';
+					table_map(lin2*8 + col2) <= '1';
+					curr_player <= (curr_player + 1) mod n_players;	
+				end if;
+				
+				i := curr_player;
+				wait_keypress <= '0';
+				next_state <= "0111";
 			end if;
-			
-			wait_keypress <= '1';
-			next_state <= "0111";
 		when "0111" =>
-			if (match = '1') then i := curr_player;
-			else i := curr_player - 1;
-			end if;
+			curr_player <= curr_player mod n_players;
 		
 			pf <= "1111";
-			pe <= std_logic_vector(to_unsigned((i + 1), 4));
+			pe <= std_logic_vector(to_unsigned(i, 4));
 			pd <= std_logic_vector(to_unsigned(player_score(i)/10 mod 10, 4));
 			pc <= std_logic_vector(to_unsigned(player_score(i) mod 10, 4));
 			pb <= "1111";
-			pa <= std_logic_vector(to_unsigned((curr_player + 1), 4));
+			pa <= std_logic_vector(to_unsigned(curr_player, 4));
 		
+			wait_keypress <= '1';
 			next_state <= "1000";
 		when "1000" =>
 			-- Estado de espera.
 			if (enter_on = '1') and (cards_found = n_cards) then 
 				next_state <= "1001";
 			elsif (enter_on = '1') then
+				wait_keypress <= '1';
 				next_state <= "0010";
 				pf <= "0000";
 				pe <= "0000";
@@ -155,7 +170,9 @@ begin
 				pc <= "0000";
 				pb <= "0000";
 				pa <= "0000";
+				LEDR(5) <= table_map(l*8 + c);
 			end if;
+			
 		when "1001" =>
 			i := 0 ;
 			while (i < 5) loop
@@ -175,9 +192,14 @@ begin
 			pe <= "0000";
 			pf <= "0000";
 			
-			if (enter_on = '1') then next_state <= "1111";
+			if (enter_on = '1') then 
+				wait_keypress <= '0';
+				next_state <= "1111";
 			end if;
-			
+--		when "1110" =>
+--			LEDR(5) <= table_map(l*8 + c);
+--			wait_keypress <= '1';
+--			next_state <= "0010";
 		when others =>
 			game_over <= '1';
 			if (play_game = '0') then
