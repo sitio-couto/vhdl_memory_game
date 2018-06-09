@@ -113,7 +113,8 @@ begin
 			n_players,
 			n_cards,
 			game_table,
-			pa, pb, pc, pd, pe, pf
+			pa, pb, pc, pd, pe, pf,
+			LEDR(5 downto 0)
 		);
 	
 	process

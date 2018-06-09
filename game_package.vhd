@@ -90,7 +90,8 @@ package game_package is
 			n_players  : in integer range 0 to 9;
 			n_cards    : in integer range 0 to 100;
 			game_table : in vetor;
-			pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0)
+			pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0);
+			LEDR		  : out std_logic_vector (5 downto 0)
 		);
 	end component;
 	
