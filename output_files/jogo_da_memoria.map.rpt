@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Sun Jun 10 11:57:53 2018
+Sun Jun 10 12:06:55 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 10 11:57:53 2018       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 10 12:06:54 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
@@ -249,14 +249,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 3107           ;
+; Estimate of Logic utilization (ALMs needed) ; 3122           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 4947           ;
-;     -- 7 input functions                    ; 49             ;
-;     -- 6 input functions                    ; 1122           ;
-;     -- 5 input functions                    ; 632            ;
-;     -- 4 input functions                    ; 1040           ;
-;     -- <=3 input functions                  ; 2104           ;
+; Combinational ALUT usage for logic          ; 4983           ;
+;     -- 7 input functions                    ; 51             ;
+;     -- 6 input functions                    ; 1115           ;
+;     -- 5 input functions                    ; 566            ;
+;     -- 4 input functions                    ; 1140           ;
+;     -- <=3 input functions                  ; 2111           ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 1299           ;
 ;                                             ;                ;
@@ -266,8 +266,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1275           ;
-; Total fan-out                               ; 24018          ;
-; Average fan-out                             ; 3.76           ;
+; Total fan-out                               ; 24075          ;
+; Average fan-out                             ; 3.75           ;
 +---------------------------------------------+----------------+
 
 
@@ -276,8 +276,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                             ; 4947 (20)           ; 1299 (35)                 ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                                       ; game_control        ; work         ;
-;    |ascii_2_num:translate|                ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                 ; ascii_2_num         ; work         ;
+; |game_control                             ; 4983 (20)           ; 1299 (35)                 ; 0                 ; 2          ; 65   ; 0            ; |game_control                                                                                                                       ; game_control        ; work         ;
+;    |ascii_2_num:translate|                ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                 ; ascii_2_num         ; work         ;
 ;    |bin2dec:print0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print1|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print1                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                                        ; bin2dec             ; work         ;
@@ -285,9 +285,9 @@ refer to the applicable agreement for further details.
 ;    |bin2dec:print4|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print5|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                                        ; bin2dec             ; work         ;
 ;    |config_table:settings|                ; 68 (68)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                                                 ; config_table        ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|       ; 233 (83)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                        ; kbd_alphanum        ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|       ; 235 (83)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                        ; kbd_alphanum        ; work         ;
 ;       |code2ascii:\G1:0:translate|        ; 108 (108)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                                             ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|        ; 41 (41)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                             ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|        ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                             ; code2ascii          ; work         ;
 ;       |ff_d:shift_flop|                   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                                        ; ff_d                ; work         ;
 ;       |ff_t:caps_flop|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                                         ; ff_t                ; work         ;
 ;    |kbdex_ctrl:kbdex_ctrl_inst|           ; 194 (72)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                            ; kbdex_ctrl          ; work         ;
@@ -312,7 +312,7 @@ refer to the applicable agreement for further details.
 ;       |lpm_divide_a2m:auto_generated|     ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                                         ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider|    ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                             ; sign_div_unsign_dkh ; work         ;
 ;             |alt_u_div_0te:divider|       ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                       ; alt_u_div_0te       ; work         ;
-;    |play_table:gameplay|                  ; 1696 (1337)         ; 209 (209)                 ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay                                                                                                   ; play_table          ; work         ;
+;    |play_table:gameplay|                  ; 1729 (1370)         ; 209 (209)                 ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay                                                                                                   ; play_table          ; work         ;
 ;       |lpm_divide:Div1|                   ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1                                                                                   ; lpm_divide          ; work         ;
 ;          |lpm_divide_4am:auto_generated|  ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                     ; lpm_divide_4am      ; work         ;
 ;             |sign_div_unsign_akh:divider| ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                         ; sign_div_unsign_akh ; work         ;
@@ -990,9 +990,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 17:1               ; 8 bits    ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |game_control|play_table:gameplay|col2[2]                              ;
 ; 11:1               ; 3 bits    ; 21 LEs        ; 3 LEs                ; 18 LEs                 ; Yes        ; |game_control|play_table:gameplay|curr_player[2]                       ;
 ; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|play_table:gameplay|pf[0]                                ;
-; 18:1               ; 5 bits    ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |game_control|play_table:gameplay|pb[3]                                ;
+; 18:1               ; 5 bits    ; 60 LEs        ; 10 LEs               ; 50 LEs                 ; Yes        ; |game_control|play_table:gameplay|pb[0]                                ;
 ; 18:1               ; 4 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |game_control|play_table:gameplay|pd[2]                                ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |game_control|play_table:gameplay|i[2]                                 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |game_control|play_table:gameplay|i[0]                                 ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 24 LEs               ; 28 LEs                 ; Yes        ; |game_control|next_state[0]                                            ;
 ; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |game_control|config_table:settings|next_state[0]                      ;
 ; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |game_control|play_table:gameplay|pe[0]                                ;
@@ -1519,7 +1519,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 40                          ;
 ;     plain             ; 71                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 4953                        ;
+; arriav_lcell_comb     ; 4989                        ;
 ;     arith             ; 1363                        ;
 ;         0 data inputs ; 155                         ;
 ;         1 data inputs ; 336                         ;
@@ -1527,16 +1527,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 279                         ;
 ;         4 data inputs ; 479                         ;
 ;         5 data inputs ; 67                          ;
-;     extend            ; 49                          ;
-;         7 data inputs ; 49                          ;
-;     normal            ; 3492                        ;
+;     extend            ; 51                          ;
+;         7 data inputs ; 51                          ;
+;     normal            ; 3526                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 16                          ;
-;         2 data inputs ; 939                         ;
-;         3 data inputs ; 290                         ;
-;         4 data inputs ; 559                         ;
-;         5 data inputs ; 565                         ;
-;         6 data inputs ; 1122                        ;
+;         2 data inputs ; 945                         ;
+;         3 data inputs ; 291                         ;
+;         4 data inputs ; 659                         ;
+;         5 data inputs ; 499                         ;
+;         6 data inputs ; 1115                        ;
 ;     shared            ; 49                          ;
 ;         0 data inputs ; 22                          ;
 ;         1 data inputs ; 24                          ;
@@ -1546,7 +1546,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 139.80                      ;
-; Average LUT depth     ; 60.04                       ;
+; Average LUT depth     ; 59.93                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1565,7 +1565,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Jun 10 11:57:25 2018
+    Info: Processing started: Sun Jun 10 12:06:27 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1662,7 +1662,7 @@ Warning (10036): Verilog HDL or VHDL warning at config_table.vhd(39): object "ma
 Info (12128): Elaborating entity "ready_table" for hierarchy "ready_table:randomize" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 96
 Info (12128): Elaborating entity "play_table" for hierarchy "play_table:gameplay" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 108
 Warning (10036): Verilog HDL or VHDL warning at play_table.vhd(28): object "match" assigned a value but never read File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 28
-Warning (10027): Verilog HDL or VHDL warning at the play_table.vhd(142): index expression is not wide enough to address all of the elements in the array File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 142
+Warning (10027): Verilog HDL or VHDL warning at the play_table.vhd(143): index expression is not wide enough to address all of the elements in the array File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 143
 Info (12128): Elaborating entity "bin2dec" for hierarchy "bin2dec:print0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 186
 Info (278001): Inferred 18 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 140
@@ -1670,16 +1670,16 @@ Info (278001): Inferred 18 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 139
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 137
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 135
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 152
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 124
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 124
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 162
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 162
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 123
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 163
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 201
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod8" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 201
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod7" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 200
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 153
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 126
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 126
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 163
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod5" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 163
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod6" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 164
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Div3" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 202
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod8" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 202
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "play_table:gameplay|Mod7" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 201
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod0" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 68
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 69
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ready_table:randomize|Mod2" File: /home/ec2016/ra188115/Documents/MC613/Projeto/ready_table.vhd Line: 78
@@ -1725,14 +1725,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/sign_div_unsign_7kh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
     Info (12023): Found entity 1: alt_u_div_kse File: /home/ec2016/ra188115/Documents/MC613/Projeto/db/alt_u_div_kse.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "play_table:gameplay|lpm_divide:Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 152
-Info (12133): Instantiated megafunction "play_table:gameplay|lpm_divide:Mod4" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 152
+Info (12130): Elaborated megafunction instantiation "play_table:gameplay|lpm_divide:Mod4" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 153
+Info (12133): Instantiated megafunction "play_table:gameplay|lpm_divide:Mod4" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 153
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "play_table:gameplay|lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 124
-Info (12133): Instantiated megafunction "play_table:gameplay|lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 124
+Info (12130): Elaborated megafunction instantiation "play_table:gameplay|lpm_divide:Div1" File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 126
+Info (12133): Instantiated megafunction "play_table:gameplay|lpm_divide:Div1" with the following parameter: File: /home/ec2016/ra188115/Documents/MC613/Projeto/play_table.vhd Line: 126
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1789,16 +1789,16 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
-Info (21057): Implemented 5935 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5971 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 52 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 5868 logic cells
+    Info (21061): Implemented 5904 logic cells
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 1256 megabytes
-    Info: Processing ended: Sun Jun 10 11:57:53 2018
+    Info: Peak virtual memory: 1259 megabytes
+    Info: Processing ended: Sun Jun 10 12:06:55 2018
     Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Total CPU time (on all processors): 00:00:37
 
 

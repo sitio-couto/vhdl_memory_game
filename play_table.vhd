@@ -88,6 +88,7 @@ begin
 			if (enter_on = '1') and (table_map(l*8 + c) = '1') then
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
+				table_map(l*8 + c) <= '0'; -- FIXING /////////
 			-- Se nao for enter, e for um valor valido, regirstra uma linha.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < n_cards/8) then
 				l := to_integer(unsigned(key_number(3 downto 0)));
@@ -101,6 +102,7 @@ begin
 			if (enter_on = '1') and (table_map(l*8 + c) = '1')then
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
+				table_map(l*8 + c) <= '0'; -- FIXING /////////
 			-- Se nao for enter, e for um valor valido, regirstra uma coluna.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < 8) then
 				c := to_integer(unsigned(key_number(3 downto 0)));
@@ -129,8 +131,7 @@ begin
 			end if;
 
 			wait_keypress <= '1'; -- Proximo estado requer input
-			table_map(l*8 + c) <= '0';
---			LEDR(5) <= table_map(l*8 + c);
+			LEDR(5) <= table_map(l*8 + c);
 			card_flag <= not card_flag;
 
 		when "0110" => -- computa a jogada
