@@ -123,6 +123,23 @@ begin
 						 -- tecla Enter
 						 x"0D" when x"1005A", -- Com capital
 						 x"0D" when x"0005A", -- Sem capital
+						 x"0D" when x"1E05A", -- KP com capital
+						 x"0D" when x"0E05A", -- KP sem capital
+						 
+						 -- Arrows
+						 --cima
+						 x"0F" when x"1E075", -- Com capital
+						 x"0F" when x"0E075", -- Sem capital
+						 --esquerda
+						 x"0A" when x"1E06B", -- com capital
+						 x"0A" when x"0E06B", -- sem capital
+						 --direita
+						 x"0B" when x"1E074", -- Com capital
+						 x"0B" when x"0E074", -- Sem capital
+						 --baixo
+						 x"0C" when x"1E072", -- com capital
+						 x"0C" when x"0E072", -- sem capital
+
 						
 						 x"00" when others; 
 						 

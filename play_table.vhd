@@ -31,7 +31,7 @@ architecture rtl of play_table is
 	signal table_map : std_logic_vector (79 downto 0);
 	signal c_aux, l_aux : integer range 0 to 9;
 	signal flag2, row_set : std_logic;
-	signal curr_player : integer range 0 to 5;
+	signal curr_player, des : integer range 0 to 5;
 	signal player_score : vetor;
 begin
 
@@ -45,6 +45,13 @@ begin
 		"0100" when 2,
 		"1000" when 3,
 		"0000" when others;
+		
+	with key_number select des <=
+		1 when x"10",
+		2 when x"20",
+		3 when x"30",
+		4 when x"40",
+		0 when others;
 
 	-- MAQUINA DE ESTADOS (controla entidade).
 	process
@@ -109,6 +116,24 @@ begin
 				next_state <= "0100"; -- Vai para "vira carta"
 				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
 			-- Se nao for enter, e for um valor valido, regirstra uma linha.
+			elsif (des mod 2) = 1 then
+				if (des = 1) then
+					if (l > 0) then l := l - 1;
+					else l := (n_cards/8 - 1); end if;
+				elsif (des = 3) then l := l + 1;
+				end if;
+				linha <= l mod (n_cards/8);
+				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				next_state <= "0011"; -- Vai para selecao de coluna
+			elsif ((des mod 2) = 0) and (des /= 0) then
+				if (des = 2) then 
+					if (c > 0) then c := c - 1;
+					else c := 7; end if;
+				elsif (des = 4) then c := c + 1;
+				end if;
+				coluna <= c mod 8;
+				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				next_state <= "0011"; -- Vai para selecao de coluna
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < n_cards/8) then
 				l := to_integer(unsigned(key_number(3 downto 0)));
 				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
@@ -124,6 +149,24 @@ begin
 				next_state <= "0100"; -- Vai para "vira carta"
 				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
 			-- Se nao for enter, e for um valor valido, regirstra uma coluna.
+			elsif (des mod 2) = 1 then
+				if    (des = 1) then 
+					if (l > 0) then l := l - 1;
+					else l := (n_cards/8 - 1); end if;
+				elsif (des = 3) then l := l + 1;	
+				end if;
+				linha <= l mod (n_cards/8);
+				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				next_state <= "0010"; -- Vai para selecao de coluna
+			elsif ((des mod 2) = 0) and (des /= 0) then
+				if    (des = 2) then
+					if (c > 0) then c := c - 1;
+					else c := 7; end if;
+				elsif (des = 4) then c := c + 1;
+				end if;
+				coluna <= c mod 8;
+				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				next_state <= "0010"; -- Vai para selecao de coluna
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < 8) then
 				c := to_integer(unsigned(key_number(3 downto 0)));
 				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade

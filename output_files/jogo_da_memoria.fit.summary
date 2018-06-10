@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Jun 10 18:03:16 2018
+Fitter Status : Successful - Sun Jun 10 19:50:39 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : jogo_da_memoria
 Top-level Entity Name : game_control
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 6,009 / 32,070 ( 19 % )
-Total registers : 1623
+Logic utilization (in ALMs) : 6,096 / 32,070 ( 19 % )
+Total registers : 1647
 Total pins : 95 / 457 ( 21 % )
 Total virtual pins : 0
 Total block memory bits : 36,864 / 4,065,280 ( < 1 % )

@@ -21,6 +21,10 @@ WITH key_pressed SELECT numeric <=
 		 x"07" when x"37",
 		 x"08" when x"38",
 		 x"09" when x"39",
+		 x"10" when x"0F",
+		 x"20" when x"0A",
+		 x"30" when x"0C",
+		 x"40" when x"0B",
 		 x"00" when others;
 		 
 WITH key_pressed SELECT enter_on <=

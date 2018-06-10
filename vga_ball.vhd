@@ -333,7 +333,7 @@ begin  -- comportamento
 					if ((col >= col_margin + col_width*j + col_margin*j) and (col <= col_margin + col_width*(j+1) + col_margin*j)) then -- nos boundaries do eixo x de uma carta
 						if  (i*8+j < n_cards) then						
 						
-							if (table_map_out(i*8 + j) = '0') then -- printa numero e cor
+							if (table_map_out(i*8 + j) = '0' or table_map_out(i*8 + j) = '1') then -- printa numero e cor
 								-- boundaries dos numeros
 								y_bound := row_margin + row_width*i + row_margin*i + num_y_margin;
 								x_bound := col_margin + col_width*j + col_margin*j + num_x_margin;
