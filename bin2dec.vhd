@@ -20,5 +20,6 @@ HEX0 <= "1111001" WHEN "0001",
 		  "1000000" WHEN "0000",
 		  "0001100" WHEN "1111", -- P
 		  "1000110" WHEN "1110", -- C
+		  "1111111" WHEN "1101", -- Apagado
 		  "0000110" WHEN OTHERS;
 END Behavior ;

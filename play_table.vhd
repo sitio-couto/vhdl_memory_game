@@ -73,6 +73,13 @@ begin
 			col2 := 0;
 			max  := 0;
 			winner := 0;
+			
+			pf <= "0000";
+			pe <= "0000";
+			pd <= "1101";
+			pc <= "1101";
+			pb <= "1101";
+			pa <= "1101";
 
 			i := 0;
 			while (i < 80) loop
@@ -80,6 +87,12 @@ begin
 				i := i + 1;
 			end loop;
 
+			i := 0;
+			while (i < 5) loop
+				player_score(i) <= 0;
+				i := i + 1;
+			end loop;
+			
 			wait_keypress <= '1';
 			next_state <= "0010";
 
@@ -138,20 +151,17 @@ begin
 			clk_flag <= not clk_flag; -- Delay de clock pra evitar um erro que ele executava duas vezes o estado
 			if (clk_flag = '1') then
 					-- Caso as cartas viradas sejam iguais.
-					if (game_table(lin1*8 + col1) = game_table(lin2*8 + col2)) then
-					--incremeta o score
-					player_score(curr_player) <= player_score(curr_player) + 1;
-					-- incremeta o numero de cartas encontradas
-					cards_found := cards_found + 2;
+				if (game_table(lin1*8 + col1) = game_table(lin2*8 + col2)) then
+					player_score(curr_player) <= player_score(curr_player) + 1; --incremeta o score
+					cards_found := cards_found + 2; -- incremeta o numero de cartas encontradas
 				else
 					-- se diferentes, devolve as cartas
-					table_map(lin1*8 + col1) <= '1';
-					table_map(lin2*8 + col2) <= '1';
-					-- passa pro proximo jogador
-					curr_player <= (curr_player + 1) mod n_players;
+					table_map(lin1*8 + col1) <= '1'; -- Devolve primeira carta 
+					table_map(lin2*8 + col2) <= '1'; -- Devolve segunda carta
+					curr_player <= (curr_player + 1) mod n_players; -- passa pro proximo jogador
 				end if;
 
-				i := curr_player; 		-- Guarda o jogador atual.
+				i := curr_player;     -- Guarda o jogador atual.
 				wait_keypress <= '0'; -- Proximo estado nao requer input.
 				next_state <= "0111";
 			end if;
@@ -176,10 +186,10 @@ begin
 				next_state <= "0010"; -- Vai para "selecao de linha"
 				pf <= std_logic_vector(to_unsigned(l, 4));
 				pe <= std_logic_vector(to_unsigned(c, 4));
-				pd <= "0000";
-				pc <= "0000";
-				pb <= "0000";
-				pa <= "0000";
+				pd <= "1101";
+				pc <= "1101";
+				pb <= "1101";
+				pa <= "1101";
 				LEDR(5) <= table_map(l*8 + c);
 			end if;
 
@@ -200,8 +210,8 @@ begin
 			pb <= std_logic_vector(to_unsigned(max/10 mod 10, 4));
 			pc <= std_logic_vector(to_unsigned(winner, 4));
 			pd <= "1111";
-			pe <= "0000";
-			pf <= "0000";
+			pe <= "1101";
+			pf <= "1101";
 
 			wait_keypress <= '1';
 			next_state <= "1011";

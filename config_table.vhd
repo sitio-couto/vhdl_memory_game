@@ -46,10 +46,6 @@ begin
 		end if;
 		------------------------------------------
 	
-		if (t_cards_aux = 1) or (t_cards_aux = 2) then max_cards := 2;
-		else max_cards := 4;
-		end if;
-	
 		if (key_on /= "000" and key_on_prev = "000") or wait_keypress = '0' then-- nao havia tecla pressionada no clock anterior e foi pressionada agora
 			case state is
 			when "000" =>
@@ -58,6 +54,10 @@ begin
 				config_ready <= '0';
 				-- Fica em espera ate "game_control" mandar executar.
 				if (configure = '1') then
+					n_players <= 0;
+					t_cards_aux <= 0;
+					n_pairs_aux <= 0;
+				
 					wait_keypress <= '1';		-- Seta flag para esperar input do usuario.
 					next_state <= "001";
 				end if;
