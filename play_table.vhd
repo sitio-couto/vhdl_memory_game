@@ -119,8 +119,7 @@ begin
 				col1 := c;
 				wait_keypress <= '1'; -- Proximo estado requer input
 				next_state <= "0010"; -- Volta para selecao de linha
---				next_state <= "1110";-- CALL TABLE_MAP UPDATE STATE.
-else -- Se for a segunda carta sendo selecionada.
+			else -- Se for a segunda carta sendo selecionada.
 				-- Imprime carta virada.
 				pc <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
 				pd <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
@@ -158,9 +157,6 @@ else -- Se for a segunda carta sendo selecionada.
 				next_state <= "0111";
 			end if;
 		when "0111" =>
-			-- PODE REMOVER ESSA LINHA, PROVAVELMENTE. (NAO SEI SE VAI BUGAR)
-			curr_player <= curr_player mod n_players;
-
 			pf <= "1111"; -- Imprime P
 			pe <= std_logic_vector(to_unsigned(i, 4)); -- Imprime jogador atual
 			pd <= std_logic_vector(to_unsigned(player_score(i)/10 mod 10, 4)); -- imprime score
@@ -173,6 +169,7 @@ else -- Se for a segunda carta sendo selecionada.
 		when "1000" => -- Passa jogada
 			-- Estado de espera (aguarda enter)
 			if (enter_on = '1') and (cards_found = n_cards) then
+				wait_keypress <= '0'; -- TODO
 				next_state <= "1001"; -- Caso nao haja mais cartas, vai para "acha vencedor"
 			elsif (enter_on = '1') then
 				-- Caso haja cartas, reinicia displays
@@ -213,14 +210,6 @@ else -- Se for a segunda carta sendo selecionada.
 				wait_keypress <= '0';
 				next_state <= "1111";
 			end if;
--- Este estado em particular serviria para corrigir o problema que acontece quando
--- ele volta da "vira carta" para o "seleciona linha". Neste caso o led nao Atualiza
--- e indica que ha uma carta na posicao que acabou de ser computada (mas apenas acontece
--- a proxima tecla ser pressionada, ai ele muda). Fico meio bugado quando tentei.
---		when "1110" =>
---			LEDR(5) <= table_map(l*8 + c);
---			wait_keypress <= '1';
---			next_state <= "0010";
 		when others =>
 			-- Avisa unidade de controle que terminou de executar.
 			game_over <= '1';
