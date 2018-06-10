@@ -117,7 +117,6 @@ begin
 				-- Salva posicao.
 				lin1 := l;
 				col1 := c;
-				wait_keypress <= '1'; -- Proximo estado requer input
 				next_state <= "0010"; -- Volta para selecao de linha
 			else -- Se for a segunda carta sendo selecionada.
 				-- Imprime carta virada.
@@ -126,11 +125,12 @@ begin
 				-- Salva posicao.
 				lin2 := l;
 				col2 := c;
-				wait_keypress <= '1'; -- Proximo estado requer input
 				next_state <= "0110"; -- Vai para "computa a jogada"
 			end if;
 
+			wait_keypress <= '1'; -- Proximo estado requer input
 			table_map(l*8 + c) <= '0';
+--			LEDR(5) <= table_map(l*8 + c);
 			card_flag <= not card_flag;
 
 		when "0110" => -- computa a jogada
@@ -195,7 +195,6 @@ begin
 				i := i + 1;
 			end loop;
 
-			-- ACHO QUE AQUI DEVERIA TER UM "wait_keypress <= '0'"
 			next_state <= "1010"; -- Vai para "game over"
 		when "1010" => -- Game over
 			pa <= std_logic_vector(to_unsigned(max mod 10, 4));
@@ -205,6 +204,9 @@ begin
 			pe <= "0000";
 			pf <= "0000";
 
+			wait_keypress <= '1';
+			next_state <= "1011";
+		when "1011" =>
 			-- Aguarda o usuario pressionar enter.
 			if (enter_on = '1') then
 				wait_keypress <= '0';

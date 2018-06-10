@@ -175,14 +175,7 @@ begin
 				play_game <= '0'; -- Sinaliza "play_table" que recebeu a resposta.
 				next_state <= "1111";
 			end if;
-		when others =>
-      -- Isso foi pra depurar o bloco "ready_table".
-			l := to_integer(unsigned(SW(7 downto 4)));
-			c := to_integer(unsigned(SW(3 downto 0)));
-
-			p5 <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
-			p6 <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
-
+		when others => next_state <= "0000";
 		end case;
 
 		state <= next_state; -- Atualiza estado;
