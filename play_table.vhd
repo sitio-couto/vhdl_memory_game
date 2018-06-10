@@ -88,7 +88,7 @@ begin
 			if (enter_on = '1') and (table_map(l*8 + c) = '1') then
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
-				table_map(l*8 + c) <= '0'; -- FIXING /////////
+				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
 			-- Se nao for enter, e for um valor valido, regirstra uma linha.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < n_cards/8) then
 				l := to_integer(unsigned(key_number(3 downto 0)));
@@ -102,7 +102,7 @@ begin
 			if (enter_on = '1') and (table_map(l*8 + c) = '1')then
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
-				table_map(l*8 + c) <= '0'; -- FIXING /////////
+				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
 			-- Se nao for enter, e for um valor valido, regirstra uma coluna.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < 8) then
 				c := to_integer(unsigned(key_number(3 downto 0)));
@@ -143,8 +143,6 @@ begin
 					player_score(curr_player) <= player_score(curr_player) + 1;
 					-- incremeta o numero de cartas encontradas
 					cards_found := cards_found + 2;
-					--  atualiza o led de disponibilidade
-					LEDR(5) <= table_map(l*8 + c); -- CALL TABLE_MAP UPDATE STATE.
 				else
 					-- se diferentes, devolve as cartas
 					table_map(lin1*8 + col1) <= '1';
@@ -170,14 +168,14 @@ begin
 		when "1000" => -- Passa jogada
 			-- Estado de espera (aguarda enter)
 			if (enter_on = '1') and (cards_found = n_cards) then
-				wait_keypress <= '0'; -- TODO
+				wait_keypress <= '0';
 				next_state <= "1001"; -- Caso nao haja mais cartas, vai para "acha vencedor"
 			elsif (enter_on = '1') then
 				-- Caso haja cartas, reinicia displays
 				wait_keypress <= '1';
 				next_state <= "0010"; -- Vai para "selecao de linha"
-				pf <= "0000";
-				pe <= "0000";
+				pf <= std_logic_vector(to_unsigned(l, 4));
+				pe <= std_logic_vector(to_unsigned(c, 4));
 				pd <= "0000";
 				pc <= "0000";
 				pb <= "0000";
