@@ -109,6 +109,9 @@ architecture comportamento of vga_ball is
   CONSTANT col_width : integer := 11;
   CONSTANT row_margin : integer := 4;
   CONSTANT row_width : integer := 18;
+  CONSTANT num_y_margin: integer := 6;
+  CONSTANT num_x_margin: integer := 3;
+  signal num_matrix : std_logic_vector (0 to 249) := "0111001010010100101001110001000010000100001000010001110000100111001000011100111000010011100001001110010100101001110000100001001110010000111000010011100111001000011100101001110011100001000010000100001001110010100111001010011100111001010011100001001110";
   
   type color_vector is array (0 to 100) of integer range 0 to 7;
   
@@ -310,15 +313,16 @@ begin  -- comportamento
   -----------------------------------------------------------------------------
   -- Brilho do pixel
   -----------------------------------------------------------------------------
-  -- O brilho do pixel é branco quando os contadores de linha e coluna, que
-  -- indicam o endereço do pixel sendo escrito para o quadro atual, casam com a
-  -- posição da bola (sinais pos_x e pos_y). Caso contrário,
-  -- o pixel é preto.
+
   
 	process (CLOCK_50, rstn)
 		variable pixel_color : integer range 0 to 7;
 		variable exit_loop: std_logic;
-		--variable col_count, row_count : integer range 0 to 100;
+		variable y_bound: integer range 0 to 200;
+		variable x_bound: integer range 0 to 200;
+		variable y_deref: integer range 0 to 200;
+		variable x_deref: integer range 0 to 200;
+		variable offset: integer range 0 to 500;
 	begin
 		exit_loop := '0';
 		pixel_color := 0; -- comeca com a cor preta
@@ -328,8 +332,31 @@ begin  -- comportamento
 				if ((line >= row_margin + row_width*i + row_margin*i) and (line <= row_margin + row_width*(i+1) + row_margin*i)) then -- nos boundaries do eixo y de uma carta
 					if ((col >= col_margin + col_width*j + col_margin*j) and (col <= col_margin + col_width*(j+1) + col_margin*j)) then -- nos boundaries do eixo x de uma carta
 						if  (i*8+j < n_cards) then						
-							if (table_map_out(i*8 + j) = '0') then
-								pixel_color := game_table(i*8 + j)/10; 
+						
+							if (table_map_out(i*8 + j) = '0') then -- printa numero e cor
+								-- boundaries dos numeros
+								y_bound := row_margin + row_width*i + row_margin*i + num_y_margin;
+								x_bound := col_margin + col_width*j + col_margin*j + num_x_margin;
+								if ((line >= y_bound) and (line <= 4 + y_bound) and (col >= x_bound) and (col <= 4 + x_bound)) then -- verifica boundaries da letra
+									-- dereferencia
+									y_deref := line-y_bound;
+									x_deref := col-x_bound;
+									offset := (game_table(i*8 + j) mod 10)*25; 
+									-- verifica se eh 1 ou 0 na letra				
+									if (num_matrix(offset + y_deref*5 + x_deref) = '1') then
+										if (game_table(i*8 + j)/10 = 0) then
+											pixel_color := 7;
+										else
+											pixel_color := 0;
+										end if;
+									else
+										pixel_color := game_table(i*8 + j)/10; 
+									end if;
+								
+								else
+									pixel_color := game_table(i*8 + j)/10; 
+								end if;
+	
 							else
 								pixel_color := 7;
 							end if;
