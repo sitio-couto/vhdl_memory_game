@@ -40,7 +40,9 @@ entity vga_ball is
     VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
     VGA_CLK                   : out std_logic;
 	 game_table : in vetor;
-	 table_map_out : in std_logic_vector (79 downto 0)
+	 table_map_out : in std_logic_vector (79 downto 0);
+	 linha, coluna : in integer range 0 to 9;
+	 n_cards : in integer range 0 to 79
     );
 end vga_ball;
 
@@ -325,13 +327,20 @@ begin  -- comportamento
 			for j in 0 to 7 loop -- colunas
 				if ((line >= row_margin + row_width*i + row_margin*i) and (line <= row_margin + row_width*(i+1) + row_margin*i)) then -- nos boundaries do eixo y de uma carta
 					if ((col >= col_margin + col_width*j + col_margin*j) and (col <= col_margin + col_width*(j+1) + col_margin*j)) then -- nos boundaries do eixo x de uma carta
-						--if () then
+						if  (i*8+j < n_cards) then						
 							if (table_map_out(i*8 + j) = '0') then
 								pixel_color := game_table(i*8 + j)/10; 
 							else
 								pixel_color := 7;
 							end if;
-						--end if;
+							
+							if (linha = i and coluna = j) then
+								if ((line = row_margin + row_width*i + row_margin*i) or (line = row_margin + row_width*(i+1) + row_margin*i) or (col = col_margin + col_width*j + col_margin*j) or (col = col_margin + col_width*(j+1) + col_margin*j)) then
+									pixel_color := 4;
+								end if;			
+							end if;
+						end if;
+						
 						exit L1;
 					end if;
 				end if;

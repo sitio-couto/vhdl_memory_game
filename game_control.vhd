@@ -39,6 +39,8 @@ architecture rtl of game_control is
   signal game_table : vetor;
   signal table_map_out: std_logic_vector (79 downto 0);
   
+  signal linha, coluna : integer range 0 to 9;
+  
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
   signal pa, pb, pc, pd, pe, pf : std_logic_vector (3 downto 0);
 
@@ -56,17 +58,19 @@ architecture rtl of game_control is
 begin
 
 	vga : vga_ball
-	port map (    
-		 CLOCK_50,
-		 KEY,
-		 VGA_R, VGA_G, VGA_B,
-		 VGA_HS, VGA_VS,
-		 VGA_BLANK_N, VGA_SYNC_N,
-		 VGA_CLK,	
-		 game_table,
-		 table_map_out
-	);
-
+		port map (    
+			 CLOCK_50,
+			 KEY,
+			 VGA_R, VGA_G, VGA_B,
+			 VGA_HS, VGA_VS,
+			 VGA_BLANK_N, VGA_SYNC_N,
+			 VGA_CLK,	
+			 game_table,
+			 table_map_out,
+			 linha, coluna,
+			 n_cards
+		);
+	
   kbdex_ctrl_inst : kbdex_ctrl
     generic map (
       clkfreq => 50000
@@ -137,7 +141,8 @@ begin
 			game_table,
 			pa, pb, pc, pd, pe, pf,
 			LEDR(5 downto 0),
-			table_map_out
+			table_map_out,
+			linha, coluna
 		);
 
 	process

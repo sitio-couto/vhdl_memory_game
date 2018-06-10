@@ -16,7 +16,8 @@ entity play_table is
 		game_table : in vetor;
 		pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0);
 		LEDR		  : out std_logic_vector (5 downto 0);
-		table_map_out : out std_logic_vector (79 downto 0)
+		table_map_out : out std_logic_vector (79 downto 0);
+		linha, coluna : out integer range 0 to 9
 	);
 end play_table;
 architecture rtl of play_table is
@@ -82,6 +83,9 @@ begin
 			pc <= "1101";
 			pb <= "1101";
 			pa <= "1101";
+			
+			linha <= 0;
+			coluna <= 0;
 
 			i := 0;
 			while (i < 80) loop
@@ -108,6 +112,7 @@ begin
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < n_cards/8) then
 				l := to_integer(unsigned(key_number(3 downto 0)));
 				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				linha <= to_integer(unsigned(key_number(3 downto 0)));
 				pf <= key_number(3 downto 0);	 -- Mostra selecao.
 				next_state <= "0011"; -- Vai para selecao de coluna
 			end if;
@@ -122,6 +127,7 @@ begin
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < 8) then
 				c := to_integer(unsigned(key_number(3 downto 0)));
 				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
+				coluna <= to_integer(unsigned(key_number(3 downto 0)));
 				pe <= key_number(3 downto 0);  -- Mostra selecao
 				next_state <= "0010"; -- Vai para selecao de linha
 			end if;
