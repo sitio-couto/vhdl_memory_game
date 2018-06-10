@@ -80,6 +80,9 @@ begin
 			next_state <= "0011";
 		
 		when "0011" =>
+			if (rand_deck >= n_pairs) then
+				rand_deck := 0;
+			end if;
 		
 			if (deck_map(rand_deck) = '0') then
 				deck_map(rand_deck) <= '1';
