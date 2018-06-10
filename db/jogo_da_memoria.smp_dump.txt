@@ -19,3 +19,10 @@ state.RELEASE 0 0 0 1 0 0 0 1
 state.EXT0 0 0 1 0 0 0 0 1 
 state.EXT1 0 1 0 0 0 0 0 1 
 state.CLRDP 1 0 0 0 0 0 0 1 
+
+State Machine - |game_control|vga_ball:vga|estado
+Name estado.move_bola estado.constroi_quadro estado.show_splash estado.inicio 
+estado.inicio 0 0 0 0 
+estado.show_splash 0 0 1 1 
+estado.constroi_quadro 0 1 0 1 
+estado.move_bola 1 0 0 1 

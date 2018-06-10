@@ -3,339 +3,403 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -112.755
-TNS   : -13963.175
+Slack : -93.381
+TNS   : -2946.849
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -4.233
-TNS   : -49.287
+Slack : -3.755
+TNS   : -51.561
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.851
-TNS   : -2.851
+Slack : -3.107
+TNS   : -3.107
 
 Type  : Slow 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.751
-TNS   : -1.499
+Slack : -0.617
+TNS   : -1.232
+
+Type  : Slow 1100mV 85C Model Setup 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 20.423
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.014
+Slack : 0.027
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.423
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.531
+Slack : 0.486
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.778
+Slack : 0.681
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 2.179
+Slack : 2.499
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
-Slack : -6.529
-TNS   : -278.889
-
 Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -4.607
-TNS   : -9.211
-
-Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -4.080
-TNS   : -4.080
+Slack : -5.165
+TNS   : -10.328
 
 Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.674
-TNS   : -47.105
+Slack : -3.794
+TNS   : -45.343
+
+Type  : Slow 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
+Slack : -2.940
+TNS   : -2.940
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -2.816
+TNS   : -172.699
 
 Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
-Slack : 0.570
+Slack : 0.417
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.770
+Slack : 0.552
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 3.047
+Slack : 2.216
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 3.260
+Slack : 3.691
 TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.411
-TNS   : -737.135
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : -0.394
-TNS   : -15.027
+TNS   : -12.741
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
 Slack : -0.394
-TNS   : -1.062
+TNS   : -1.281
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
 Slack : -0.394
-TNS   : -1.051
+TNS   : -1.019
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
 Slack : -0.394
-TNS   : -0.585
+TNS   : -0.583
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.857
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.614
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -115.038
-TNS   : -13502.406
+Slack : -95.453
+TNS   : -2890.970
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -4.307
-TNS   : -49.862
+Slack : -3.834
+TNS   : -51.932
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.991
-TNS   : -2.991
+Slack : -3.217
+TNS   : -3.217
 
 Type  : Slow 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.754
-TNS   : -1.502
+Slack : -0.627
+TNS   : -1.250
+
+Type  : Slow 1100mV 0C Model Setup 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 19.946
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.326
-TNS   : -1.296
+Slack : -0.317
+TNS   : -1.117
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.481
+Slack : 0.412
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.419
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.726
+Slack : 0.655
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 2.324
+Slack : 2.610
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
-Slack : -6.335
-TNS   : -259.606
-
 Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -4.381
-TNS   : -8.758
-
-Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -4.157
-TNS   : -4.157
+Slack : -4.898
+TNS   : -9.795
 
 Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.765
-TNS   : -46.418
+Slack : -3.845
+TNS   : -44.604
+
+Type  : Slow 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
+Slack : -3.076
+TNS   : -3.076
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -2.626
+TNS   : -152.617
 
 Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
-Slack : 0.192
+Slack : 0.027
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.676
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 3.021
+Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 3.095
+Slack : 2.348
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.397
-TNS   : -784.458
+Type  : Slow 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
+Slack : 3.415
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : -0.394
-TNS   : -14.650
+TNS   : -12.595
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
 Slack : -0.394
-TNS   : -1.062
+TNS   : -1.314
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
 Slack : -0.394
-TNS   : -1.040
+TNS   : -1.024
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
 Slack : -0.394
-TNS   : -0.585
+TNS   : -0.597
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.812
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.597
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -63.056
-TNS   : -8574.414
+Slack : -44.150
+TNS   : -1345.859
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -2.054
-TNS   : -22.075
+Slack : -1.881
+TNS   : -23.495
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -1.332
-TNS   : -1.332
+Slack : -1.484
+TNS   : -1.484
 
 Type  : Fast 1100mV 85C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.130
-TNS   : -0.259
+Slack : -0.063
+TNS   : -0.124
+
+Type  : Fast 1100mV 85C Model Setup 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 29.411
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.107
+Slack : 0.028
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.162
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.264
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.404
+Slack : 0.364
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.053
+Slack : 1.231
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
-Slack : -3.578
-TNS   : -162.888
-
 Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.852
-TNS   : -5.703
-
-Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -1.983
-TNS   : -1.983
+Slack : -3.328
+TNS   : -6.655
 
 Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.808
-TNS   : -23.091
+Slack : -1.861
+TNS   : -22.214
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.853
+TNS   : -118.550
+
+Type  : Fast 1100mV 85C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
+Slack : -1.300
+TNS   : -1.300
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.184
+Slack : 0.110
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
-Slack : 0.243
+Slack : 0.281
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 1.511
+Slack : 1.026
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.800
+Slack : 2.118
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.406
-TNS   : -124.140
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -0.080
-TNS   : -1.308
-
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 0.044
+Slack : 0.007
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.084
+Slack : 0.010
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
+Slack : 0.053
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 0.118
+Slack : 0.161
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.817
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.733
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -59.156
-TNS   : -7510.627
+Slack : -40.227
+TNS   : -1136.659
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.986
-TNS   : -20.570
+Slack : -1.817
+TNS   : -21.471
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -1.336
-TNS   : -1.336
+Slack : -1.461
+TNS   : -1.461
 
 Type  : Fast 1100mV 0C Model Setup 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : -0.084
-TNS   : -0.168
+Slack : -0.013
+TNS   : -0.025
+
+Type  : Fast 1100mV 0C Model Setup 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 30.098
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.118
-TNS   : -0.906
+Slack : -0.102
+TNS   : -0.348
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.055
+Slack : -0.036
+TNS   : -0.071
+
+Type  : Fast 1100mV 0C Model Hold 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.249
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.352
+Slack : 0.327
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.069
+Slack : 1.218
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
-Slack : -3.141
-TNS   : -133.091
 
 Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : -2.436
-TNS   : -4.871
-
-Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : -1.917
-TNS   : -1.917
+Slack : -2.843
+TNS   : -5.685
 
 Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.759
-TNS   : -20.779
+Slack : -1.789
+TNS   : -19.619
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.462
+TNS   : -88.146
+
+Type  : Fast 1100mV 0C Model Recovery 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
+Slack : -1.304
+TNS   : -1.304
 
 Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
-Slack : 0.003
-TNS   : 0.000
+Slack : -0.022
+TNS   : -0.083
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.111
+Slack : 0.054
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 1.465
+Slack : 1.047
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 1.513
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.405
-TNS   : -122.046
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -0.045
-TNS   : -0.528
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
-Slack : 0.072
+Slack : 1.793
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|key0code[0]'
-Slack : 0.090
+Slack : 0.033
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked'
+Slack : 0.033
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger'
+Slack : 0.081
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'kbdex_ctrl:kbdex_ctrl_inst|sigsend'
-Slack : 0.124
+Slack : 0.161
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.807
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 18.739
 TNS   : 0.000
 
 ------------------------------------------------------------

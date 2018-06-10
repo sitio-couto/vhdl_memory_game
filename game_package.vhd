@@ -5,6 +5,19 @@ package game_package is
 	
   type vetor is array (0 to 100) of integer range 0 to 100;
 	
+	
+	component vga_ball is
+	  port (    
+		 CLOCK_50                  : in  std_logic;
+		 KEY                       : in  std_logic_vector(0 downto 0);
+		 VGA_R, VGA_G, VGA_B       : out std_logic_vector(7 downto 0);
+		 VGA_HS, VGA_VS            : out std_logic;
+		 VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
+		 VGA_CLK                   : out std_logic
+		 );
+	end component;
+	
+	
   component kbd_alphanum is
     port (
       clk : in std_logic;
