@@ -37,7 +37,8 @@ architecture rtl of game_control is
   signal n_players, t_cards, n_pairs : integer range 0 to 9;
   signal n_cards : integer range 0 to 79;
   signal game_table : vetor;
-
+  signal table_map_out: std_logic_vector (79 downto 0);
+  
   signal p1, p2, p3, p4, p5, p6 : std_logic_vector (3 downto 0);
   signal pa, pb, pc, pd, pe, pf : std_logic_vector (3 downto 0);
 
@@ -61,7 +62,9 @@ begin
 		 VGA_R, VGA_G, VGA_B,
 		 VGA_HS, VGA_VS,
 		 VGA_BLANK_N, VGA_SYNC_N,
-		 VGA_CLK                
+		 VGA_CLK,	
+		 game_table,
+		 table_map_out
 	);
 
   kbdex_ctrl_inst : kbdex_ctrl
@@ -133,7 +136,8 @@ begin
 			n_cards,
 			game_table,
 			pa, pb, pc, pd, pe, pf,
-			LEDR(5 downto 0)
+			LEDR(5 downto 0),
+			table_map_out
 		);
 
 	process

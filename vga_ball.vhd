@@ -28,6 +28,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.game_package.all;
+
 
 entity vga_ball is
   port (    
@@ -36,7 +38,9 @@ entity vga_ball is
     VGA_R, VGA_G, VGA_B       : out std_logic_vector(7 downto 0);
     VGA_HS, VGA_VS            : out std_logic;
     VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
-    VGA_CLK                   : out std_logic
+    VGA_CLK                   : out std_logic;
+	 game_table : in vetor;
+	 table_map_out : in std_logic_vector (79 downto 0)
     );
 end vga_ball;
 
@@ -316,19 +320,18 @@ begin  -- comportamento
 	begin
 		exit_loop := '0';
 		pixel_color := 0; -- comeca com a cor preta
-
---		for i in 0 to 3 loop
---			if ((line >= row_margin + row_width*i + row_margin*i) and (line <= row_margin + row_width*(i+1) + row_margin*i)) then
---				pixel_color := 7;
---			end if;
---		end loop;
 		
 		L1 : for i in 0 to 3 loop -- linhas
 			for j in 0 to 7 loop -- colunas
 				if ((line >= row_margin + row_width*i + row_margin*i) and (line <= row_margin + row_width*(i+1) + row_margin*i)) then -- nos boundaries do eixo y de uma carta
 					if ((col >= col_margin + col_width*j + col_margin*j) and (col <= col_margin + col_width*(j+1) + col_margin*j)) then -- nos boundaries do eixo x de uma carta
-						--pixel_color := card_color(i*8 + j);
-						pixel_color := 7;
+						--if () then
+							if (table_map_out(i*8 + j) = '0') then
+								pixel_color := game_table(i*8 + j)/10; 
+							else
+								pixel_color := 7;
+							end if;
+						--end if;
 						exit L1;
 					end if;
 				end if;
@@ -339,37 +342,6 @@ begin  -- comportamento
 	end process;
 	pixel <= color_bin;
 
-	
---  
---  process (CLOCK_50, rstn)
---  begin
---		if color_int = 0 then
---			color_int <= 1;
---		elsif old_xc /= x_color or old_yc /= y_color then
---			
---			if old_xc = 63 then old_xc <= 1;
---			else old_xc <= x_color;
---			end if;
---			
---			if old_yc = 63 then old_yc <= 1;
---			else old_yc <= y_color; 
---			end if;
---			
---			if color_int = 7 then color_int <= 1;
---			else color_int <= color_int + 1;
---			end if;
---		end if;
---		
---		--color_bin <= std_logic_vector(to_unsigned(color_int, 3));
---  end process;
-  
---	pixel_bit <= '1' when (col = pos_x and line = pos_y) or (col = pos_x1 and line = pos_y1) or (col = pos_x2 and line = pos_y2) or (col = pos_x3 and line = pos_y3) or (col = pos_x4 and line = pos_y4) or (col = pos_x5 and line = pos_y5) else '0';
-
-
---	with pixel_bit select pixel <=
---		color_bin when '1',
---		"000" when '0';
-		
   -- O endereço de memória pode ser construído com essa fórmula simples,
   -- a partir da linha e coluna atual
   addr  <= col + (128 * line);

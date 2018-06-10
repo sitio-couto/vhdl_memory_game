@@ -15,7 +15,8 @@ entity play_table is
 		n_cards    : in integer range 0 to 100;
 		game_table : in vetor;
 		pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0);
-		LEDR		  : out std_logic_vector (5 downto 0)
+		LEDR		  : out std_logic_vector (5 downto 0);
+		table_map_out : out std_logic_vector (79 downto 0)
 	);
 end play_table;
 architecture rtl of play_table is
@@ -35,7 +36,8 @@ begin
 
 	LEDR(3 downto 0) <= aux_player;
 	LEDR(4) <= wait_keypress;
-
+	table_map_out <= table_map;
+	
 	with curr_player select aux_player <=
 		"0001" when 0,
 		"0010" when 1,

@@ -13,7 +13,9 @@ package game_package is
 		 VGA_R, VGA_G, VGA_B       : out std_logic_vector(7 downto 0);
 		 VGA_HS, VGA_VS            : out std_logic;
 		 VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
-		 VGA_CLK                   : out std_logic
+		 VGA_CLK                   : out std_logic;
+		 game_table : in vetor;
+		 table_map_out : in std_logic_vector (79 downto 0)
 		 );
 	end component;
 	
@@ -104,7 +106,8 @@ package game_package is
 			n_cards    : in integer range 0 to 100;
 			game_table : in vetor;
 			pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0);
-			LEDR		  : out std_logic_vector (5 downto 0)
+			LEDR		  : out std_logic_vector (5 downto 0);
+			table_map_out : out std_logic_vector (79 downto 0)
 		);
 	end component;
 	
