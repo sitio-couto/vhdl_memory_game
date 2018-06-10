@@ -15,15 +15,16 @@ entity ready_table is
 	 );
 end ready_table;
 architecture rtl of ready_table is
-	signal clk_flag : std_logic := '0';
+	signal clk_flag, deck_flag : std_logic := '0';
 	signal state, next_state : std_logic_vector (2 downto 0) := "000";
 
 	signal deck : vetor;
+	signal deck_map : std_logic_vector(0 to 39);
 	signal table_map : std_logic_vector(0 to 79);
 begin
 
 	process
-		variable i, rand : integer range 0 to 100 := 0;
+		variable i, rand_deck, rand_table : integer range 0 to 100 := 0;
 	
 		variable seed : positive := 61631;
 		constant M: integer := 502321;
@@ -60,32 +61,49 @@ begin
 			
 			i := 0;
 			seed := seed_in;
+			deck_flag <= '1';
 			
 			next_state <= "010";
 			
 		when "010" =>
-	
 			seed := (seed*A + B) mod M;
-			rand := (seed mod n_cards);
-			next_state <= "011";
+			
+			if (deck_flag = '1') then
+				i := i + 1;
+				rand_deck := (seed mod (n_cards/2));
+				next_state <= "011";
+			else	next_state <= "100";
+			end if;
+			
+			rand_table := (seed mod n_cards);
 		
 		when "011" =>
 		
-			if (table_map(rand) = '0') then
-				table_map(rand) <= '1';
+			if (deck_map(rand_deck) = '0') then
+				deck_map(rand_deck) <= '1';
 				next_state <= "100";
 			else
-				rand := (rand + 1) mod n_cards;
+				rand_deck := (rand_deck + 1) mod (n_cards/2);
 			end if;
 	
 		when "100" =>
 			
-			game_table(rand) <= deck(i/2);
-			i := i + 1;
-			if (i < n_cards) then next_state <= "010";
-			else next_state <= "111";
+			if (table_map(rand_table) = '0') then
+				table_map(rand_table) <= '1';
+				next_state <= "101";
+			else
+				rand_table := (rand_table + 1) mod n_cards;
 			end if;
+
+		when "101" =>
 		
+			deck_flag <= not deck_flag;
+			game_table(rand_table) <= deck(rand_deck);
+			
+			if (i = n_cards/2) then next_state <= "111";
+			else next_state <= "010";
+			end if;
+			
 		when "111" =>
 		
 			table_ready <= '1';
