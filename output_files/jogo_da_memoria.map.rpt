@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jogo_da_memoria
-Mon Jun 11 09:42:42 2018
+Mon Jun 11 13:55:12 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -151,7 +151,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 11 09:42:42 2018       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 11 13:55:12 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
@@ -351,12 +351,12 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Estimate of Logic utilization (ALMs needed) ; 6000           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 10395          ;
+; Combinational ALUT usage for logic          ; 10396          ;
 ;     -- 7 input functions                    ; 71             ;
 ;     -- 6 input functions                    ; 1389           ;
-;     -- 5 input functions                    ; 1020           ;
-;     -- 4 input functions                    ; 1837           ;
-;     -- <=3 input functions                  ; 6078           ;
+;     -- 5 input functions                    ; 980            ;
+;     -- 4 input functions                    ; 1861           ;
+;     -- <=3 input functions                  ; 6095           ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 1467           ;
 ;                                             ;                ;
@@ -371,7 +371,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1409           ;
-; Total fan-out                               ; 42301          ;
+; Total fan-out                               ; 42236          ;
 ; Average fan-out                             ; 3.50           ;
 +---------------------------------------------+----------------+
 
@@ -381,26 +381,26 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |game_control                                   ; 10395 (20)          ; 1467 (35)                 ; 36864             ; 34         ; 88   ; 0            ; |game_control                                                                                                                                       ; game_control        ; work         ;
-;    |ascii_2_num:translate|                      ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                                 ; ascii_2_num         ; work         ;
+; |game_control                                   ; 10396 (20)          ; 1467 (35)                 ; 36864             ; 34         ; 88   ; 0            ; |game_control                                                                                                                                       ; game_control        ; work         ;
+;    |ascii_2_num:translate|                      ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ascii_2_num:translate                                                                                                                 ; ascii_2_num         ; work         ;
 ;    |bin2dec:print0|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print0                                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print1|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print1                                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print2|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print2                                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print3|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print3                                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print4|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print4                                                                                                                        ; bin2dec             ; work         ;
 ;    |bin2dec:print5|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|bin2dec:print5                                                                                                                        ; bin2dec             ; work         ;
-;    |config_table:settings|                      ; 74 (74)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                                                                 ; config_table        ; work         ;
-;    |kbd_alphanum:kbd_alphanum_inst|             ; 270 (74)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                                        ; kbd_alphanum        ; work         ;
-;       |code2ascii:\G1:0:translate|              ; 143 (143)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                                                             ; code2ascii          ; work         ;
-;       |code2ascii:\G1:1:translate|              ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                                             ; code2ascii          ; work         ;
+;    |config_table:settings|                      ; 73 (73)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|config_table:settings                                                                                                                 ; config_table        ; work         ;
+;    |kbd_alphanum:kbd_alphanum_inst|             ; 272 (73)            ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst                                                                                                        ; kbd_alphanum        ; work         ;
+;       |code2ascii:\G1:0:translate|              ; 145 (145)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:0:translate                                                                             ; code2ascii          ; work         ;
+;       |code2ascii:\G1:1:translate|              ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|code2ascii:\G1:1:translate                                                                             ; code2ascii          ; work         ;
 ;       |ff_d:shift_flop|                         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_d:shift_flop                                                                                        ; ff_d                ; work         ;
 ;       |ff_t:caps_flop|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbd_alphanum:kbd_alphanum_inst|ff_t:caps_flop                                                                                         ; ff_t                ; work         ;
-;    |kbdex_ctrl:kbdex_ctrl_inst|                 ; 191 (69)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                                            ; kbdex_ctrl          ; work         ;
+;    |kbdex_ctrl:kbdex_ctrl_inst|                 ; 192 (70)            ; 137 (59)                  ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst                                                                                                            ; kbdex_ctrl          ; work         ;
 ;       |ps2_iobase:ps2_ctrl|                     ; 122 (122)           ; 78 (78)                   ; 0                 ; 0          ; 0    ; 0            ; |game_control|kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl                                                                                        ; ps2_iobase          ; work         ;
-;    |lpm_divide:Div0|                            ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                                                       ; lpm_divide          ; work         ;
-;       |lpm_divide_4am:auto_generated|           ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                                         ; lpm_divide_4am      ; work         ;
-;          |sign_div_unsign_akh:divider|          ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                                             ; sign_div_unsign_akh ; work         ;
-;             |alt_u_div_qse:divider|             ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                                       ; alt_u_div_qse       ; work         ;
+;    |lpm_divide:Div0|                            ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0                                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_4am:auto_generated|           ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                                         ; lpm_divide_4am      ; work         ;
+;          |sign_div_unsign_akh:divider|          ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                                             ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_qse:divider|             ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                                       ; alt_u_div_qse       ; work         ;
 ;    |lpm_divide:Mod0|                            ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0                                                                                                                       ; lpm_divide          ; work         ;
 ;       |lpm_divide_42m:auto_generated|           ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                                                         ; lpm_divide_42m      ; work         ;
 ;          |sign_div_unsign_7kh:divider|          ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                                             ; sign_div_unsign_7kh ; work         ;
@@ -409,15 +409,15 @@ refer to the applicable agreement for further details.
 ;       |lpm_divide_42m:auto_generated|           ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                                                         ; lpm_divide_42m      ; work         ;
 ;          |sign_div_unsign_7kh:divider|          ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                                             ; sign_div_unsign_7kh ; work         ;
 ;             |alt_u_div_kse:divider|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider                                       ; alt_u_div_kse       ; work         ;
-;    |lpm_divide:Mod2|                            ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                                                       ; lpm_divide          ; work         ;
-;       |lpm_divide_a2m:auto_generated|           ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated                                                                                         ; lpm_divide_a2m      ; work         ;
-;          |sign_div_unsign_dkh:divider|          ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                                             ; sign_div_unsign_dkh ; work         ;
-;             |alt_u_div_0te:divider|             ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                                       ; alt_u_div_0te       ; work         ;
+;    |lpm_divide:Mod2|                            ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2                                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_a2m:auto_generated|           ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated                                                                                         ; lpm_divide_a2m      ; work         ;
+;          |sign_div_unsign_dkh:divider|          ; 36 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                                             ; sign_div_unsign_dkh ; work         ;
+;             |alt_u_div_0te:divider|             ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod2|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                                       ; alt_u_div_0te       ; work         ;
 ;    |lpm_divide:Mod3|                            ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3                                                                                                                       ; lpm_divide          ; work         ;
 ;       |lpm_divide_a2m:auto_generated|           ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated                                                                                         ; lpm_divide_a2m      ; work         ;
 ;          |sign_div_unsign_dkh:divider|          ; 32 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                                             ; sign_div_unsign_dkh ; work         ;
 ;             |alt_u_div_0te:divider|             ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|lpm_divide:Mod3|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                                       ; alt_u_div_0te       ; work         ;
-;    |play_table:gameplay|                        ; 1363 (1075)         ; 206 (206)                 ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay                                                                                                                   ; play_table          ; work         ;
+;    |play_table:gameplay|                        ; 1360 (1074)         ; 206 (206)                 ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay                                                                                                                   ; play_table          ; work         ;
 ;       |lpm_divide:Div0|                         ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
 ;          |lpm_divide_4am:auto_generated|        ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                     ; lpm_divide_4am      ; work         ;
 ;             |sign_div_unsign_akh:divider|       ; 39 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                         ; sign_div_unsign_akh ; work         ;
@@ -426,10 +426,10 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_4am:auto_generated|        ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1|lpm_divide_4am:auto_generated                                                                     ; lpm_divide_4am      ; work         ;
 ;             |sign_div_unsign_akh:divider|       ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                         ; sign_div_unsign_akh ; work         ;
 ;                |alt_u_div_qse:divider|          ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Div1|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider                   ; alt_u_div_qse       ; work         ;
-;       |lpm_divide:Mod0|                         ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0                                                                                                   ; lpm_divide          ; work         ;
-;          |lpm_divide_62m:auto_generated|        ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                                     ; lpm_divide_62m      ; work         ;
-;             |sign_div_unsign_ekh:divider|       ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_ekh:divider                                         ; sign_div_unsign_ekh ; work         ;
-;                |alt_u_div_pse:divider|          ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_pse:divider                   ; alt_u_div_pse       ; work         ;
+;       |lpm_divide:Mod0|                         ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0                                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_62m:auto_generated|        ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                                     ; lpm_divide_62m      ; work         ;
+;             |sign_div_unsign_ekh:divider|       ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_ekh:divider                                         ; sign_div_unsign_ekh ; work         ;
+;                |alt_u_div_pse:divider|          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_pse:divider                   ; alt_u_div_pse       ; work         ;
 ;       |lpm_divide:Mod1|                         ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod1                                                                                                   ; lpm_divide          ; work         ;
 ;          |lpm_divide_42m:auto_generated|        ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod1|lpm_divide_42m:auto_generated                                                                     ; lpm_divide_42m      ; work         ;
 ;             |sign_div_unsign_7kh:divider|       ; 26 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod1|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                                         ; sign_div_unsign_7kh ; work         ;
@@ -450,7 +450,7 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_a2m:auto_generated|        ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod5|lpm_divide_a2m:auto_generated                                                                     ; lpm_divide_a2m      ; work         ;
 ;             |sign_div_unsign_dkh:divider|       ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                         ; sign_div_unsign_dkh ; work         ;
 ;                |alt_u_div_0te:divider|          ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|play_table:gameplay|lpm_divide:Mod5|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                   ; alt_u_div_0te       ; work         ;
-;    |ready_table:randomize|                      ; 4039 (558)          ; 934 (934)                 ; 0                 ; 2          ; 0    ; 0            ; |game_control|ready_table:randomize                                                                                                                 ; ready_table         ; work         ;
+;    |ready_table:randomize|                      ; 4044 (557)          ; 934 (934)                 ; 0                 ; 2          ; 0    ; 0            ; |game_control|ready_table:randomize                                                                                                                 ; ready_table         ; work         ;
 ;       |lpm_divide:Mod0|                         ; 1199 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0                                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_45m:auto_generated|        ; 1199 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                                   ; lpm_divide_45m      ; work         ;
 ;             |sign_div_unsign_7nh:divider|       ; 1199 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                                       ; sign_div_unsign_7nh ; work         ;
@@ -459,19 +459,19 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_c2m:auto_generated|        ; 80 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_c2m:auto_generated                                                                   ; lpm_divide_c2m      ; work         ;
 ;             |sign_div_unsign_fkh:divider|       ; 80 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                                       ; sign_div_unsign_fkh ; work         ;
 ;                |alt_u_div_4te:divider|          ; 80 (80)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod1|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider                 ; alt_u_div_4te       ; work         ;
-;       |lpm_divide:Mod2|                         ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2                                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_65m:auto_generated|        ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated                                                                   ; lpm_divide_65m      ; work         ;
-;             |sign_div_unsign_9nh:divider|       ; 959 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                                       ; sign_div_unsign_9nh ; work         ;
-;                |alt_u_div_o2f:divider|          ; 959 (959)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider                 ; alt_u_div_o2f       ; work         ;
-;       |lpm_divide:Mod3|                         ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3                                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_45m:auto_generated|        ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated                                                                   ; lpm_divide_45m      ; work         ;
-;             |sign_div_unsign_7nh:divider|       ; 1182 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                                       ; sign_div_unsign_7nh ; work         ;
-;                |alt_u_div_k2f:divider|          ; 1182 (1182)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider                 ; alt_u_div_k2f       ; work         ;
-;       |lpm_divide:Mod4|                         ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4                                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_c2m:auto_generated|        ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated                                                                   ; lpm_divide_c2m      ; work         ;
-;             |sign_div_unsign_fkh:divider|       ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                                       ; sign_div_unsign_fkh ; work         ;
-;                |alt_u_div_4te:divider|          ; 61 (61)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider                 ; alt_u_div_4te       ; work         ;
-;    |vga_ball:vga|                               ; 4266 (1248)         ; 81 (40)                   ; 36864             ; 32         ; 0    ; 0            ; |game_control|vga_ball:vga                                                                                                                          ; vga_ball            ; work         ;
+;       |lpm_divide:Mod2|                         ; 961 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2                                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_65m:auto_generated|        ; 961 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated                                                                   ; lpm_divide_65m      ; work         ;
+;             |sign_div_unsign_9nh:divider|       ; 961 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                                       ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_o2f:divider|          ; 961 (961)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod2|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider                 ; alt_u_div_o2f       ; work         ;
+;       |lpm_divide:Mod3|                         ; 1184 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3                                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_45m:auto_generated|        ; 1184 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated                                                                   ; lpm_divide_45m      ; work         ;
+;             |sign_div_unsign_7nh:divider|       ; 1184 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|          ; 1184 (1184)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod3|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider                 ; alt_u_div_k2f       ; work         ;
+;       |lpm_divide:Mod4|                         ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4                                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_c2m:auto_generated|        ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated                                                                   ; lpm_divide_c2m      ; work         ;
+;             |sign_div_unsign_fkh:divider|       ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider                                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_4te:divider|          ; 63 (63)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|ready_table:randomize|lpm_divide:Mod4|lpm_divide_c2m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_4te:divider                 ; alt_u_div_4te       ; work         ;
+;    |vga_ball:vga|                               ; 4265 (1247)         ; 81 (40)                   ; 36864             ; 32         ; 0    ; 0            ; |game_control|vga_ball:vga                                                                                                                          ; vga_ball            ; work         ;
 ;       |lpm_divide:Div11|                        ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|vga_ball:vga|lpm_divide:Div11                                                                                                         ; lpm_divide          ; work         ;
 ;          |lpm_divide_4am:auto_generated|        ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|vga_ball:vga|lpm_divide:Div11|lpm_divide_4am:auto_generated                                                                           ; lpm_divide_4am      ; work         ;
 ;             |sign_div_unsign_akh:divider|       ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |game_control|vga_ball:vga|lpm_divide:Div11|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                               ; sign_div_unsign_akh ; work         ;
@@ -1523,7 +1523,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 17:1               ; 5 bits    ; 55 LEs        ; 10 LEs               ; 45 LEs                 ; Yes        ; |game_control|play_table:gameplay|pa[3]                                ;
 ; 17:1               ; 8 bits    ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |game_control|play_table:gameplay|lin1[3]                              ;
 ; 17:1               ; 8 bits    ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |game_control|play_table:gameplay|col2[0]                              ;
-; 17:1               ; 6 bits    ; 66 LEs        ; 6 LEs                ; 60 LEs                 ; Yes        ; |game_control|play_table:gameplay|cards_found[2]                       ;
+; 17:1               ; 6 bits    ; 66 LEs        ; 6 LEs                ; 60 LEs                 ; Yes        ; |game_control|play_table:gameplay|cards_found[6]                       ;
 ; 17:1               ; 7 bits    ; 77 LEs        ; 7 LEs                ; 70 LEs                 ; Yes        ; |game_control|play_table:gameplay|player_score[0][4]                   ;
 ; 17:1               ; 7 bits    ; 77 LEs        ; 7 LEs                ; 70 LEs                 ; Yes        ; |game_control|play_table:gameplay|player_score[1][6]                   ;
 ; 17:1               ; 7 bits    ; 77 LEs        ; 7 LEs                ; 70 LEs                 ; Yes        ; |game_control|play_table:gameplay|player_score[2][6]                   ;
@@ -3947,23 +3947,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 10                          ;
 ;     plain             ; 96                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 10402                       ;
+; arriav_lcell_comb     ; 10403                       ;
 ;     arith             ; 3683                        ;
-;         0 data inputs ; 610                         ;
-;         1 data inputs ; 628                         ;
+;         0 data inputs ; 612                         ;
+;         1 data inputs ; 626                         ;
 ;         2 data inputs ; 312                         ;
-;         3 data inputs ; 1022                        ;
-;         4 data inputs ; 932                         ;
-;         5 data inputs ; 179                         ;
+;         3 data inputs ; 1026                        ;
+;         4 data inputs ; 960                         ;
+;         5 data inputs ; 147                         ;
 ;     extend            ; 71                          ;
 ;         7 data inputs ; 71                          ;
-;     normal            ; 5946                        ;
+;     normal            ; 5947                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 2039                        ;
-;         3 data inputs ; 784                         ;
-;         4 data inputs ; 872                         ;
-;         5 data inputs ; 841                         ;
+;         2 data inputs ; 2049                        ;
+;         3 data inputs ; 787                         ;
+;         4 data inputs ; 868                         ;
+;         5 data inputs ; 833                         ;
 ;         6 data inputs ; 1389                        ;
 ;     shared            ; 702                         ;
 ;         0 data inputs ; 89                          ;
@@ -3977,7 +3977,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 6                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 143.20                      ;
-; Average LUT depth     ; 50.16                       ;
+; Average LUT depth     ; 50.19                       ;
 +-----------------------+-----------------------------+
 
 
@@ -3996,7 +3996,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 11 09:42:04 2018
+    Info: Processing started: Mon Jun 11 13:54:35 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jogo_da_memoria -c jogo_da_memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -4485,18 +4485,18 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 13
     Warning (15610): No output dependent on input pin "KEY[2]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
     Warning (15610): No output dependent on input pin "KEY[3]" File: /home/ec2016/ra188115/Documents/MC613/Projeto/game_control.vhd Line: 20
-Info (21057): Implemented 11473 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 11474 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 71 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 11344 logic cells
+    Info (21061): Implemented 11345 logic cells
     Info (21064): Implemented 6 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 34 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 1322 megabytes
-    Info: Processing ended: Mon Jun 11 09:42:42 2018
-    Info: Elapsed time: 00:00:38
-    Info: Total CPU time (on all processors): 00:00:48
+    Info: Peak virtual memory: 1335 megabytes
+    Info: Processing ended: Mon Jun 11 13:55:12 2018
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:47
 
 

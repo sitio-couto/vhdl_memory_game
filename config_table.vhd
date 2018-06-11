@@ -29,8 +29,8 @@ begin
 	with n_pairs_aux select n_cards <=
 		 8 when 1,
 		16 when 2,
-		32 when 3,
-		64 when 4,
+		24 when 3,
+		32 when 4,
 		 0 when others;
 
 	-- MAQUINA DE ESTADOS (controla entidade).
