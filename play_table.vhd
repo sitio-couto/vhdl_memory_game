@@ -15,37 +15,23 @@ entity play_table is
 		n_cards    : in integer range 0 to 100;
 		game_table : in vetor;
 		pa, pb, pc, pd, pe, pf : out std_logic_vector (3 downto 0);
-		LEDR		  : out std_logic_vector (5 downto 0);
 		table_map_out : out std_logic_vector (79 downto 0);
 		linha, coluna : out integer range 0 to 9
 	);
 end play_table;
 architecture rtl of play_table is
-	signal  key_on_prev : std_logic_vector (2 downto 0);
+	signal key_on_prev : std_logic_vector (2 downto 0);
 	signal state, next_state : std_logic_vector (3 downto 0) := "0000";
 	signal wait_keypress : std_logic := '0';
 
-	signal clk_flag : std_logic := '0';
-	signal aux_player : std_logic_vector (3 downto 0);
-	signal card_flag, match : std_logic := '0';
+	signal clk_flag, card_flag, return_cards : std_logic := '0';
 	signal table_map : std_logic_vector (79 downto 0);
-	signal c_aux, l_aux : integer range 0 to 9;
-	signal flag2, row_set : std_logic;
 	signal curr_player, des : integer range 0 to 5;
 	signal player_score : vetor;
 begin
 
-	LEDR(3 downto 0) <= aux_player;
-	LEDR(4) <= wait_keypress;
 	table_map_out <= table_map;
 	
-	with curr_player select aux_player <=
-		"0001" when 0,
-		"0010" when 1,
-		"0100" when 2,
-		"1000" when 3,
-		"0000" when others;
-		
 	with key_number select des <=
 		1 when x"10",
 		2 when x"20",
@@ -72,7 +58,6 @@ begin
 			-- Inicializacao de variaveis essenciais.
 			curr_player <= 0;
 			card_flag <= '0';
-			match <= '0';
 			cards_found := 0;
 
 			l := 0;
@@ -84,15 +69,15 @@ begin
 			max  := 0;
 			winner := 0;
 			
-			pf <= "0000";
-			pe <= "0000";
-			pd <= "1101";
-			pc <= "1101";
-			pb <= "1101";
-			pa <= "1101";
-			
 			linha <= 0;
 			coluna <= 0;
+			
+			pf <= "1100";
+			pe <= "1101";
+			pd <= "1111";
+			pc <= "0000";
+			pb <= "0000";
+			pa <= "0000";
 
 			i := 0;
 			while (i < 80) loop
@@ -115,30 +100,28 @@ begin
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
 				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
-			-- Se nao for enter, e for um valor valido, regirstra uma linha.
-			elsif (des mod 2) = 1 then
-				if (des = 1) then
+			-- Se for uma seta, incrementa de acordo (da a volta caso sai das margens).
+			elsif (des /= 0) then
+				if (des = 1) then -- Cima
 					if (l > 0) then l := l - 1;
-					else l := (n_cards/8 - 1); end if;
-				elsif (des = 3) then l := l + 1;
-				end if;
-				linha <= l mod (n_cards/8);
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				next_state <= "0011"; -- Vai para selecao de coluna
-			elsif ((des mod 2) = 0) and (des /= 0) then
-				if (des = 2) then 
+					else l := (n_cards/8 - 1); 
+					end if;
+				elsif (des = 3) then -- Esquerda
+					l := (l + 1) mod (n_cards/8);
+				elsif (des = 2) then -- Baixo
 					if (c > 0) then c := c - 1;
-					else c := 7; end if;
-				elsif (des = 4) then c := c + 1;
+					else c := 7; 
+					end if;
+				elsif (des = 4) then -- Direita
+					c := (c + 1) mod 8;
 				end if;
-				coluna <= c mod 8;
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				next_state <= "0011"; -- Vai para selecao de coluna
+				linha <= l;
+				coluna <= c;
+			-- Se nao for enter, e for um valor valido, regirstra uma linha.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < n_cards/8) then
 				l := to_integer(unsigned(key_number(3 downto 0)));
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				linha <= to_integer(unsigned(key_number(3 downto 0)));
-				pf <= key_number(3 downto 0);	 -- Mostra selecao.
+				linha <= l;
+				pf <= "1110"; -- Mostra C.
 				next_state <= "0011"; -- Vai para selecao de coluna
 			end if;
 
@@ -148,55 +131,49 @@ begin
 				wait_keypress <= '0'; -- Proximo estado nao espera input.
 				next_state <= "0100"; -- Vai para "vira carta"
 				table_map(l*8 + c) <= '0'; -- Atualiza cartas viradas
-			-- Se nao for enter, e for um valor valido, regirstra uma coluna.
-			elsif (des mod 2) = 1 then
-				if    (des = 1) then 
+			-- Se for uma seta, incrementa de acordo (da a volta caso sai das margens).
+			elsif (des /= 0) then
+				if (des = 1) then -- Cima
 					if (l > 0) then l := l - 1;
-					else l := (n_cards/8 - 1); end if;
-				elsif (des = 3) then l := l + 1;	
-				end if;
-				linha <= l mod (n_cards/8);
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				next_state <= "0010"; -- Vai para selecao de coluna
-			elsif ((des mod 2) = 0) and (des /= 0) then
-				if    (des = 2) then
+					else l := (n_cards/8 - 1); 
+					end if;
+				elsif (des = 3) then -- Equerda
+					l := (l + 1) mod (n_cards/8);
+				elsif (des = 2) then -- Baixo
 					if (c > 0) then c := c - 1;
-					else c := 7; end if;
-				elsif (des = 4) then c := c + 1;
+					else c := 7; 
+					end if;
+				elsif (des = 4) then -- Direita
+					c := (c + 1) mod 8;
 				end if;
-				coluna <= c mod 8;
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				next_state <= "0010"; -- Vai para selecao de coluna
+				linha <= l;
+				coluna <= c;
+			-- Se nao for enter, e for um valor valido, regirstra uma coluna.
 			elsif (enter_on = '0') and (to_integer(unsigned(key_number(3 downto 0))) >= 0) and (to_integer(unsigned(key_number(3 downto 0))) < 8) then
 				c := to_integer(unsigned(key_number(3 downto 0)));
-				LEDR(5) <= table_map(l*8 + c); -- Atualiza led que indica disponibilidade
-				coluna <= to_integer(unsigned(key_number(3 downto 0)));
-				pe <= key_number(3 downto 0);  -- Mostra selecao
+				coluna <= c;
+				pf <= "1100"; -- Mostra L.
 				next_state <= "0010"; -- Vai para selecao de linha
 			end if;
 
 		when "0100" => -- Vira carta
-			if (card_flag = '0') then -- Se for a primeira carta sendo selecionada.
-				-- Imprime carta virada.
-				pa <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
-				pb <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
-				-- Salva posicao.
-				lin1 := l;
-				col1 := c;
-				next_state <= "0010"; -- Volta para selecao de linha
-			else -- Se for a segunda carta sendo selecionada.
-				-- Imprime carta virada.
-				pc <= std_logic_vector(to_unsigned(game_table(l*8 + c) mod 10, 4));
-				pd <= std_logic_vector(to_unsigned(game_table(l*8 + c)/10 mod 10, 4));
-				-- Salva posicao.
-				lin2 := l;
-				col2 := c;
-				next_state <= "0110"; -- Vai para "computa a jogada"
-			end if;
+			clk_flag <= not clk_flag;
+			if (clk_flag = '1') then
+				if (card_flag = '0') then -- Se for a primeira carta sendo selecionada.
+					-- Salva posicao.
+					lin1 := l;
+					col1 := c;
+					wait_keypress <= '1';
+					next_state <= "0010"; -- Volta para selecao de linha
+				else -- Se for a segunda carta sendo selecionada.
+					-- Salva posicao.
+					lin2 := l;
+					col2 := c;
+					next_state <= "0110"; -- Vai para "computa a jogada"
+				end if;
 
-			wait_keypress <= '1'; -- Proximo estado requer input
-			LEDR(5) <= table_map(l*8 + c);
-			card_flag <= not card_flag;
+				card_flag <= not card_flag;
+			end if;
 
 		when "0110" => -- computa a jogada
 			clk_flag <= not clk_flag; -- Delay de clock pra evitar um erro que ele executava duas vezes o estado
@@ -206,14 +183,12 @@ begin
 					player_score(curr_player) <= player_score(curr_player) + 1; --incremeta o score
 					cards_found := cards_found + 2; -- incremeta o numero de cartas encontradas
 				else
-					-- se diferentes, devolve as cartas
-					table_map(lin1*8 + col1) <= '1'; -- Devolve primeira carta 
-					table_map(lin2*8 + col2) <= '1'; -- Devolve segunda carta
+					-- se diferentes, sinaliza para devolver as cartas
+					return_cards <= '1';
 					curr_player <= (curr_player + 1) mod n_players; -- passa pro proximo jogador
 				end if;
 
 				i := curr_player;     -- Guarda o jogador atual.
-				wait_keypress <= '0'; -- Proximo estado nao requer input.
 				next_state <= "0111";
 			end if;
 		when "0111" =>
@@ -223,25 +198,31 @@ begin
 			pc <= std_logic_vector(to_unsigned(player_score(i) mod 10, 4));  -- imprime score
 			pb <= "1111"; -- imprime P
 			pa <= std_logic_vector(to_unsigned(curr_player, 4)); -- Imprime proximo jogador
-
+			
 			wait_keypress <= '1'; -- Proximo estado requer input
 			next_state <= "1000"; -- Vai para "passa jogada"
 		when "1000" => -- Passa jogada
+			-- Devolve cartas se necessario antes de passar a jogada.
+			if (return_cards = '1') then 
+				return_cards <= '0'; -- Sinaliza que devolveu cartas
+				table_map(lin1*8 + col1) <= '1'; -- Devolve primeira carta 
+				table_map(lin2*8 + col2) <= '1'; -- Devolve segunda carta
+			end if;
+		
 			-- Estado de espera (aguarda enter)
-			if (enter_on = '1') and (cards_found = n_cards) then
+			if (cards_found = n_cards) then
 				wait_keypress <= '0';
 				next_state <= "1001"; -- Caso nao haja mais cartas, vai para "acha vencedor"
-			elsif (enter_on = '1') then
+			else
 				-- Caso haja cartas, reinicia displays
+				pf <= "1100";
+				pe <= "1101";
+				pd <= "1111";
+				pc <= std_logic_vector(to_unsigned(curr_player, 4)); -- Jogador atual.
+				pb <= std_logic_vector(to_unsigned(player_score(i)/10 mod 10, 4)); -- imprime score
+				pa <= std_logic_vector(to_unsigned(player_score(i) mod 10, 4));    -- imprime score
 				wait_keypress <= '1';
 				next_state <= "0010"; -- Vai para "selecao de linha"
-				pf <= std_logic_vector(to_unsigned(l, 4));
-				pe <= std_logic_vector(to_unsigned(c, 4));
-				pd <= "1101";
-				pc <= "1101";
-				pb <= "1101";
-				pa <= "1101";
-				LEDR(5) <= table_map(l*8 + c);
 			end if;
 
 		when "1001" => -- acha Vencedor

@@ -140,7 +140,6 @@ begin
 			n_cards,
 			game_table,
 			pa, pb, pc, pd, pe, pf,
-			LEDR(5 downto 0),
 			table_map_out,
 			linha, coluna
 		);
