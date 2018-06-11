@@ -1,5 +1,5 @@
 Flow report for jogo_da_memoria
-Mon Jun 11 09:28:42 2018
+Mon Jun 11 09:46:17 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Jun 11 09:28:42 2018       ;
+; Flow Status                     ; Successful - Mon Jun 11 09:46:17 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; jogo_da_memoria                             ;
 ; Top-level Entity Name           ; game_control                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 5,825 / 32,070 ( 18 % )                     ;
-; Total registers                 ; 1552                                        ;
-; Total pins                      ; 95 / 457 ( 21 % )                           ;
+; Logic utilization (in ALMs)     ; 5,829 / 32,070 ( 18 % )                     ;
+; Total registers                 ; 1543                                        ;
+; Total pins                      ; 88 / 457 ( 19 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 36,864 / 4,065,280 ( < 1 % )                ;
 ; Total DSP Blocks                ; 34 / 87 ( 39 % )                            ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/11/2018 09:24:44 ;
+; Start date & time ; 06/11/2018 09:42:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; jogo_da_memoria     ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name  ; Section Id     ;
 +-------------------------------------+----------------------------------------+-----------------+--------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273440552319713.152871988413877        ; --              ; --           ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273440552319713.152872092415945        ; --              ; --           ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --              ; --           ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>          ; --           ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --           ; eda_simulation ;
@@ -101,12 +101,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:36     ; 1.0                     ; 1334 MB             ; 00:00:46                           ;
-; Fitter                    ; 00:02:47     ; 1.2                     ; 2804 MB             ; 00:05:10                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 1177 MB             ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:17     ; 2.4                     ; 1528 MB             ; 00:00:35                           ;
+; Analysis & Synthesis      ; 00:00:36     ; 1.0                     ; 1322 MB             ; 00:00:47                           ;
+; Fitter                    ; 00:03:01     ; 1.2                     ; 2813 MB             ; 00:05:22                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 1169 MB             ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:17     ; 2.5                     ; 1529 MB             ; 00:00:36                           ;
 ; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 1514 MB             ; 00:00:04                           ;
-; Total                     ; 00:03:51     ; --                      ; --                  ; 00:06:43                           ;
+; Total                     ; 00:04:06     ; --                      ; --                  ; 00:06:57                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

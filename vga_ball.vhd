@@ -34,7 +34,7 @@ use work.game_package.all;
 entity vga_ball is
   port (    
     CLOCK_50                  : in  std_logic;
-    KEY                       : in  std_logic_vector(0 downto 0);
+    KEY                       : in  std_logic_vector(1 downto 0);
     VGA_R, VGA_G, VGA_B       : out std_logic_vector(7 downto 0);
     VGA_HS, VGA_VS            : out std_logic;
     VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
@@ -47,7 +47,7 @@ entity vga_ball is
 end vga_ball;
 
 architecture comportamento of vga_ball is
-  
+  signal cheats : std_logic; -- Mostra todas as cartas.
   signal rstn : std_logic;              -- reset active low para nossos
                                         -- circuitos sequenciais.
 
@@ -313,7 +313,7 @@ begin  -- comportamento
   -----------------------------------------------------------------------------
   -- Brilho do pixel
   -----------------------------------------------------------------------------
-
+	cheats <= not KEY(1);
   
 	process (CLOCK_50, rstn)
 		variable pixel_color : integer range 0 to 7;
@@ -333,7 +333,7 @@ begin  -- comportamento
 					if ((col >= col_margin + col_width*j + col_margin*j) and (col <= col_margin + col_width*(j+1) + col_margin*j)) then -- nos boundaries do eixo x de uma carta
 						if  (i*8+j < n_cards) then						
 						
-							if (table_map_out(i*8 + j) = '0') then -- printa numero e cor
+							if (table_map_out(i*8 + j) = '0' or cheats = '1') then -- printa numero e cor
 								-- boundaries dos numeros
 								y_bound := row_margin + row_width*i + row_margin*i + num_y_margin;
 								x_bound := col_margin + col_width*j + col_margin*j + num_x_margin;

@@ -17,9 +17,7 @@ entity game_control is
 	 HEX2 : out std_logic_vector(6 downto 0);
     HEX1 : out std_logic_vector(6 downto 0);
     HEX0 : out std_logic_vector(6 downto 0);
-	 LEDR : out std_logic_vector(9 downto 0);
-	 
-    KEY                       : in  std_logic_vector(0 downto 0);
+    KEY                       : in  std_logic_vector(3 downto 0);
     VGA_R, VGA_G, VGA_B       : out std_logic_vector(7 downto 0);
     VGA_HS, VGA_VS            : out std_logic;
     VGA_BLANK_N, VGA_SYNC_N   : out std_logic;
@@ -57,19 +55,19 @@ architecture rtl of game_control is
 
 begin
 
-	vga : vga_ball
-		port map (    
-			 CLOCK_50,
-			 KEY,
-			 VGA_R, VGA_G, VGA_B,
-			 VGA_HS, VGA_VS,
-			 VGA_BLANK_N, VGA_SYNC_N,
-			 VGA_CLK,	
-			 game_table,
-			 table_map_out,
-			 linha, coluna,
-			 n_cards
-		);
+  vga : vga_ball
+    port map (    
+		 CLOCK_50,
+		 KEY(1 downto 0),
+		 VGA_R, VGA_G, VGA_B,
+		 VGA_HS, VGA_VS,
+		 VGA_BLANK_N, VGA_SYNC_N,
+		 VGA_CLK,	
+		 game_table,
+		 table_map_out,
+		 linha, coluna,
+		 n_cards
+	 );
 	
   kbdex_ctrl_inst : kbdex_ctrl
     generic map (
@@ -243,7 +241,5 @@ begin
 		  p6,
 		  HEX5
 	) ;
-
-	LEDR(9 downto 6) <= state;
 
 end rtl;
