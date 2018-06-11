@@ -5,6 +5,7 @@ use work.game_package.all;
 
 entity play_table is
 	port (
+	   reset_game : in std_logic;
 		CLOCK_50   : in std_logic;
 		play_game  : in std_logic;
 		enter_on   : in std_logic;
@@ -45,7 +46,12 @@ begin
 		variable i, max, winner, cards_found  : integer range 0 to 100;
 	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-	if (key_on /= "000" and key_on_prev = "000") or wait_keypress = '0' then
+	
+	if (reset_game = '1') then
+		game_over <= '0';
+		wait_keypress <= '0';
+		next_state <= "0000";
+	elsif (key_on /= "000" and key_on_prev = "000") or wait_keypress = '0' then
 
 		case state is
 		when "0000" =>

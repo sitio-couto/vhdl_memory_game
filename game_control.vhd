@@ -43,6 +43,8 @@ architecture rtl of game_control is
   signal pa, pb, pc, pd, pe, pf : std_logic_vector (3 downto 0);
 
   -- Signals for block control.
+  signal reset_game : std_logic;
+  
   signal configure : std_logic := '0';
   signal config_ready : std_logic;
   signal seed_in : integer range 0 to 50000000;
@@ -54,6 +56,8 @@ architecture rtl of game_control is
   signal game_over : std_logic;
 
 begin
+
+  reset_game <= not KEY(2);
 
   vga : vga_ball
     port map (    
@@ -116,6 +120,7 @@ begin
   -- Bloco para o preparo da mesa.
 	randomize : ready_table
 	  port map (
+			 reset_game,
 			 CLOCK_50,
 			 set_table,
 			 table_ready,
@@ -128,6 +133,7 @@ begin
   -- Block para execucao do gameplay.
 	gameplay : play_table
 		port map (
+		   reset_game,
 			CLOCK_50,
 			play_game,
 			enter_on,
@@ -146,7 +152,12 @@ begin
 		variable l, c : integer range 0 to 100;
 	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-
+	
+	if (reset_game = '1') then
+		set_table <= '0';
+		play_game <= '0';
+		next_state <= "0011";
+	else
 		case state is
 		when "0000" =>
 			-- Sinaliza "config_table" para executar.
@@ -199,7 +210,8 @@ begin
 			end if;
 		when others => next_state <= "0000";
 		end case;
-
+	end if;
+		
 		state <= next_state; -- Atualiza estado;
 	end process;
 

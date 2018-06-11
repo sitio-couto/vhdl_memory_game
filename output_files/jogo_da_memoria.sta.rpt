@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for jogo_da_memoria
-Mon Jun 11 13:59:22 2018
+Mon Jun 11 14:25:16 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.47        ;
+; Average used               ; 2.46        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  50.2%      ;
-;     Processor 3            ;  49.2%      ;
-;     Processor 4            ;  48.1%      ;
+;     Processor 2            ;  48.9%      ;
+;     Processor 3            ;  48.8%      ;
+;     Processor 4            ;  48.6%      ;
 +----------------------------+-------------+
 
 
@@ -132,10 +132,10 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                     ; Note ;
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
-; 8.35 MHz   ; 8.35 MHz        ; CLOCK_50                                                                                       ;      ;
-; 54.2 MHz   ; 54.2 MHz        ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 274.88 MHz ; 274.88 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ;      ;
-; 544.96 MHz ; 544.96 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ;      ;
+; 8.32 MHz   ; 8.32 MHz        ; CLOCK_50                                                                                       ;      ;
+; 49.66 MHz  ; 49.66 MHz       ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 311.53 MHz ; 311.53 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ;      ;
+; 644.75 MHz ; 644.75 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ;      ;
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -146,30 +146,30 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary                                                                                      ;
-+------------------------------------------------------------------------------------------------+---------+---------------+
-; Clock                                                                                          ; Slack   ; End Point TNS ;
-+------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                       ; -99.771 ; -5699.669     ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -3.880  ; -48.204       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -2.895  ; -2.895        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.835  ; -1.666        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 21.271  ; 0.000         ;
-+------------------------------------------------------------------------------------------------+---------+---------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                                       ;
++------------------------------------------------------------------------------------------------+----------+---------------+
+; Clock                                                                                          ; Slack    ; End Point TNS ;
++------------------------------------------------------------------------------------------------+----------+---------------+
+; CLOCK_50                                                                                       ; -100.218 ; -4845.879     ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -4.027   ; -48.878       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -2.943   ; -2.943        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.551   ; -1.096        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.583   ; 0.000         ;
++------------------------------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                                                                                     ;
-+------------------------------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                                          ; Slack ; End Point TNS ;
-+------------------------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                                       ; 0.042 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.210 ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.308 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.876 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 2.250 ; 0.000         ;
-+------------------------------------------------------------------------------------------------+-------+---------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                                      ;
++------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                          ; Slack  ; End Point TNS ;
++------------------------------------------------------------------------------------------------+--------+---------------+
+; CLOCK_50                                                                                       ; -2.712 ; -46.977       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.231  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.381  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.612  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 2.307  ; 0.000         ;
++------------------------------------------------------------------------------------------------+--------+---------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -177,23 +177,23 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.606 ; -5.641        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.846 ; -41.378       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.230 ; -3.230        ;
-; CLOCK_50                                                  ; -2.919 ; -178.242      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -5.016 ; -10.030       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.814 ; -39.780       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.582 ; -3.582        ;
+; CLOCK_50                                                  ; -2.994 ; -126.503      ;
 +-----------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Removal Summary                                             ;
-+-----------------------------------------------------------+-------+---------------+
-; Clock                                                     ; Slack ; End Point TNS ;
-+-----------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                  ; 0.400 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.555 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.591 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.306 ; 0.000         ;
-+-----------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                                              ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; CLOCK_50                                                  ; -2.538 ; -52.528       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.313  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.619  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 3.344  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -201,13 +201,13 @@ HTML report is unavailable in plain text report export.
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.414 ; -0.808        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.394 ; -11.823       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.394 ; -1.117        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -0.394 ; -1.059        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.394 ; -10.824       ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.394 ; -1.066        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -0.394 ; -1.027        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.394 ; -0.552        ;
 ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.325  ; 0.000         ;
-; CLOCK_50                                                                                       ; 8.877  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.634 ; 0.000         ;
+; CLOCK_50                                                                                       ; 8.867  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.639 ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -218,7 +218,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 17.737 ns
+Worst Case Available Settling Time: 17.509 ns
 
 
 
@@ -228,10 +228,10 @@ Worst Case Available Settling Time: 17.737 ns
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                                     ; Note ;
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
-; 8.22 MHz   ; 8.22 MHz        ; CLOCK_50                                                                                       ;      ;
-; 52.64 MHz  ; 52.64 MHz       ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 270.86 MHz ; 270.86 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ;      ;
-; 547.35 MHz ; 547.35 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ;      ;
+; 8.18 MHz   ; 8.18 MHz        ; CLOCK_50                                                                                       ;      ;
+; 48.02 MHz  ; 48.02 MHz       ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 312.4 MHz  ; 312.4 MHz       ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ;      ;
+; 644.75 MHz ; 644.75 MHz      ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ;      ;
 +------------+-----------------+------------------------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -241,11 +241,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------------------------+----------+---------------+
 ; Clock                                                                                          ; Slack    ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+----------+---------------+
-; CLOCK_50                                                                                       ; -101.648 ; -5519.997     ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -3.952   ; -49.009       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.028   ; -3.028        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.827   ; -1.649        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 20.722   ; 0.000         ;
+; CLOCK_50                                                                                       ; -102.222 ; -4780.493     ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -4.029   ; -49.173       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.084   ; -3.084        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.551   ; -1.097        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.894   ; 0.000         ;
 +------------------------------------------------------------------------------------------------+----------+---------------+
 
 
@@ -254,11 +254,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                       ; -0.302 ; -0.757        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.279  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.288  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.849  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 2.386  ; 0.000         ;
+; CLOCK_50                                                                                       ; -2.937 ; -51.913       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.176  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.366  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.591  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 2.449  ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -267,23 +267,23 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.381 ; -5.358        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.877 ; -40.836       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.315 ; -3.315        ;
-; CLOCK_50                                                  ; -2.784 ; -158.682      ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -4.745 ; -9.489        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -3.876 ; -38.899       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -3.694 ; -3.694        ;
+; CLOCK_50                                                  ; -2.714 ; -114.523      ;
 +-----------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Removal Summary                                              ;
-+-----------------------------------------------------------+-------+---------------+
-; Clock                                                     ; Slack ; End Point TNS ;
-+-----------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                  ; 0.015 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.490 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.535 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.458 ; 0.000         ;
-+-----------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary                                               ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; CLOCK_50                                                  ; -2.746 ; -57.649       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.253  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2.709  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 3.097  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -291,13 +291,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.404 ; -0.798        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.394 ; -11.631       ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.394 ; -1.068        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -0.394 ; -1.047        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.394 ; -10.848       ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.394 ; -1.084        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -0.394 ; -1.024        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.394 ; -0.541        ;
 ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.325  ; 0.000         ;
-; CLOCK_50                                                                                       ; 8.834  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.621 ; 0.000         ;
+; CLOCK_50                                                                                       ; 8.825  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.618 ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -308,7 +308,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 17.783 ns
+Worst Case Available Settling Time: 17.586 ns
 
 
 
@@ -318,11 +318,11 @@ Worst Case Available Settling Time: 17.783 ns
 +------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                          ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                       ; -48.363 ; -2093.569     ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -1.814  ; -20.955       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -1.366  ; -1.366        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.185  ; -0.368        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 30.158  ; 0.000         ;
+; CLOCK_50                                                                                       ; -48.731 ; -1842.169     ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -1.944  ; -21.857       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -1.388  ; -1.388        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.002  ; -0.003        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 29.203  ; 0.000         ;
 +------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -331,11 +331,11 @@ Worst Case Available Settling Time: 17.783 ns
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.065 ; -0.106        ;
-; CLOCK_50                                                                                       ; 0.155  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.189  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.479  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1.095  ; 0.000         ;
+; CLOCK_50                                                                                       ; -1.756 ; -30.497       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.019 ; -0.028        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.267  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.316  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1.122  ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -344,23 +344,23 @@ Worst Case Available Settling Time: 17.783 ns
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.973 ; -3.395        ;
-; CLOCK_50                                                  ; -1.918 ; -122.995      ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.875 ; -18.087       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.568 ; -1.568        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -3.255 ; -6.509        ;
+; CLOCK_50                                                  ; -2.145 ; -79.292       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.882 ; -17.887       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.618 ; -1.618        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Fast 1100mV 85C Model Removal Summary                                             ;
-+-----------------------------------------------------------+-------+---------------+
-; Clock                                                     ; Slack ; End Point TNS ;
-+-----------------------------------------------------------+-------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.050 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.126 ; 0.000         ;
-; CLOCK_50                                                  ; 0.263 ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.023 ; 0.000         ;
-+-----------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                                              ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; CLOCK_50                                                  ; -1.634 ; -34.908       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.065 ; -0.065        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.245  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.909  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -368,13 +368,13 @@ Worst Case Available Settling Time: 17.783 ns
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.164 ; -0.164        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.054  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.059  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 0.081  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.051  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; 0.060  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.085  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 0.131  ; 0.000         ;
 ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.325  ; 0.000         ;
-; CLOCK_50                                                                                       ; 8.809  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.751 ; 0.000         ;
+; CLOCK_50                                                                                       ; 8.806  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.752 ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -385,7 +385,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 18.470 ns
+Worst Case Available Settling Time: 18.206 ns
 
 
 
@@ -395,11 +395,11 @@ Worst Case Available Settling Time: 18.470 ns
 +------------------------------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                                          ; Slack   ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+---------+---------------+
-; CLOCK_50                                                                                       ; -43.801 ; -1591.924     ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -1.759  ; -19.446       ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -1.354  ; -1.354        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.137  ; -0.271        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 30.703  ; 0.000         ;
+; CLOCK_50                                                                                       ; -44.150 ; -1447.627     ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -1.877  ; -20.114       ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -1.380  ; -1.380        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.032   ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 29.794  ; 0.000         ;
 +------------------------------------------------------------------------------------------------+---------+---------------+
 
 
@@ -408,11 +408,11 @@ Worst Case Available Settling Time: 18.470 ns
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                                       ; -0.097 ; -0.240        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.074 ; -0.144        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.170  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.433  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1.101  ; 0.000         ;
+; CLOCK_50                                                                                       ; -1.804 ; -32.384       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -0.077 ; -0.249        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.236  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.282  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1.128  ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -421,10 +421,10 @@ Worst Case Available Settling Time: 18.470 ns
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.533 ; -2.858        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.797 ; -16.349       ;
-; CLOCK_50                                                  ; -1.534 ; -92.830       ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.520 ; -1.520        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; -2.767 ; -5.533        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -1.807 ; -15.961       ;
+; CLOCK_50                                                  ; -1.594 ; -60.750       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; -1.588 ; -1.588        ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -433,10 +433,10 @@ Worst Case Available Settling Time: 18.470 ns
 +-----------------------------------------------------------+--------+---------------+
 ; Clock                                                     ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                  ; -0.022 ; -0.178        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 0.005  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 0.065  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.046  ; 0.000         ;
+; CLOCK_50                                                  ; -1.693 ; -36.720       ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; -0.113 ; -0.113        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 1.230  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 1.617  ; 0.000         ;
 +-----------------------------------------------------------+--------+---------------+
 
 
@@ -445,13 +445,13 @@ Worst Case Available Settling Time: 18.470 ns
 +------------------------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                                          ; Slack  ; End Point TNS ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; -0.096 ; -0.096        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.082  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.083  ; 0.000         ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 0.098  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 0.077  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0.094  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; 0.094  ; 0.000         ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 0.136  ; 0.000         ;
 ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.325  ; 0.000         ;
-; CLOCK_50                                                                                       ; 8.802  ; 0.000         ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.748 ; 0.000         ;
+; CLOCK_50                                                                                       ; 8.798  ; 0.000         ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.749 ; 0.000         ;
 +------------------------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -462,33 +462,33 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 18.580 ns
+Worst Case Available Settling Time: 18.385 ns
 
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                                                                             ;
-+-------------------------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Clock                                                                                           ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                                                ; -101.648  ; -0.302 ; -4.606   ; -0.022  ; -0.414              ;
-;  CLOCK_50                                                                                       ; -101.648  ; -0.302 ; -2.919   ; -0.022  ; 8.802               ;
-;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.835    ; 0.433  ; N/A      ; N/A     ; -0.394              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; N/A       ; N/A    ; -3.315   ; 1.023   ; -0.414              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -3.952    ; -0.074 ; -3.877   ; 0.005   ; -0.394              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.028    ; 1.095  ; -4.606   ; 0.065   ; -0.394              ;
-;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A      ; N/A     ; 0.325               ;
-;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 20.722    ; 0.170  ; N/A      ; N/A     ; 18.621              ;
-; Design-wide TNS                                                                                 ; -5752.434 ; -0.757 ; -228.491 ; -0.178  ; -14.807             ;
-;  CLOCK_50                                                                                       ; -5699.669 ; -0.757 ; -178.242 ; -0.178  ; 0.000               ;
-;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -1.666    ; 0.000  ; N/A      ; N/A     ; -1.117              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; N/A       ; N/A    ; -3.315   ; 0.000   ; -0.808              ;
-;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -49.009   ; -0.144 ; -41.378  ; 0.000   ; -11.823             ;
-;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.028    ; 0.000  ; -5.641   ; 0.000   ; -1.059              ;
-;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
-;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000     ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-+-------------------------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                                              ;
++-------------------------------------------------------------------------------------------------+-----------+---------+----------+---------+---------------------+
+; Clock                                                                                           ; Setup     ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------------------------------------------------------------------------+-----------+---------+----------+---------+---------------------+
+; Worst-case Slack                                                                                ; -102.222  ; -2.937  ; -5.016   ; -2.746  ; -0.394              ;
+;  CLOCK_50                                                                                       ; -102.222  ; -2.937  ; -2.994   ; -2.746  ; 8.798               ;
+;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -0.551    ; 0.282   ; N/A      ; N/A     ; -0.394              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; N/A       ; N/A     ; -3.694   ; 1.230   ; -0.394              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -4.029    ; -0.077  ; -3.876   ; -0.113  ; -0.394              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.084    ; 1.122   ; -5.016   ; 1.617   ; -0.394              ;
+;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A     ; N/A      ; N/A     ; 0.325               ;
+;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.894    ; 0.236   ; N/A      ; N/A     ; 18.618              ;
+; Design-wide TNS                                                                                 ; -4898.796 ; -51.913 ; -179.895 ; -57.649 ; -13.497             ;
+;  CLOCK_50                                                                                       ; -4845.879 ; -51.913 ; -126.503 ; -57.649 ; 0.000               ;
+;  kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; -1.097    ; 0.000   ; N/A      ; N/A     ; -1.084              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; N/A       ; N/A     ; -3.694   ; 0.000   ; -0.552              ;
+;  kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; -49.173   ; -0.249  ; -39.780  ; -0.113  ; -10.848             ;
+;  kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; -3.084    ; 0.000   ; -10.030  ; 0.000   ; -1.027              ;
+;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A     ; N/A      ; N/A     ; 0.000               ;
+;  vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000     ; 0.000   ; N/A      ; N/A     ; 0.000               ;
++-------------------------------------------------------------------------------------------------+-----------+---------+----------+---------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -587,11 +587,11 @@ Worst Case Available Settling Time: 18.580 ns
 ; SW[7]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[8]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[9]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; KEY[2]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[3]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; PS2_DAT  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; PS2_CLK  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; CLOCK_50 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[2]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[1]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[0]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +----------+--------------+-----------------+-----------------+
@@ -927,17 +927,17 @@ Worst Case Available Settling Time: 18.580 ns
 ; From Clock                                                                                     ; To Clock                                                                                       ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------+----------+----------+----------+
 ; CLOCK_50                                                                                       ; CLOCK_50                                                                                       ; > 2147483647 ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; CLOCK_50                                                                                       ; 122554       ; 191837   ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; CLOCK_50                                                                                       ; 144857       ; 238432   ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; CLOCK_50                                                                                       ; 7            ; 5        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; CLOCK_50                                                                                       ; 33           ; 1        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; CLOCK_50                                                                                       ; 16           ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0            ; 0        ; 0        ; 2        ;
 ; CLOCK_50                                                                                       ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 7            ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 1            ; 1        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 116          ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 112          ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 8            ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                       ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1            ; 0        ; 0        ; 0        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 9465505      ; 0        ; 0        ; 0        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 9465444      ; 0        ; 0        ; 0        ;
 +------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -948,17 +948,17 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                                                                                     ; To Clock                                                                                       ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------+----------+----------+----------+
 ; CLOCK_50                                                                                       ; CLOCK_50                                                                                       ; > 2147483647 ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; CLOCK_50                                                                                       ; 122554       ; 191837   ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; CLOCK_50                                                                                       ; 144857       ; 238432   ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; CLOCK_50                                                                                       ; 7            ; 5        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; CLOCK_50                                                                                       ; 33           ; 1        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; CLOCK_50                                                                                       ; 16           ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                                                         ; 0            ; 0        ; 0        ; 2        ;
 ; CLOCK_50                                                                                       ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 7            ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 1            ; 1        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 116          ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 112          ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger                                      ; 8            ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                                                       ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                                                             ; 1            ; 0        ; 0        ; 0        ;
-; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 9465505      ; 0        ; 0        ; 0        ;
+; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 9465444      ; 0        ; 0        ; 0        ;
 +------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -968,13 +968,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 2518     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 2516     ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 87       ; 87       ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 24       ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 21       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 20       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -985,13 +985,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                ; To Clock                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                  ; CLOCK_50                                                  ; 2518     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                  ; CLOCK_50                                                  ; 2516     ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|key0code[0]                    ; CLOCK_50                                                  ; 87       ; 87       ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; CLOCK_50                                                  ; 16       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; CLOCK_50                                                  ; 24       ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked ; 2        ; 0        ; 0        ; 0        ;
 ; CLOCK_50                                                  ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 7        ; 0        ; 0        ; 0        ;
-; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 21       ; 0        ; 0        ; 0        ;
+; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; 20       ; 0        ; 0        ; 0        ;
 ; kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger ; kbdex_ctrl:kbdex_ctrl_inst|sigsend                        ; 2        ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------+-----------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1016,8 +1016,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 101   ; 101  ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 1260  ; 1260 ;
 ; Unconstrained Output Ports      ; 71    ; 71   ;
 ; Unconstrained Output Port Paths ; 459   ; 459  ;
 +---------------------------------+-------+------+
@@ -1045,6 +1045,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 ; KEY[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; KEY[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; PS2_CLK    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; PS2_DAT    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
@@ -1136,6 +1137,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 ; KEY[0]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; KEY[1]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; KEY[2]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; PS2_CLK    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; PS2_DAT    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
@@ -1226,7 +1228,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 11 13:59:05 2018
+    Info: Processing started: Mon Jun 11 14:25:00 2018
 Info: Command: quartus_sta jogo_da_memoria -c jogo_da_memoria
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1242,10 +1244,10 @@ Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 61 -duty_cycle 50.00 -name {vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|key0code[0] kbdex_ctrl:kbdex_ctrl_inst|key0code[0]
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|sigsend kbdex_ctrl:kbdex_ctrl_inst|sigsend
     Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked
-    Info (332105): create_clock -period 1.000 -name kbdex_ctrl:kbdex_ctrl_inst|key0code[0] kbdex_ctrl:kbdex_ctrl_inst|key0code[0]
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
@@ -1256,52 +1258,52 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -99.771
+Info (332146): Worst-case setup slack is -100.218
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -99.771           -5699.669 CLOCK_50 
-    Info (332119):    -3.880             -48.204 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -2.895              -2.895 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.835              -1.666 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    21.271               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.042
+    Info (332119):  -100.218           -4845.879 CLOCK_50 
+    Info (332119):    -4.027             -48.878 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -2.943              -2.943 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.551              -1.096 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    19.583               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -2.712
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.042               0.000 CLOCK_50 
-    Info (332119):     0.210               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.308               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.876               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     2.250               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -4.606
+    Info (332119):    -2.712             -46.977 CLOCK_50 
+    Info (332119):     0.231               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.381               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.612               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     2.307               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -5.016
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.606              -5.641 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -3.846             -41.378 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -3.230              -3.230 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):    -2.919            -178.242 CLOCK_50 
-Info (332146): Worst-case removal slack is 0.400
+    Info (332119):    -5.016             -10.030 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -3.814             -39.780 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -3.582              -3.582 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -2.994            -126.503 CLOCK_50 
+Info (332146): Worst-case removal slack is -2.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.400               0.000 CLOCK_50 
-    Info (332119):     0.555               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.591               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     2.306               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.414
+    Info (332119):    -2.538             -52.528 CLOCK_50 
+    Info (332119):     0.313               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     2.619               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     3.344               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.414              -0.808 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):    -0.394             -11.823 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -0.394              -1.117 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.394              -1.059 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394             -10.824 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.394              -1.066 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    -0.394              -1.027 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394              -0.552 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
     Info (332119):     0.325               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.877               0.000 CLOCK_50 
-    Info (332119):    18.634               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.867               0.000 CLOCK_50 
+    Info (332119):    18.639               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 17.737 ns
+    Info (332114): Worst Case Available Settling Time: 17.509 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -1313,52 +1315,52 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -101.648
+Info (332146): Worst-case setup slack is -102.222
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):  -101.648           -5519.997 CLOCK_50 
-    Info (332119):    -3.952             -49.009 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -3.028              -3.028 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.827              -1.649 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    20.722               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.302
+    Info (332119):  -102.222           -4780.493 CLOCK_50 
+    Info (332119):    -4.029             -49.173 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -3.084              -3.084 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.551              -1.097 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    18.894               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -2.937
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.302              -0.757 CLOCK_50 
-    Info (332119):     0.279               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.288               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.849               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     2.386               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -4.381
+    Info (332119):    -2.937             -51.913 CLOCK_50 
+    Info (332119):     0.176               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.366               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.591               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     2.449               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -4.745
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.381              -5.358 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -3.877             -40.836 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -3.315              -3.315 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):    -2.784            -158.682 CLOCK_50 
-Info (332146): Worst-case removal slack is 0.015
+    Info (332119):    -4.745              -9.489 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -3.876             -38.899 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -3.694              -3.694 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):    -2.714            -114.523 CLOCK_50 
+Info (332146): Worst-case removal slack is -2.746
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.015               0.000 CLOCK_50 
-    Info (332119):     0.490               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.535               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     2.458               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.404
+    Info (332119):    -2.746             -57.649 CLOCK_50 
+    Info (332119):     0.253               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     2.709               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     3.097               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.404              -0.798 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):    -0.394             -11.631 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -0.394              -1.068 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    -0.394              -1.047 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394             -10.848 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -0.394              -1.084 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    -0.394              -1.024 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.394              -0.541 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
     Info (332119):     0.325               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.834               0.000 CLOCK_50 
-    Info (332119):    18.621               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.825               0.000 CLOCK_50 
+    Info (332119):    18.618               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 17.783 ns
+    Info (332114): Worst Case Available Settling Time: 17.586 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
@@ -1370,52 +1372,52 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -48.363
+Info (332146): Worst-case setup slack is -48.731
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -48.363           -2093.569 CLOCK_50 
-    Info (332119):    -1.814             -20.955 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.366              -1.366 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.185              -0.368 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    30.158               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.065
+    Info (332119):   -48.731           -1842.169 CLOCK_50 
+    Info (332119):    -1.944             -21.857 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.388              -1.388 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -0.002              -0.003 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    29.203               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -1.756
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.065              -0.106 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.155               0.000 CLOCK_50 
-    Info (332119):     0.189               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.479               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     1.095               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -2.973
+    Info (332119):    -1.756             -30.497 CLOCK_50 
+    Info (332119):    -0.019              -0.028 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.267               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.316               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     1.122               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -3.255
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.973              -3.395 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -1.918            -122.995 CLOCK_50 
-    Info (332119):    -1.875             -18.087 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.568              -1.568 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is 0.050
+    Info (332119):    -3.255              -6.509 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -2.145             -79.292 CLOCK_50 
+    Info (332119):    -1.882             -17.887 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.618              -1.618 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+Info (332146): Worst-case removal slack is -1.634
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.050               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.126               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     0.263               0.000 CLOCK_50 
-    Info (332119):     1.023               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.164
+    Info (332119):    -1.634             -34.908 CLOCK_50 
+    Info (332119):    -0.065              -0.065 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     1.245               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     1.909               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is 0.051
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.164              -0.164 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):     0.054               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     0.059               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.081               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):     0.051               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.060               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     0.085               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     0.131               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
     Info (332119):     0.325               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.809               0.000 CLOCK_50 
-    Info (332119):    18.751               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.806               0.000 CLOCK_50 
+    Info (332119):    18.752               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 18.470 ns
+    Info (332114): Worst Case Available Settling Time: 18.206 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
@@ -1425,59 +1427,59 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -43.801
+Info (332146): Worst-case setup slack is -44.150
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -43.801           -1591.924 CLOCK_50 
-    Info (332119):    -1.759             -19.446 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.354              -1.354 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -0.137              -0.271 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):    30.703               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.097
+    Info (332119):   -44.150           -1447.627 CLOCK_50 
+    Info (332119):    -1.877             -20.114 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.380              -1.380 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):     0.032               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):    29.794               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -1.804
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.097              -0.240 CLOCK_50 
-    Info (332119):    -0.074              -0.144 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.170               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.433               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     1.101               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-Info (332146): Worst-case recovery slack is -2.533
+    Info (332119):    -1.804             -32.384 CLOCK_50 
+    Info (332119):    -0.077              -0.249 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.236               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.282               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     1.128               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case recovery slack is -2.767
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.533              -2.858 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):    -1.797             -16.349 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):    -1.534             -92.830 CLOCK_50 
-    Info (332119):    -1.520              -1.520 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case removal slack is -0.022
+    Info (332119):    -2.767              -5.533 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):    -1.807             -15.961 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):    -1.594             -60.750 CLOCK_50 
+    Info (332119):    -1.588              -1.588 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+Info (332146): Worst-case removal slack is -1.693
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.022              -0.178 CLOCK_50 
-    Info (332119):     0.005               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.065               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
-    Info (332119):     1.046               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-Info (332146): Worst-case minimum pulse width slack is -0.096
+    Info (332119):    -1.693             -36.720 CLOCK_50 
+    Info (332119):    -0.113              -0.113 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     1.230               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     1.617               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+Info (332146): Worst-case minimum pulse width slack is 0.077
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.096              -0.096 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
-    Info (332119):     0.082               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
-    Info (332119):     0.083               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
-    Info (332119):     0.098               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
+    Info (332119):     0.077               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|sigtrigger 
+    Info (332119):     0.094               0.000 kbdex_ctrl:kbdex_ctrl_inst|key0code[0] 
+    Info (332119):     0.094               0.000 kbdex_ctrl:kbdex_ctrl_inst|ps2_iobase:ps2_ctrl|parchecked 
+    Info (332119):     0.136               0.000 kbdex_ctrl:kbdex_ctrl_inst|sigsend 
     Info (332119):     0.325               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.802               0.000 CLOCK_50 
-    Info (332119):    18.748               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.798               0.000 CLOCK_50 
+    Info (332119):    18.749               0.000 vga|vga_controller|divider|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 18.580 ns
+    Info (332114): Worst Case Available Settling Time: 18.385 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 1527 megabytes
-    Info: Processing ended: Mon Jun 11 13:59:22 2018
-    Info: Elapsed time: 00:00:17
+    Info: Processing ended: Mon Jun 11 14:25:16 2018
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:36
 
 

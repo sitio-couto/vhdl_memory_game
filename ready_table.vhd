@@ -5,6 +5,7 @@ use work.game_package.all;
 
 entity ready_table is
   port (
+       reset_game  : in std_logic;
 		 CLOCK_50    : in std_logic;
 		 set_table 	 : in std_logic;
 		 table_ready : out std_logic;
@@ -15,7 +16,7 @@ entity ready_table is
 	 );
 end ready_table;
 architecture rtl of ready_table is
-	signal clk_flag : std_logic := '0';
+	signal clk_flag, seed_set : std_logic := '0';
 	signal state, next_state : std_logic_vector (3 downto 0) := "0000";
 
 	signal deck : vetor;
@@ -39,7 +40,16 @@ begin
 		constant B: integer := 88977;
 	begin
 	wait until CLOCK_50'event and CLOCK_50 = '1';
-	if (clk_flag = '1') then
+	
+	if (seed_set = '0') then 
+		seed := seed_in;
+		seed_set <= '1';
+	end if;
+	
+	if (reset_game = '1') then
+		table_ready <= '0';
+		next_state <= "0000";
+	elsif (clk_flag = '1') then
 	
 		case state is
 		when "0000" =>
@@ -68,7 +78,6 @@ begin
 			end loop;
 			
 			i := 0;
-			seed := seed_in;
 			deck_flag <= '1';
 			
 			next_state <= "0010";

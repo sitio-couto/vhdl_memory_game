@@ -86,6 +86,7 @@ package game_package is
   
   component ready_table is
 	 port (
+		 reset_game  : in std_logic;
 		 CLOCK_50    : in std_logic;
 		 set_table 	 : in std_logic;
 		 table_ready : out std_logic;
@@ -98,6 +99,7 @@ package game_package is
 
 	component play_table is
 		port (
+		   reset_game : in std_logic;
 			CLOCK_50   : in std_logic;
 			play_game  : in std_logic;
 			enter_on   : in std_logic;
